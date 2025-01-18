@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+
+.Brockmann {
+  font-family: 'Brockmann', sans-serif;
+
+}
+
+.Gilroy {
+  font-family: 'Gilroy-Medium', sans-serif;
+}
+
+.react-multiple-carousel__arrow--right {
+  right: -15px !important;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: -15px !important;
+}
+
+input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+input[type=checkbox]:before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  border: 2px solid #104649;
+  border-radius: 3px;
+  padding: 1px;
+  background-color: #002025;
+}
+
+input[type=checkbox]:checked:before {
+  background-color: #104649;
+}
+
+input[type=checkbox]:checked:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 6px;
+}
