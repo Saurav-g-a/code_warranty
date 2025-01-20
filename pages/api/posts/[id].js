@@ -9,17 +9,18 @@ export default async function handler(req, res) {
   switch (method) {
     case "GET":
       try {
-        const post = await Post.findById(id);
-
+        console.log('here',id)
+        const post = await Post.findOne({ 'paramUrl': id });
         if (!post) {
           return res.status(404).json({ success: false, message: "Post not found" });
         }
-
+    
         res.status(200).json({ success: true, data: post });
       } catch (error) {
-        res.status(400).json({ success: false, error: "Invalid ID" });
+        res.status(400).json({ success: false, error: "Invalid request" });
       }
       break;
+    
 
     case "PUT":
       try {

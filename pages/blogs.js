@@ -4,11 +4,14 @@ import Arrow from "@/public/assets/images/blog/arrow.png"
 import Image from "next/image";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
+import { useRouter } from "next/router";
 
 const BlogPage = ({ blogs, error }) => {
-  console.log(blogs)
+  const router = useRouter();
+  // console.log(blogs)
   if (error) {
-    return <div className="text-red-500 text-center">Error: {error}</div>;
+    router.push('/404');
+    return null;
   }
 
   return (
@@ -60,7 +63,7 @@ const BlogPage = ({ blogs, error }) => {
                         {blog.extractDescription || "Default description for the blog..."}
                       </p>
                       <div className="my-5">
-                        <a href={`/blogs/${blog._id}`}>
+                        <a href={`/blogs/${blog.paramUrl}`}>
                           <Image title="Hero image description" src={Arrow} alt='arrow' className='w-[60px] h-[60px]' />
 
                         </a>
