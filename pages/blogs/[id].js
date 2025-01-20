@@ -46,7 +46,7 @@ export default function Blog({ blog, error }) {
               </div>
             </div>
             <div className='col-span-9'>
-              <h3 className='text-white text-3xl Brockmann'>{title}</h3>
+              <h1 className='text-white text-3xl Brockmann'>{title}</h1>
 
               <p className='text-white mt-5 w-[80%] Gilroy text-base'>{extractDescription}</p>
             </div>

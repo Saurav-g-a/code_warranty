@@ -4,7 +4,7 @@ import Image from "next/image"
 function Footer() {
     return (
         <div className='bg-headerBackground bg-cover bg-no-repeat pt-12'>
-            <Image src={Logo} className='mx-auto' alt="logo" />
+            <Image title="Hero image description" src={Logo} className='mx-auto' alt="logo" />
             <p className='text-center text-[#95AAAD] Gilroy text-lg py-8'>Since 2015, CodeWarranty has been a leading web and mobile app development agency, <br /> specializing in creating custom solutions for businesses.</p>
             {/* <div className='grid lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-2 s:grid-cols-2 gap-4 text-[#95AAAD] mt-5 px-8'>
                 <div className=' col-span-1'>

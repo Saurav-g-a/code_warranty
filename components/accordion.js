@@ -23,9 +23,9 @@ const AccordionItem = ({ title, content, isOpen, onClick }) => {
         <span className="self-center Brockmann">{title}</span>
         <span>
           {!isOpen ? (
-            <Image src={close} width={40} height={40} alt="close" />
+            <Image title="Hero image description" src={close} width={40} height={40} alt="close" />
           ) : (
-            <Image src={open} width={40} height={40} alt="open" className="rotate-180" />
+            <Image title="Hero image description" src={open} width={40} height={40} alt="open" className="rotate-180" />
           )}
         </span>
       </div>

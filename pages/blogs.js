@@ -61,7 +61,7 @@ const BlogPage = ({ blogs, error }) => {
                       </p>
                       <div className="my-5">
                         <a href={`/blogs/${blog._id}`}>
-                          <Image src={Arrow} alt='arrow' className='w-[60px] h-[60px]' />
+                          <Image title="Hero image description" src={Arrow} alt='arrow' className='w-[60px] h-[60px]' />
 
                         </a>
                       </div>
