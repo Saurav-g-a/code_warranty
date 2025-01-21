@@ -682,10 +682,32 @@ export default function Page() {
                         </div >
 
                         <div className='lg:order-none md:order-none sm:order-1 s:order-1 flex'>
-                            <Image title="Hero image description" src={Banner1} className='px-6 self-center' alt="mask" />
+                            <video
+                                // className=""
+                                className='mx-auto bg-transparent rounded-[2.5rem] shadow-lg'
+                                poster={Banner1}
+                                autoPlay
+                                loop
+                                muted
+                            >
+                                <source src="./assets/video/2.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                            {/* <Image title="Hero image description" src={Banner1} className='px-6 self-center' alt="mask" /> */}
                         </div>
                         <div className='lg:order-none md:order-none sm:order-3 s:order-3 flex'>
-                            <Image title="Hero image description" src={Banner1} className='px-6 self-center' alt="mask" />
+                            <video
+                                // className=""
+                                className='mx-auto bg-transparent rounded-[2.5rem] shadow-lg'
+                                poster={Banner1}
+                                autoPlay
+                                loop
+                                muted
+                            >
+                                <source src="./assets/video/3.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                            {/* <Image title="Hero image description" src={Banner1} className='px-6 self-center' alt="mask" /> */}
                         </div>
                         <div className='col-span-1 text-white lg:order-none md:order-none sm:order-4 s:order-4 mt-3'>
                             <p className='Brockmann text-xl'>Advanced Pricing Features</p>
