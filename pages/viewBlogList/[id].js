@@ -85,7 +85,7 @@ export default function BlogListPage() {
         <div className="space-x-2">
           <button
             className="btn btn-primary"
-            onClick={() => router.push(`/blogs/${row._id}`)}
+            onClick={() => router.push(`/blogs/${row.paramUrl}`)}
           >
             View
           </button>

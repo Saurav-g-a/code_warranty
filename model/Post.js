@@ -9,6 +9,7 @@ const PostSchema = new mongoose.Schema({
     photo: { type: String, default: null },
   },
   bannerImage: { type: String, default: null },
+  paramUrl: { type: String, default: null },
   thumbnailImage: { type: String, default: null },
   metaTitle: { type: String, required: true },
   metaDescription: { type: String, required: true },

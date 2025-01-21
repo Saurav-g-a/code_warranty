@@ -23,6 +23,7 @@ export default function AddBlogPage() {
       photo: null,
     },
     bannerImage: null,
+    paramUrl:'',
     thumbnailImage: null,
     metaTitle: "",
     metaDescription: "",
@@ -142,6 +143,7 @@ export default function AddBlogPage() {
     const dataToSend = {
       title: formData.title,
       extractDescription: formData.extractDescription,
+      paramUrl:formData.paramUrl,
       content: value,
       author: {
         name: formData.author.name,
@@ -166,7 +168,7 @@ export default function AddBlogPage() {
 
       if (response.ok) {
         const result = await response.json();
-        console.log("Blog created:", result);
+        // console.log("Blog created:", result);
         setFormData({});
        router.push("/blogs"); // Uncomment this line to redirect after submission
       } else {
@@ -274,6 +276,15 @@ export default function AddBlogPage() {
             />
           </div>
   
+          <input
+            type="text"
+            name="paramUrl"
+            placeholder="Param Url"
+            onChange={handleChange}
+            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+            required
+          />
+
           <input
             type="text"
             name="metaTitle"
