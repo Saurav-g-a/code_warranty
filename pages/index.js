@@ -211,7 +211,18 @@ export default function Page() {
                             <div className='text-center py-5'>
                                 <button onClick={() => scrollToSection("contactUs")} className="bg-[#8BC542] Gilroy uppercase py-4 px-6 rounded-md text-white font-medium">Book A Demo</button>
                             </div>
-                            <Image title="Hero image description" src={Banner} alt="banner" className='mx-auto' />
+                            <video
+                                // className="rounded-lg shadow-lg"
+                                className='mx-auto bg-transparent'
+                                // controls
+                                autoPlay
+                                loop
+                                muted
+                            >
+                                <source src="./assets/video/1.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                            {/* <Image title="Hero image description" src={Banner} alt="banner" className='mx-auto' /> */}
                         </div>
                         <div className='col-span-2'></div>
                     </div>
