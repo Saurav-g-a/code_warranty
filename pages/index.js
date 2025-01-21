@@ -163,7 +163,7 @@ export default function Page() {
     return (
         <>
             <Head>
-                <link rel="canonical" href="https://codewarranty.vercel.app" />
+                <link rel="canonical" href="https://www.codewarranty.com/" />
                 <title>Best Warranty Management Software | Streamline Claims and Warranty Operations</title>
                 <meta
                     name="description"
@@ -212,9 +212,9 @@ export default function Page() {
                                 <button onClick={() => scrollToSection("contactUs")} className="bg-[#8BC542] Gilroy uppercase py-4 px-6 rounded-md text-white font-medium">Book A Demo</button>
                             </div>
                             <video
-                                // className="rounded-lg shadow-lg"
-                                className='mx-auto bg-transparent'
-                                // controls
+                                // className=""
+                                className='mx-auto bg-transparent rounded-[2.5rem] shadow-lg'
+                                poster={Banner}
                                 autoPlay
                                 loop
                                 muted
