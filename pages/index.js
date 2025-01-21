@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import Head from 'next/head';
 import Header from '@/components/header'
@@ -19,6 +19,7 @@ import Business5 from '@/public/assets/images/EnhanceDealerCollaboration.png'
 import Business6 from '@/public/assets/images/ImproveData-DrivenDecisionMaking.png'
 import custom from '@/public/assets/images/CustomDevelopment.png'
 import custom1 from '@/public/assets/images/End-to-EndSupport.png'
+import close from '@/public/assets/images/active.svg';
 import Footer from '@/components/footer'
 import CustomAccordion from '@/components/accordion'
 import Contact from '@/components/contact'
@@ -44,7 +45,31 @@ import 'react-multi-carousel/lib/styles.css';
 import { Helmet } from 'react-helmet'
 
 export default function Page() {
+    const [showButton, setShowButton] = useState(false);
 
+    // Show the button when the user scrolls down
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 300) {
+                setShowButton(true);
+            } else {
+                setShowButton(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth", // Smooth scrolling
+        });
+    };
     const accordionItems = [
         {
             title: "What is a warranty management platform, and how does it help?   ",
@@ -740,7 +765,14 @@ export default function Page() {
                         <p className='self-center Gilroy text-[#95AAAD] lg:w-[50%] md:w-full sm:w-full lg:text-right lg:pt-0 md:pt-5 sm:pt-5 md:text-center sm:text-center'>Let us know if you'd like any further adjustments!</p>
                     </div>
                 </div >
-
+                {showButton && (
+                    <button
+                        onClick={scrollToTop}
+                        className="fixed bottom-5 right-5 px-4 py-2 rounded-full shadow-lg "
+                    >
+                        <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="close" />
+                    </button>
+                )}
                 <Footer />
             </div >
         </>
