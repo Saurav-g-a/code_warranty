@@ -1,6 +1,7 @@
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
+import Head from 'next/head';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
@@ -25,11 +26,25 @@ export default function Blog({ blog, error }) {
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>{metaTitle || 'Features of Warranty Software'}</title>
         <meta name="description" content={metaDescription || "Key Features to Look for in a Warranty Management Platform"} />
         <meta name="keywords" content={metaTags?.join(', ')} />
-      </Helmet>
+
+        <link rel="canonical" href="https://codewarranty.com/" />
+
+        <link
+          href="https://fonts.cdnfonts.com/css/brockmann"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.cdnfonts.com/css/gilroy-bold"
+          rel="stylesheet"
+        />
+        <meta name="theme-color" content="#002025" />
+        <link rel="icon" type="image/x-icon" href="./assets/images/fabIcon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="./assets/images/fabIcon.png" />
+      </Head>
 
       <div className='bg-[#002025]'>
         <div className='w-large mx-auto'>

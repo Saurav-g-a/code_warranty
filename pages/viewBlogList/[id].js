@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import DataTable from "react-data-table-component";
 import Swal from "sweetalert2";
+import Head from "next/head";
 
 const StaticID = "ghe6hvwayvpof82zcp7gsbudxh0anvdv";
 
@@ -11,13 +12,13 @@ export default function BlogListPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  if(router.query.id !=undefined){
-    if (router.query.id != StaticID) {
+    if (router.query.id != undefined) {
+      if (router.query.id != StaticID) {
         router.replace("/404");
       } else {
         fetchBlogs();
       }
-  }
+    }
   }, [router.query.id]);
 
   const fetchBlogs = async () => {
@@ -106,9 +107,26 @@ export default function BlogListPage() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="container mx-auto py-4">
-      <h1 className="text-2xl font-bold mb-4">Blog List</h1>
-      <DataTable columns={columns} data={blogs} pagination />
-    </div>
+    <>
+      <Head>
+        <link rel="canonical" href="https://codewarranty.com/" />
+
+        <link
+          href="https://fonts.cdnfonts.com/css/brockmann"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.cdnfonts.com/css/gilroy-bold"
+          rel="stylesheet"
+        />
+        <meta name="theme-color" content="#002025" />
+        <link rel="icon" type="image/x-icon" href="./assets/images/fabIcon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="./assets/images/fabIcon.png" />
+      </Head>
+      <div className="container mx-auto py-4">
+        <h1 className="text-2xl font-bold mb-4">Blog List</h1>
+        <DataTable columns={columns} data={blogs} pagination />
+      </div>
+    </>
   );
 }
