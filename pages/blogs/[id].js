@@ -42,8 +42,8 @@ export default function Blog({ blog, error }) {
           rel="stylesheet"
         />
         <meta name="theme-color" content="#002025" />
-        <link rel="icon" type="image/x-icon" href="@/assets/images/fabIcon.png" />
-        <link rel="apple-touch-icon" sizes="57x57" href="@/assets/images/fabIcon.png" />
+        <link rel="icon" type="image/x-icon" href="../assets/images/fabIcon.png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/fabIcon.png" />
       </Head>
 
       <div className='bg-[#002025]'>
