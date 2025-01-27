@@ -681,10 +681,10 @@ export default function Page() {
                             </div>
                         </div >
 
-                        <div className='lg:order-none md:order-none sm:order-1 s:order-1 flex'>
+                        <div className='lg:order-none md:order-none sm:order-1 s:order-1 flex self-center'>
                             <video
                                 // className=""
-                                className='mx-auto bg-transparent rounded-[2.5rem] shadow-lg'
+                                className='mx-auto bg-transparent rounded-[1.5rem] shadow-lg'
                                 poster={Banner1}
                                 autoPlay
                                 loop
@@ -695,10 +695,10 @@ export default function Page() {
                             </video>
                             {/* <Image title="Hero image description" src={Banner1} className='px-6 self-center' alt="mask" /> */}
                         </div>
-                        <div className='lg:order-none md:order-none sm:order-3 s:order-3 flex'>
+                        <div className='lg:order-none md:order-none sm:order-3 s:order-3 flex self-center'>
                             <video
                                 // className=""
-                                className='mx-auto bg-transparent rounded-[2.5rem] shadow-lg'
+                                className='mx-auto bg-transparent rounded-[1.5rem] shadow-lg'
                                 poster={Banner1}
                                 autoPlay
                                 loop
