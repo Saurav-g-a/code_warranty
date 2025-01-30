@@ -10,28 +10,33 @@ export default function BlogListPage() {
   const router = useRouter();
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false); 
 
   useEffect(() => {
-    if (router.query.id != undefined) {
-      if (router.query.id != StaticID) {
+    if (router.query.id !== undefined) {
+      if (router.query.id !== StaticID) {
         router.replace("/404");
       } else {
-        fetchBlogs();
+        setTimeout(() => {
+          fetchBlogs();
+        }, 500); 
       }
     }
   }, [router.query.id]);
 
   const fetchBlogs = async () => {
     try {
+      setError(false); 
       const response = await fetch("/api/post");
       const data = await response.json();
       if (data.success) {
         setBlogs(data.data);
       } else {
-        console.error("Failed to fetch blogs");
+        throw new Error("Failed to fetch blogs");
       }
     } catch (error) {
       console.error("Error fetching blogs:", error);
+      setError(true); // ✅ Set error state when API request fails
     } finally {
       setLoading(false);
     }
@@ -92,7 +97,7 @@ export default function BlogListPage() {
           </button>
           <button
             className="btn btn-secondary"
-            onClick={() => router.push(`/editBlog/${row._id}`)}
+            onClick={() => router.push(`/blogs/editBlog/${row.paramUrl}`)}
           >
             Edit
           </button>
@@ -104,21 +109,30 @@ export default function BlogListPage() {
     },
   ];
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <p className="text-lg font-semibold">Loading...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <p className="text-lg font-semibold text-red-600">
+          Something went wrong. Please try again later.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <>
       <Head>
         <link rel="canonical" href="https://codewarranty.com/" />
-
-        <link
-          href="https://fonts.cdnfonts.com/css/brockmann"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.cdnfonts.com/css/gilroy-bold"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.cdnfonts.com/css/brockmann" rel="stylesheet" />
+        <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet" />
         <meta name="theme-color" content="#002025" />
         <link rel="icon" type="image/x-icon" href="./assets/images/fabIcon.png" />
         <link rel="apple-touch-icon" sizes="57x57" href="./assets/images/fabIcon.png" />

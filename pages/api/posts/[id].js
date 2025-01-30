@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   switch (method) {
     case "GET":
       try {
-        console.log('here',id)
+      
         const post = await Post.findOne({ 'paramUrl': id });
         if (!post) {
           return res.status(404).json({ success: false, message: "Post not found" });
@@ -24,11 +24,13 @@ export default async function handler(req, res) {
 
     case "PUT":
       try {
-        const post = await Post.findByIdAndUpdate(id, req.body, {
+        const post =  await Post.findOneAndUpdate(
+          { paramUrl: id } , req.body, {
           new: true,
           runValidators: true,
         });
-
+        console.log('here',id)
+console.log(post)
         if (!post) {
           return res.status(404).json({ success: false, message: "Post not found" });
         }
