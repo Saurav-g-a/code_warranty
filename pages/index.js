@@ -741,8 +741,18 @@ export default function Page() {
                                 <p className='text-[#95AAAD] Gilroy pb-3 flex'><Image title="Hero image description" src={Mask1} alt="mask" className='pr-2 self-center' /> Ensures accurate record-keeping and faster resolutions.</p>
                             </div>
                         </div >
-                        <div className='lg:order-none md:order-none sm:order-5 s:order-5 flex'>
-                            <Image title="Hero image description" src={Banner1} className='px-6 self-center' alt="mask" />
+                        <div className='lg:order-none md:order-none sm:order-5 s:order-5 flex self-center'>
+                            <video
+                                // className=""
+                                className='mx-auto bg-transparent rounded-[1.5rem] shadow-lg'
+                                poster={Banner1}
+                                autoPlay
+                                loop
+                                muted
+                            >
+                                <source src="./assets/video/4.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div className='lg:order-none md:order-none sm:order-7 s:order-7 flex'>
                             <Image title="Hero image description" src={Banner1} className='px-6 self-center' alt="mask" />
