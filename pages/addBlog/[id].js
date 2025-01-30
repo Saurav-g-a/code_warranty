@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import DatePicker from "react-datepicker";
@@ -7,7 +7,12 @@ import "react-quill-new/dist/quill.snow.css";
 const StaticID = "ghe6hvwayvpof82zcp7gsbudxh0anvdv";
 
 export default function AddBlogPage() {
+  const router = useRouter();
+  const { id } = router.query;
+
   const [value, setValue] = useState("");
+  const [loading, setLoading] = useState(true);
+  const maxLength = 200;
   const [uploadTime, setUploadTime] = useState(new Date());
   const ReactQuill = useMemo(
     () => dynamic(() => import("react-quill-new"), { ssr: false }),
@@ -30,8 +35,7 @@ export default function AddBlogPage() {
     metaTags: [],
   });
 
-  const router = useRouter();
-  const { id } = router.query;
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -200,146 +204,157 @@ export default function AddBlogPage() {
     "link",
     "image",
   ];
-
-  if (id != StaticID) {
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 500);
+    return () => clearTimeout(timer);
+  }, []);
+  
+  if (loading) {
     return (
-      <div>
-        <h1>404 - Not Found</h1>
-        <p>The requested page does not exist.</p>
+      <div className="flex items-center justify-center h-screen">
+        <p className="text-lg font-semibold">Loading...</p>
       </div>
     );
   }
   else{
-    return (
-      <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Add New Blog</h1>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="text"
-            name="title"
-            placeholder="Title"
-            onChange={handleChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-  
-          <textarea
-            name="extractDescription"
-            placeholder="Extract Description"
-            onChange={handleChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-  
-          <input
-            type="text"
-            name="name"
-            placeholder="Author Name"
-            onChange={handleAuthorChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-  
-          <div>
-            <label className="block mb-2 font-medium">Author Photo</label>
+    if (id != StaticID) {
+      return (
+        router.replace("/404")
+      );
+    }
+    else{
+      return (
+        <div className="container mx-auto p-4">
+          <h1 className="text-2xl font-bold mb-4">Add New Blog</h1>
+          <form onSubmit={handleSubmit} className="space-y-4">
             <input
-              type="file"
-              name="photo"
-              onChange={handleAuthorPhotoChange}
-              accept="image/*"
+              type="text"
+              name="title"
+              placeholder="Title"
+              onChange={handleChange}
               className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
               required
             />
-          </div>
-  
-          <div>
-            <label className="block mb-2 font-medium">Banner Image</label>
-            <input
-              type="file"
-              name="bannerImage"
-              onChange={handleFileChange}
-              accept="image/*"
+    
+            <textarea
+              name="extractDescription"
+              placeholder="Extract Description"
+              onChange={handleChange}
               className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
               required
             />
-          </div>
-  
-          <div>
-            <label className="block mb-2 font-medium">Thumbnail Image</label>
+    
             <input
-              type="file"
-              name="thumbnailImage"
-              onChange={handleFileChange}
-              accept="image/*"
+              type="text"
+              name="name"
+              placeholder="Author Name"
+              onChange={handleAuthorChange}
               className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
               required
             />
-          </div>
-  
-          <input
-            type="text"
-            name="paramUrl"
-            placeholder="Param Url"
-            onChange={handleChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-
-          <input
-            type="text"
-            name="metaTitle"
-            placeholder="Meta Title"
-            onChange={handleChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-  
-          <textarea
-            name="metaDescription"
-            placeholder="Meta Description"
-            onChange={handleChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-  
-          <input
-            type="text"
-            name="metaTags"
-            placeholder="Meta Tags (comma-separated)"
-            onChange={handleMetaTagsChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-  
-          <div>
-            <label className="block mb-2 font-medium">Upload Time</label>
-            <DatePicker
-              selected={uploadTime}
-              onChange={(date) => setUploadTime(date)}
+    
+            <div>
+              <label className="block mb-2 font-medium">Author Photo</label>
+              <input
+                type="file"
+                name="photo"
+                onChange={handleAuthorPhotoChange}
+                accept="image/*"
+                className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+                required
+              />
+            </div>
+    
+            <div>
+              <label className="block mb-2 font-medium">Banner Image</label>
+              <input
+                type="file"
+                name="bannerImage"
+                onChange={handleFileChange}
+                accept="image/*"
+                className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+                required
+              />
+            </div>
+    
+            <div>
+              <label className="block mb-2 font-medium">Thumbnail Image</label>
+              <input
+                type="file"
+                name="thumbnailImage"
+                onChange={handleFileChange}
+                accept="image/*"
+                className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+                required
+              />
+            </div>
+    
+            <input
+              type="text"
+              name="paramUrl"
+              placeholder="Param Url"
+              onChange={handleChange}
               className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+              required
             />
-          </div>
   
-          <div>
-            <ReactQuill
-              value={value}
-              onChange={setValue}
-              modules={quillModules}
-              formats={quillFormats}
-              placeholder="Blog content"
-              style={{ backgroundColor: "white", color: "black" }}
+            <input
+              type="text"
+              name="metaTitle"
+              placeholder="Meta Title"
+              onChange={handleChange}
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+              required
             />
-          </div>
-  
-          <button
-            type="submit"
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
-    );
+    
+            <textarea
+              name="metaDescription"
+              placeholder="Meta Description"
+              onChange={handleChange}
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+              required
+            />
+    
+            <input
+              type="text"
+              name="metaTags"
+              placeholder="Meta Tags (comma-separated)"
+              onChange={handleMetaTagsChange}
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+              required
+            />
+    
+            <div>
+              <label className="block mb-2 font-medium">Upload Time</label>
+              <DatePicker
+                selected={uploadTime}
+                onChange={(date) => setUploadTime(date)}
+                className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+              />
+            </div>
+    
+            <div>
+              <ReactQuill
+                value={value}
+                onChange={setValue}
+                modules={quillModules}
+                formats={quillFormats}
+                placeholder="Blog content"
+                style={{ backgroundColor: "white", color: "black" }}
+              />
+            </div>
+    
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      );
+    }
   }
+
 
 }
