@@ -4,9 +4,9 @@ import Arrow from "@/public/assets/images/blog/arrow.png"
 import Image from "next/image";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
-import { Helmet } from 'react-helmet'
 import { useRouter } from "next/router";
 import Head from "next/head";
+import Link from "next/link";
 
 const BlogPage = ({ blogs, error }) => {
   const router = useRouter();
@@ -47,7 +47,7 @@ const BlogPage = ({ blogs, error }) => {
                       key={blog._id} // Assuming MongoDB's default `_id` is used
                       className=""
                     >
-                      <a href={`/blogs/${blog.paramUrl}`}>
+                 <Link href={`/blogs/${blog.paramUrl}`} passHref>
                         <div className="bg-[#082B30] p-4 rounded-[14px]">
                           {/* Ensure bannerImage is a valid URL */}
                           {blog.bannerImage && (
@@ -73,13 +73,13 @@ const BlogPage = ({ blogs, error }) => {
                             {blog.extractDescription || "Default description for the blog..."}
                           </p>
                           <div className="my-5">
-                            <a href={`/blogs/${blog.paramUrl}`}>
+                          {/* <Link href={`/blogs/${blog.paramUrl}`} passHref> */}
                               <Image title="Hero image description" src={Arrow} alt='arrow' className='w-[60px] h-[60px]' />
 
-                            </a>
+                            {/* </Link> */}
                           </div>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   ))}
                 </>
