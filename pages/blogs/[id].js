@@ -12,14 +12,14 @@ export default function Blog({ blog, error, isLoading }) {
     if (!blog || error) {
       router.push('/404');
     }
-  }, [blog, error, router]); 
+  }, [blog, error, router]);
 
   if (isLoading) {
     return <div className="text-white text-center mt-10">Loading...</div>;
   }
 
   if (!blog || error) {
-    return null; 
+    return null;
   }
   const {
     author,
@@ -52,29 +52,41 @@ export default function Blog({ blog, error, isLoading }) {
           <Header />
 
           <div className='grid grid-cols-12 gap-4 mt-12'>
-            <div className='col-span-3'>
-              <div className='flex justify-start'>
-                <img src={author?.photo} alt='author photo' className='mr-3 w-[50px] h-[50px]' />
-                <div>
-                  <p className='text-white font-semibold text-lg text-left'>{author?.name}</p>
-                  <p className='text-[#00FFFC] Brockmann text-left'>{uploadDate ? new Date(uploadDate).toLocaleDateString() : ''}</p>
-                </div>
-              </div>
+            <div className='col-span-12'>
+
+              <h1 className='text-white text-3xl Brockmann text-center'>{title}</h1>
             </div>
-            <div className='col-span-9'>
-              <h1 className='text-white text-3xl Brockmann'>{title}</h1>
-              <p className='text-white mt-5 w-[80%] Gilroy text-base'>{extractDescription}</p>
+
+          </div>
+        </div>
+        <div className='w-large mx-auto'>
+          <div className='grid grid-cols-12 gap-4'>
+
+            <div className='col-span-7'>
+              <div className='text-white mt-5 text-left mx-auto Gilroy text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
+            </div>
+            <div className='col-span-5'>
+              <div className='sticky top-5 mt-5'>
+                <div className='flex justify-start mt-3'>
+                  <img src={author?.photo} alt='author photo' className='mr-3 w-[50px] h-[50px]' />
+                  <div>
+                    <p className='text-white font-semibold text-lg text-left'>{author?.name}</p>
+                    <p className='text-[#00FFFC] Brockmann text-left'>{uploadDate ? new Date(uploadDate).toLocaleDateString() : ''}</p>
+                  </div>
+
+                </div>
+                {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto my-3' />}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Banner Image */}
-        {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto my-8' />}
+
 
         <div className='w-large mx-auto'>
           <div className='grid grid-cols-12 gap-4'>
             <div className='col-span-12'>
-              <div className='text-white mt-5 text-left mx-auto Gilroy text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
+
             </div>
           </div>
         </div>
