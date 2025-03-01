@@ -54,7 +54,7 @@ export default function Blog({ blog, error, isLoading }) {
           <div className='grid grid-cols-12 gap-4 mt-12'>
             <div className='col-span-12'>
 
-              <h1 className='text-white text-3xl Brockmann text-center'>{title}</h1>
+              
             </div>
 
           </div>
@@ -81,7 +81,25 @@ export default function Blog({ blog, error, isLoading }) {
           </div>
         </div>
 
+<div>
+  <div>
+  {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto w-full h-[500px] my-3' />}
+  <div>
+  <h1 className='text-white text-3xl Brockmann text-center'>{title}</h1>
+  <div className='flex justify-between mt-3'>
+    <div className='flex'>
 
+                  <img src={author?.photo} alt='author photo' className='mr-3 w-[50px] h-[50px]' />
+                  
+                    <p className='text-white font-semibold text-lg text-left'>{author?.name}</p>
+    </div>
+                    <p className='text-[#00FFFC] Brockmann text-right'>{uploadDate ? new Date(uploadDate).toLocaleDateString() : ''}</p>
+              
+
+                </div>
+  </div>
+  </div>
+</div>
 
         <div className='w-large mx-auto'>
           <div className='grid grid-cols-12 gap-4'>
