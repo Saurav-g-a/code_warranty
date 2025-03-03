@@ -47,59 +47,34 @@ export default function Blog({ blog, error, isLoading }) {
         <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/fabIcon.png" />
       </Head>
 
-      <div className='bg-[#002025]'>
+      <div className='bg-[#002025] '>
         <div className='w-large mx-auto'>
           <Header />
-
-          <div className='grid grid-cols-12 gap-4 mt-12'>
-            <div className='col-span-12'>
-
-              
-            </div>
-
-          </div>
         </div>
-        <div className='w-large mx-auto'>
-          <div className='grid grid-cols-12 gap-4'>
 
-            <div className='col-span-7'>
-              <div className='text-white mt-5 text-left mx-auto Gilroy text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
-            </div>
-            <div className='col-span-5'>
-              <div className='sticky top-5 mt-5'>
-                <div className='flex justify-start mt-3'>
-                  <img src={author?.photo} alt='author photo' className='mr-3 w-[50px] h-[50px]' />
-                  <div>
-                    <p className='text-white font-semibold text-lg text-left'>{author?.name}</p>
-                    <p className='text-[#00FFFC] Brockmann text-left'>{uploadDate ? new Date(uploadDate).toLocaleDateString() : ''}</p>
-                  </div>
 
-                </div>
-                {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto my-3' />}
+        <div>
+          <div>
+            {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto w-full h-[500px] my-3' />}
+            <div className='w-[65%] mx-auto bg-[#002025] z-10 -mt-[10%] p-5 rounded-md relative shadow-lg'>
+              <div>
+
+              </div>
+              <h1 className='text-white text-3xl Brockmann text-left'>{title}</h1>
+              <div className='flex  mt-3'>
+
+                <img src={author?.photo} alt='author photo' className='mr-3 rounded-full w-[50px] h-[50px]' />
+
+                <p className='text-white self-center Gilroy capitalize font-semibold text-lg text-left'>By {author?.name}  on {uploadDate ? new Date(uploadDate).toLocaleDateString() : ''}</p>
+
+
               </div>
             </div>
+            <div className='w-[65%] mx-auto bg-[#002025] z-10 p-5 mt-7 rounded-md relative shadow-xl'>
+              <div className='text-white mt-5 text-left mx-auto Gilroy text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
+            </div>
           </div>
         </div>
-
-<div>
-  <div>
-  {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto w-full h-[500px] my-3' />}
-  <div>
-  <h1 className='text-white text-3xl Brockmann text-center'>{title}</h1>
-  <div className='flex justify-between mt-3'>
-    <div className='flex'>
-
-                  <img src={author?.photo} alt='author photo' className='mr-3 w-[50px] h-[50px]' />
-                  
-                    <p className='text-white font-semibold text-lg text-left'>{author?.name}</p>
-    </div>
-                    <p className='text-[#00FFFC] Brockmann text-right'>{uploadDate ? new Date(uploadDate).toLocaleDateString() : ''}</p>
-              
-
-                </div>
-  </div>
-  </div>
-</div>
 
         <div className='w-large mx-auto'>
           <div className='grid grid-cols-12 gap-4'>
