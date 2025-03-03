@@ -4,6 +4,11 @@ import Header from '@/components/header';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
+import Facebook from '../../public/assets/images/facebook.png';
+import linkin from '../../public/assets/images/linkedin.png';
+import twitter from '../../public/assets/images/twitter.png';
+import instagram from '../../public/assets/images/instagram.png';
+import Image from 'next/image';
 
 export default function Blog({ blog, error, isLoading }) {
   const router = useRouter();
@@ -71,19 +76,16 @@ export default function Blog({ blog, error, isLoading }) {
               </div>
             </div>
             <div className='w-[65%] mx-auto bg-[#002025] z-10 p-5 mt-7 rounded-xl relative shadow-xl'>
+              <div className='absolute left-[-45px]'>
+                <a href=''><Image src={Facebook} alt='facebook' className='mb-3' /></a>
+                <a href=''><Image src={twitter} alt='twitter' className='mb-3' /></a>
+                <a href=''><Image src={linkin} alt='linkin' className='mb-3' /></a>
+                <a href=''><Image src={instagram} alt='instagram' className='mb-3' /></a>
+              </div>
               <div className='text-white mt-5 text-left mx-auto Gilroy text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
             </div>
           </div>
         </div>
-
-        <div className='w-large mx-auto'>
-          <div className='grid grid-cols-12 gap-4'>
-            <div className='col-span-12'>
-
-            </div>
-          </div>
-        </div>
-
         <div className='py-8 w-large mx-auto' id='contactUs'>
           <Contact />
         </div>
