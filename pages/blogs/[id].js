@@ -56,7 +56,7 @@ export default function Blog({ blog, error, isLoading }) {
         <div>
           <div>
             {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto w-full h-[500px] my-3' />}
-            <div className='w-[65%] mx-auto bg-[#002025] z-10 -mt-[10%] p-5 rounded-md relative shadow-lg'>
+            <div className='w-[65%] mx-auto bg-[#002025] z-10 -mt-[10%] p-5 rounded-xl relative shadow-lg'>
               <div>
 
               </div>
@@ -70,7 +70,7 @@ export default function Blog({ blog, error, isLoading }) {
 
               </div>
             </div>
-            <div className='w-[65%] mx-auto bg-[#002025] z-10 p-5 mt-7 rounded-md relative shadow-xl'>
+            <div className='w-[65%] mx-auto bg-[#002025] z-10 p-5 mt-7 rounded-xl relative shadow-xl'>
               <div className='text-white mt-5 text-left mx-auto Gilroy text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
             </div>
           </div>
