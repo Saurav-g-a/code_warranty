@@ -3,7 +3,7 @@ import Footer from '@/components/footer';
 import Header from '@/components/header';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Facebook from '../../public/assets/images/facebook.png';
 import linkin from '../../public/assets/images/linkedin.png';
 import twitter from '../../public/assets/images/twitter.png';
@@ -26,6 +26,7 @@ export default function Blog({ blog, error, isLoading }) {
   if (!blog || error) {
     return null;
   }
+
   const {
     author,
     bannerImage,
@@ -75,12 +76,14 @@ export default function Blog({ blog, error, isLoading }) {
 
               </div>
             </div>
-            <div className='w-[65%] mx-auto bg-[#002025] z-10 p-5 mt-7 rounded-xl relative shadow-xl'>
-              <div className='absolute left-[-45px]'>
-                <a href=''><Image src={Facebook} alt='facebook' className='mb-3' /></a>
-                <a href=''><Image src={twitter} alt='twitter' className='mb-3' /></a>
-                <a href=''><Image src={linkin} alt='linkin' className='mb-3' /></a>
-                <a href=''><Image src={instagram} alt='instagram' className='mb-3' /></a>
+            <div id="contentSection" className='w-[65%] mx-auto bg-[#002025] z-10 p-5 mt-7 rounded-xl relative shadow-xl'>
+              <div className='sticky top-5 left-[-45px]'>
+                <div className={"absolute left-[-45px]"}>
+                  <a href=''><Image src={Facebook} alt='facebook' className='mb-3' /></a>
+                  <a href=''><Image src={twitter} alt='twitter' className='mb-3' /></a>
+                  <a href=''><Image src={linkin} alt='linkin' className='mb-3' /></a>
+                  <a href=''><Image src={instagram} alt='instagram' className='mb-3' /></a>
+                </div>
               </div>
               <div className='text-white mt-5 text-left mx-auto Gilroy text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
             </div>
