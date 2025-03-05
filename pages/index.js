@@ -473,9 +473,9 @@ export default function Page() {
                                 <Image title="Hero image description" src={Business2} className='py-4' alt="mask" />
                                 <p className='Brockmann text-xl'>Seamless API Integration</p>
                                 <p className='text-[#95AAAD] Gilroy py-4 pr-8'>Integrate with existing CRM, ERP, and dealer management systems for a unified warranty management ecosystem.</p>
-                                <p className='flex Gilroy pb-3'> <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' /> Synchronize customer, product, and claim data seamlessly across platforms.</p>
+                                <p className='flex Gilroy pb-3'> <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Synchronize customer, product, and claim data seamlessly across platforms.</p>
                                 <p className='flex Gilroy pb-3' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Eliminate redundant data entry and improve operational efficiency.</p>
-                                <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' /> Enable real - time updates and consistent information across all connected systems.</p>
+                                <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Enable real - time updates and consistent information across all connected systems.</p>
                             </div >
                         </div >
                         <div className='col-span-6 h-full'>
@@ -510,7 +510,7 @@ export default function Page() {
                                 <Image title="Hero image description" src={Business6} className='py-4' alt="mask" />
                                 <p className='Brockmann text-xl'>Improve Data-Driven Decision Making</p>
                                 <p className='text-[#95AAAD] Gilroy py-4 pr-8'>Access powerful analytics and reporting tools to make smarter business decisions.</p>
-                                <p className='flex Gilroy pb-3'> <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' /> Analyze trends in claims, sales, and operations to identify opportunities for improvement.</p>
+                                <p className='flex Gilroy pb-3'> <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Analyze trends in claims, sales, and operations to identify opportunities for improvement.</p>
                                 <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Use actionable insights to optimize warranty policies and product quality.</p>
                             </div >
                         </div >
@@ -667,11 +667,11 @@ export default function Page() {
                         <div className='col-span-1 lg:order-none md:order-none sm:order-2 s:order-2 text-white'>
                             <p className='Brockmann text-xl'>Multiple Claim Types</p>
                             <p className='text-[#95AAAD] text-lg Gilroy py-4 pr-8'>The platform supports different types of claims such as:</p>
-                            <p className='flex Gilroy '> <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Warranty Claims</p>
+                            <p className='flex Gilroy '> <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Warranty Claims</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Handle requests for repair or replacement under valid warranty terms.</p>
                             <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Bulk Claims</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Allows multiple claims to be uploaded and processed simultaneously.</p>
-                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' /> Custom Claims Management</p>
+                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Custom Claims Management</p>
                             <p className='text-[#95AAAD] Gilroy'>Tailors claim processes based on product categories or dealer requirements.</p>
                             <p className='text-white Gilroy pt-5'>Impact</p>
                             <div className='border-l border-white pl-4 mt-3'>
@@ -712,11 +712,11 @@ export default function Page() {
                         <div className='col-span-1 text-white lg:order-none md:order-none sm:order-4 s:order-4 mt-3'>
                             <p className='Brockmann text-xl'>Advanced Pricing Features</p>
                             <p className='text-[#95AAAD] text-lg Gilroy py-4 pr-8'>The system supports managing dealer-specific price books with different pricing models, including:</p>
-                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Regular Pricing</p>
+                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Regular Pricing</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Fixed pricing for standard sales.</p>
                             <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Flat Pricing</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Uniform pricing for specific categories or ranges.</p>
-                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' /> Quantity - Based Pricing</p>
+                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 ' /> Quantity - Based Pricing</p>
                             <p className='text-[#95AAAD] Gilroy'>Discounted rates for bulk purchases.</p>
                             <p className='text-white Gilroy pt-5'>Impact</p>
                             <div className='border-l border-white pl-4 mt-3'>
@@ -728,11 +728,11 @@ export default function Page() {
                         <div className='col-span-1 text-white lg:order-none md:order-none sm:order-6 s:order-6 mt-3'>
                             <p className='Brockmann text-xl'>Real-Time Claim Tracking</p>
                             <p className='text-[#95AAAD] text-lg Gilroy py-4 pr-8'>Track claims at every stage of their lifecycle with features like:</p>
-                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Status Updates</p>
+                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Status Updates</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Clear visibility into claim processing.</p>
                             <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Approval Workflows</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Automated steps for claim validation and approvals.</p>
-                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Filters and Searches</p>
+                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Filters and Searches</p>
                             <p className='text-[#95AAAD] Gilroy'>Quickly locate claims by type, status, or dealer.</p>
                             <p className='text-white Gilroy pt-5'>Impact</p>
                             <div className='border-l border-white pl-4 mt-3'>
@@ -770,11 +770,11 @@ export default function Page() {
                         <div className='col-span-1 text-white lg:order-none md:order-none sm:order-8 s:order-8 mt-3'>
                             <p className='Brockmann text-xl'>Dealer Management Tools</p>
                             <p className='text-[#95AAAD] text-lg Gilroy py-4 pr-8'> Facilitate efficient dealer operations with features like:</p>
-                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Dealer Approval Workflows</p>
+                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Dealer Approval Workflows</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Quickly onboard or update dealer accounts.</p>
                             <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Order Management</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Manage dealer-specific orders, contracts, and claims in one place.</p>
-                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' /> Performance Insights</p>
+                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 ' /> Performance Insights</p>
                             <p className='text-[#95AAAD] Gilroy'>View dealer activity and performance metrics.</p>
                             <p className='text-white Gilroy pt-5'>Impact</p>
                             <div className='border-l border-white pl-4 mt-3'>
@@ -786,11 +786,11 @@ export default function Page() {
                         <div className='col-span-1 lg:order-none md:order-none sm:order-10 s:order-10 text-white mt-3'>
                             <p className='Brockmann text-xl'>Reporting and Insights</p>
                             <p className='text-[#95AAAD] text-lg Gilroy py-4 pr-8'>Generate comprehensive reports to analyze performance across warranty operations:</p>
-                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Claims Reporting</p>
+                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Claims Reporting</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>View claims by type, dealer, or product category.</p>
                             <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Sales Reports</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Track order volumes and revenue trends.</p>
-                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Custom Dashboards</p>
+                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Custom Dashboards</p>
                             <p className='text-[#95AAAD] Gilroy'>Tailored visualizations to monitor KPIs.</p>
                             <p className='text-white Gilroy pt-5'>Impact</p>
                             <div className='border-l border-white pl-4 mt-3'>
