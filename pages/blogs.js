@@ -18,7 +18,8 @@ const BlogPage = ({ blogs, error }) => {
 
   return (
     <>
-      <Head>
+      <Head>  <title>{'Blog'}</title>
+        <meta name="description" content={"Key Features to Look for in a Warranty Management Platform"} />
         <link href="https://fonts.cdnfonts.com/css/brockmann" rel="stylesheet" />
         <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet" />
         <link rel="icon" type="image/x-icon" href="./assets/images/fabIcon.png" />
@@ -47,7 +48,7 @@ const BlogPage = ({ blogs, error }) => {
                       key={blog._id} // Assuming MongoDB's default `_id` is used
                       className=""
                     >
-                 <Link href={`/blogs/${blog.paramUrl}`} passHref>
+                      <Link href={`/blogs/${blog.paramUrl}`} passHref>
                         <div className="bg-[#082B30] p-4 rounded-[14px]">
                           {/* Ensure bannerImage is a valid URL */}
                           {blog.bannerImage && (
@@ -73,8 +74,8 @@ const BlogPage = ({ blogs, error }) => {
                             {blog.extractDescription || "Default description for the blog..."}
                           </p>
                           <div className="my-5">
-                          {/* <Link href={`/blogs/${blog.paramUrl}`} passHref> */}
-                              <Image title="Hero image description" src={Arrow} alt='arrow' className='w-[60px] h-[60px]' />
+                            {/* <Link href={`/blogs/${blog.paramUrl}`} passHref> */}
+                            <Image title="Hero image description" src={Arrow} alt='arrow' className='w-[60px] h-[60px]' />
 
                             {/* </Link> */}
                           </div>

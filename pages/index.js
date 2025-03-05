@@ -754,8 +754,18 @@ export default function Page() {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className='lg:order-none md:order-none sm:order-7 s:order-7 flex'>
-                            <Image title="Hero image description" src={Banner1} className='px-6 self-center' alt="mask" />
+                        <div className='lg:order-none md:order-none sm:order-7 s:order-7 flex self-center'>
+                            <video
+                                // className=""
+                                className='mx-auto bg-transparent rounded-[1.5rem] shadow-lg'
+                                poster={Banner1}
+                                autoPlay
+                                loop
+                                muted
+                            >
+                                <source src="./assets/video/5.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div className='col-span-1 text-white lg:order-none md:order-none sm:order-8 s:order-8 mt-3'>
                             <p className='Brockmann text-xl'>Dealer Management Tools</p>
@@ -789,8 +799,18 @@ export default function Page() {
                                 <p className='text-[#95AAAD] Gilroy pb-3 flex'><Image title="Hero image description" src={Mask1} alt="mask" className='pr-2 self-center' /> Ensures better alignment of warranty operations with business goals.</p>
                             </div>
                         </div >
-                        <div className='lg:order-none md:order-none sm:order-9 s:order-9 flex'>
-                            <Image title="Hero image description" src={Banner1} className='px-6 self-center' alt="mask" />
+                        <div className='lg:order-none md:order-none sm:order-9 s:order-9 flex self-center'>
+                            <video
+                                // className=""
+                                className='mx-auto bg-transparent rounded-[1.5rem] shadow-lg'
+                                poster={Banner1}
+                                autoPlay
+                                loop
+                                muted
+                            >
+                                <source src="./assets/video/6.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
 
                     </div >
@@ -802,10 +822,8 @@ export default function Page() {
 
                 <div className='w-large mx-auto'>
                     <div className='lg:flex md:block sm:block bg-[#04292B] justify-center text-white p-12 mx-8'>
-                        <div className='lg:w-[50%] md:w-full sm:w-full'>
-                            <p className='Gilroy text-3xl text-[#95AAAD] lg:text-left md:text-center sm:text-center'>Your <span className='text-white'> warranty <br /> transformation begins now. </span> <br />  Let us simplify, automate, and <br /> elevate your operations.</p>
-                        </div>
-                        <p className='self-center Gilroy text-[#95AAAD] lg:w-[50%] md:w-full sm:w-full lg:text-right lg:pt-0 md:pt-5 sm:pt-5 md:text-center sm:text-center'>Let us know if you'd like any further adjustments!</p>
+
+                        <p className='Gilroy text-3xl text-[#95AAAD] lg:text-center md:text-center sm:text-center'>Your <span className='text-white'> warranty  transformation begins now. </span> <br />  Let us simplify, automate, and elevate your operations.</p>
                     </div>
                 </div >
                 {showButton && (

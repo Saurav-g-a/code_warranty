@@ -39,6 +39,35 @@ export default function Blog({ blog, error, isLoading }) {
     uploadDate,
   } = blog;
 
+  const [isSticky, setIsSticky] = useState(true);
+
+  const [bottomOffset, setBottomOffset] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const contentDiv = document.getElementById("contentSection");
+      if (contentDiv) {
+        const rect = contentDiv.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Check if we have reached the bottom
+        const atBottom = rect.bottom <= windowHeight - 170;
+
+        if (atBottom) {
+          setIsSticky(false);
+          setBottomOffset(rect.height); // Adjust 40px if needed for positioning
+        } else {
+          setIsSticky(true);
+        }
+        console.log("================================", windowHeight, rect.bottom)
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
   return (
     <>
       <Head>
@@ -77,7 +106,8 @@ export default function Blog({ blog, error, isLoading }) {
               </div>
             </div>
             <div id="contentSection" className='w-[65%] mx-auto bg-[#002025] z-10 p-5 mt-7 rounded-xl relative shadow-xl'>
-              <div className='sticky top-5 left-[-45px]'>
+              <div className={`left-[-45px] ${isSticky ? "sticky top-5" : ""}`}
+                style={!isSticky ? { bottom: `-${bottomOffset}px` } : {}}>
                 <div className={"absolute left-[-45px]"}>
                   <a href=''><Image src={Facebook} alt='facebook' className='mb-3' /></a>
                   <a href=''><Image src={twitter} alt='twitter' className='mb-3' /></a>
