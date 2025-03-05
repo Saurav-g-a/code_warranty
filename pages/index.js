@@ -243,19 +243,19 @@ export default function Page() {
                     <div className='grid lg:grid-cols-12 md:grid-cols-12 sm:grid-cols-8 s:grid-cols-4 gap-4 py-5 px-8'>
                         <div className='col-span-4'>
                             <div className='flex '>
-                                <Image title="Hero image description" src={Mask} className='pr-3 self-start' alt="mask" />
+                                <Image title="Hero image description" src={Mask} className='h-4 w-[23px] mt-1 pr-3 self-start' alt="mask" />
                                 <p className='text-white Gilroy font-[500]'>Streamline claims, registrations, and <br /> service plans with ease.</p>
                             </div>
                         </div>
                         <div className='col-span-4'>
                             <div className='flex '>
-                                <Image title="Hero image description" src={Mask} className='pr-3 self-start' alt="mask" />
+                                <Image title="Hero image description" src={Mask} className='pr-3 w-[23px] mt-1 self-start' alt="mask" />
                                 <p className='text-white Gilroy font-[500]'>Automate key processes to eliminate <br /> inefficiencies and reduce operational costs.</p>
                             </div>
                         </div>
                         <div className='col-span-4'>
                             <div className='flex '>
-                                <Image title="Hero image description" src={Mask} className='pr-3 self-start' alt="mask" />
+                                <Image title="Hero image description" src={Mask} className='pr-3 w-[23px] mt-1 self-start' alt="mask" />
                                 <p className='text-white Gilroy font-[500]'>Support dealer services with a robust, <br /> all-in-one solution built for scalability.</p>
                             </div>
                         </div>
@@ -348,7 +348,7 @@ export default function Page() {
 
                 <div className='py-8 w-large mx-auto'>
                     <p className='text-3xl Brockmann text-white text-center'>Comprehensive Warranty <br /> Lifecycle Solutions</p>
-                    <p className='text-[#95AAAD] text-lg text-center Gilroy py-6'>Streamlined processes for every stage of the warranty journey, tailored for efficiency and accuracy.</p>
+                    <p className='text-[#95AAAD] text-[22px] text-center Gilroy py-6'>Streamlined processes for every stage of the warranty journey, tailored for efficiency and accuracy.</p>
                     <div className='lg:block md:hidden sm:block s:block'>
                         <div className='grid lg:grid-cols-12 md:grid-cols-8 sm:grid-cols-4 s:grid-cols-4 gap-4 py-5 px-8'>
                             <div className='col-span-4 text-white'>
