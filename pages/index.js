@@ -659,8 +659,8 @@ export default function Page() {
                 </div >
 
                 <div className='py-8 w-large mx-auto'>
-                    <p className='text-[#95AAAD] Brockmann text-3xl text-center'>Explore the  <span className='text-[#00FFFC]'> Capabilities </span></p>
-                    <p className='text-[#95AAAD] text-center Gilroy py-6'>Discover the key features to automate the warranty management process</p>
+                    <p className='text-[#95AAAD] Brockmann text-[34px] text-center'>Explore the  <span className='text-[#00FFFC]'> Capabilities </span></p>
+                    <p className='text-[#95AAAD] text-center Gilroy pt-2 pb-6'>Discover the key features to automate the warranty management process</p>
 
 
                     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 px-8'>
