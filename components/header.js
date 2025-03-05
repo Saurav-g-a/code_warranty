@@ -5,6 +5,8 @@ import Link from "next/link";
 import Logo from "@/public/assets/images/logo.png";
 import Menu from "@/public/assets/images/menu.png";
 import { useRouter } from "next/router";
+import Head from "next/head";
+import Script from "next/script";
 
 function Header() {
   const [currentPath, setCurrentPath] = useState("");
@@ -31,6 +33,19 @@ function Header() {
   }, []);
   return (
     <>
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.smartlook||(function(d) {
+              var o=smartlook=function(){o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+              var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+              c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+            })(document);
+            smartlook('init', '361f09aeaedbeba64bb124477f3d60ee4596f29c', {region: 'eu' });
+          `,
+        }}
+      />
       <div className="py-6">
         <div className="grid lg:grid-cols-12 md:grid-cols-7 sm:grid-cols-7 s:grid-cols-7 gap-4">
           <div className="col-span-3">

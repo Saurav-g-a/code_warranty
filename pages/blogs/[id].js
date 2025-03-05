@@ -3,7 +3,12 @@ import Footer from '@/components/footer';
 import Header from '@/components/header';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import Facebook from '../../public/assets/images/facebook.png';
+import linkin from '../../public/assets/images/linkedin.png';
+import twitter from '../../public/assets/images/twitter.png';
+import instagram from '../../public/assets/images/instagram.png';
+import Image from 'next/image';
 
 export default function Blog({ blog, error, isLoading }) {
   const router = useRouter();
@@ -12,15 +17,16 @@ export default function Blog({ blog, error, isLoading }) {
     if (!blog || error) {
       router.push('/404');
     }
-  }, [blog, error, router]); 
+  }, [blog, error, router]);
 
   if (isLoading) {
     return <div className="text-white text-center mt-10">Loading...</div>;
   }
 
   if (!blog || error) {
-    return null; 
+    return null;
   }
+
   const {
     author,
     bannerImage,
@@ -47,38 +53,42 @@ export default function Blog({ blog, error, isLoading }) {
         <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/fabIcon.png" />
       </Head>
 
-      <div className='bg-[#002025]'>
+      <div className='bg-[#002025] '>
         <div className='w-large mx-auto'>
           <Header />
-
-          <div className='grid grid-cols-12 gap-4 mt-12'>
-            <div className='col-span-3'>
-              <div className='flex justify-start'>
-                <img src={author?.photo} alt='author photo' className='mr-3 w-[50px] h-[50px]' />
-                <div>
-                  <p className='text-white font-semibold text-lg text-left'>{author?.name}</p>
-                  <p className='text-[#00FFFC] Brockmann text-left'>{uploadDate ? new Date(uploadDate).toLocaleDateString() : ''}</p>
-                </div>
-              </div>
-            </div>
-            <div className='col-span-9'>
-              <h1 className='text-white text-3xl Brockmann'>{title}</h1>
-              <p className='text-white mt-5 w-[80%] Gilroy text-base'>{extractDescription}</p>
-            </div>
-          </div>
         </div>
 
-        {/* Banner Image */}
-        {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto my-8' />}
 
-        <div className='w-large mx-auto'>
-          <div className='grid grid-cols-12 gap-4'>
-            <div className='col-span-12'>
+        <div>
+          <div>
+            {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto w-full h-[500px] my-3' />}
+            <div className='w-[65%] mx-auto bg-[#002025] z-10 -mt-[10%] p-5 rounded-xl relative shadow-lg'>
+              <div>
+
+              </div>
+              <h1 className='text-white text-3xl Brockmann text-left'>{title}</h1>
+              <div className='flex  mt-3'>
+
+                <img src={author?.photo} alt='author photo' className='mr-3 rounded-full w-[50px] h-[50px]' />
+
+                <p className='text-white self-center Gilroy capitalize font-semibold text-lg text-left'>By {author?.name}  on {uploadDate ? new Date(uploadDate).toLocaleDateString() : ''}</p>
+
+
+              </div>
+            </div>
+            <div id="contentSection" className='w-[65%] mx-auto bg-[#002025] z-10 p-5 mt-7 rounded-xl relative shadow-xl'>
+              <div className='sticky top-5 left-[-45px]'>
+                <div className={"absolute left-[-45px]"}>
+                  <a href=''><Image src={Facebook} alt='facebook' className='mb-3' /></a>
+                  <a href=''><Image src={twitter} alt='twitter' className='mb-3' /></a>
+                  <a href=''><Image src={linkin} alt='linkin' className='mb-3' /></a>
+                  <a href=''><Image src={instagram} alt='instagram' className='mb-3' /></a>
+                </div>
+              </div>
               <div className='text-white mt-5 text-left mx-auto Gilroy text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
             </div>
           </div>
         </div>
-
         <div className='py-8 w-large mx-auto' id='contactUs'>
           <Contact />
         </div>
