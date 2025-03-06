@@ -267,16 +267,16 @@ export default function Page() {
                     <p className='text-[#95AAAD] Gilroy text-base'>Our platform brings together every stage of the warranty process to maximize efficiency and deliver value:</p>
                     <div className='relative mt-6 lg:block md:hidden sm:hidden s:hidden'>
                         <Image title="Hero image description" src={lifecycle} className='mx-auto px-16 py-8' alt="mask" />
-                        <div className='absolute top-5 3xl:left-[45%] 2xl:left-[43%] xl:left-[42%] lg:left-[37%] '>
+                        <div className='absolute top-5 3xl:left-[45%] 2xl:left-[43%] xl:left-[42%] lg:left-[39%] '>
                             <p className='text-[#95AAAD] Gilroy text-base'>Simplify product setup <br /> with, registrations, and <br /> service plans</p>
                         </div>
-                        <div className='absolute top-[19%] 3xl:left-[25%] 2xl:left-[17%] xl:left-[14%] lg:left-[-2%] '>
+                        <div className='absolute top-[19%] 3xl:left-[25%] 2xl:left-[17%] xl:left-[14%] lg:left-[3%] '>
                             <p className='text-[#95AAAD] Gilroy text-base text-right'>Foster deeper connections <br /> and enhance trust with <br /> customers and partners.</p>
                         </div>
-                        <div className='absolute top-[18%] 3xl:right-[26%] 2xl:right-[19%] xl:right-[16%] lg:right-[1%] '>
+                        <div className='absolute top-[18%] 3xl:right-[26%] 2xl:right-[19%] xl:right-[16%] lg:right-[5%] '>
                             <p className='text-[#95AAAD] Gilroy text-base text-left'>Handle warranty claims <br /> with precision and speed,<br /> backed by data-driven <br /> workflows.</p>
                         </div>
-                        <div className='absolute top-[44%] 3xl:left-[19%] 2xl:left-[9%] xl:left-[5%] lg:left-[-5%] '>
+                        <div className='absolute top-[44%] 3xl:left-[19%] 2xl:left-[9%] xl:left-[5%] lg:left-[-4%] '>
                             <p className='text-[#95AAAD] Gilroy text-base text-right'>Bring stakeholders together <br /> on one cohesive platform for  <br /> seamless collaboration.</p>
                         </div>
                         <div className='absolute top-[47%] 3xl:right-[22%] 2xl:right-[13%] xl:right-[9%] lg:right-[-4%]'>
@@ -285,10 +285,10 @@ export default function Page() {
                         <div className='absolute bottom-[13%] 3xl:right-[25%] 2xl:right-[17%] xl:right-[14%] lg:right-[-2%] '>
                             <p className='text-[#95AAAD] Gilroy text-base text-left'>Streamline recovery   <br /> operations to minimize losses <br /> and maximize efficiency.</p>
                         </div>
-                        <div className='absolute bottom-[14%] 3xl:left-[25%] 2xl:left-[17%] xl:left-[14%] lg:left-[-3%]  '>
+                        <div className='absolute bottom-[14%] 3xl:left-[25%] 2xl:left-[17%] xl:left-[14%] lg:left-[2%]  '>
                             <p className='text-[#95AAAD] Gilroy text-base text-right'>Optimize operations with   <br /> intelligent, automated <br /> workflows that drive results.</p>
                         </div>
-                        <div className='absolute bottom-[-2%] 3xl:left-[45%] 2xl:left-[43%]  xl:left-[42%] lg:left-[37%]'>
+                        <div className='absolute bottom-[-2%] 3xl:left-[45%] 2xl:left-[43%]  xl:left-[42%] lg:left-[39%]'>
                             <p className='text-[#95AAAD] Gilroy text-base text-left'>Transform raw data into   <br /> actionable insights for <br /> smarter decision-making.</p>
                         </div>
                     </div>
