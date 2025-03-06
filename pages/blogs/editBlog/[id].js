@@ -102,7 +102,7 @@ export default function EditBlogPage() {
 
       if (flag) {
         const response = await fetch(
-          `/api/upload?flag=${flag}`,
+          `https://api.demo.codewarranty.com/api-v1/dealer/uploadBannerImage?flag=${flag}`,
           {
             method: "POST",
             body: formData,
@@ -125,6 +125,42 @@ export default function EditBlogPage() {
     }
   };
 
+  const handleAuthorPhotoChange = async (e) => {
+    const { files } = e.target;
+    const file = files[0];
+    if (!file) return;
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const response = await fetch(
+        "https://api.demo.codewarranty.com/api-v1/dealer/uploadBannerImage?flag=authorImage",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (response.ok) {
+        const result = await response.json();
+        const uploadedUrl = result.file.location;
+
+        setFormData((prev) => ({
+          ...prev,
+          author: {
+            ...prev.author,
+            photo: uploadedUrl,
+          },
+        }));
+      } else {
+        console.error("Author image upload failed", await response.text());
+      }
+    } catch (error) {
+      console.error("Error uploading author photo:", error);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const dataToSend = {
@@ -141,7 +177,7 @@ export default function EditBlogPage() {
       metaTitle: formData.metaTitle,
       metaDescription: formData.metaDescription,
       metaTags: formData.metaTags,
-      uploadTime: uploadTime || new Date().toISOString(),
+      uploadDate: uploadTime || new Date().toISOString(),
     };
 
     try {
@@ -244,7 +280,7 @@ export default function EditBlogPage() {
           <input
             type="file"
             name="photo"
-            onChange={handleFileChange}
+            onChange={handleAuthorPhotoChange}
             accept="image/*"
             className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
           />

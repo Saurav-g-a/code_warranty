@@ -158,7 +158,7 @@ export default function AddBlogPage() {
       metaTitle: formData.metaTitle,
       metaDescription: formData.metaDescription,
       metaTags: formData.metaTags,
-      uploadTime: uploadTime.toISOString(),
+      uploadDate: uploadTime.toISOString(),
     };
 
     try {

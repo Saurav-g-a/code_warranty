@@ -29,8 +29,6 @@ export default async function handler(req, res) {
           new: true,
           runValidators: true,
         });
-        console.log('here',id)
-console.log(post)
         if (!post) {
           return res.status(404).json({ success: false, message: "Post not found" });
         }
