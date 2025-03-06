@@ -32,6 +32,7 @@ export default function Blog({ blog, error, isLoading }) {
     bannerImage,
     content,
     extractDescription,
+    paramUrl,
     metaDescription,
     metaTags,
     metaTitle,
@@ -40,7 +41,7 @@ export default function Blog({ blog, error, isLoading }) {
   } = blog;
 
   const [isSticky, setIsSticky] = useState(true);
-
+  console.log(blog)
   const [bottomOffset, setBottomOffset] = useState(0);
 
   useEffect(() => {
@@ -74,7 +75,7 @@ export default function Blog({ blog, error, isLoading }) {
         <title>{metaTitle || 'Features of Warranty Software'}</title>
         <meta name="description" content={metaDescription || "Key Features to Look for in a Warranty Management Platform"} />
         <meta name="keywords" content={metaTags?.join(', ')} />
-        <link rel="canonical" href="https://codewarranty.com/" />
+        <link rel="canonical" href={`https://codewarranty.com/blogs/${paramUrl}`} />
         <link href="https://fonts.cdnfonts.com/css/brockmann" rel="stylesheet" />
         <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet" />
         <meta name="theme-color" content="#002025" />
@@ -92,7 +93,7 @@ export default function Blog({ blog, error, isLoading }) {
           <div>
             <div>
               {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto w-full h-[350px] my-3' />}
-              <div className='w-[65%] mx-auto bg-[#11474A] z-10 -mt-[10%] p-5 rounded-xl relative shadow-lg'>
+              <div className='w-[80%] mx-auto bg-[#11474A] z-10 -mt-[10%] p-5 rounded-xl relative shadow-lg'>
                 <div>
 
                 </div>
@@ -106,7 +107,7 @@ export default function Blog({ blog, error, isLoading }) {
 
                 </div>
               </div>
-              <div id="contentSection" className='w-[65%] mx-auto  z-10 p-5 mt-7 rounded-xl relative'>
+              <div id="contentSection" className='w-[75%] mx-auto  z-10 p-5 mt-7 rounded-xl relative'>
                 <div className={`left-[-45px] ${isSticky ? "sticky top-5" : ""}`}
                   style={!isSticky ? { bottom: `-${bottomOffset}px` } : {}}>
                   <div className={"absolute left-[-45px]"}>

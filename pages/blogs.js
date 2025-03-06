@@ -22,6 +22,7 @@ const BlogPage = ({ blogs, error }) => {
         <meta name="description" content={"Key Features to Look for in a Warranty Management Platform"} />
         <link href="https://fonts.cdnfonts.com/css/brockmann" rel="stylesheet" />
         <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet" />
+        <link rel="canonical" href={`https://codewarranty.com/blogs`} />
         <link rel="icon" type="image/x-icon" href="./assets/images/fabIcon.png" />
         <link rel="apple-touch-icon" sizes="57x57" href="./assets/images/fabIcon.png" />
       </Head>

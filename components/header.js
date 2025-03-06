@@ -7,6 +7,7 @@ import Menu from "@/public/assets/images/menu.png";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Script from "next/script";
+import cross from '@/public/assets/images/cross.svg';
 
 function Header() {
   const [currentPath, setCurrentPath] = useState("");
@@ -31,6 +32,10 @@ function Header() {
       setCurrentPath(window.location.pathname);
     }
   }, []);
+  const [isVisible, setIsVisible] = useState(false);
+  const openDiv = () => {
+    setIsVisible(!isVisible);
+  };
   return (
     <>
       <Script
@@ -84,8 +89,28 @@ function Header() {
 
             <div className="md:hidden sm:block s:block ml-auto max-w-fit">
               {/* Menu Icon */}
-              <Image title="Hero image description" src={Menu} alt="Menu" />
+              <Image title="Hero image description" onClick={openDiv} src={Menu} alt="Menu" />
             </div>
+
+            {isVisible && (
+              <div className='fixed top-0 left-0 w-full h-screen bg-[#002025] backdrop-blur-2xl'>
+                <Image src={cross} onClick={openDiv} className='ml-5 mt-5' alt='cross' />
+                <div className='mt-8  w-full text-center  mx-auto'>
+                  <Link href='/'>
+                    <Image src={Logo} className="w-[158px] mx-auto mb-3" alt='logo' />
+                  </Link>
+
+                  <div className='text-center mx-auto py-3 mt-5 text-[#4E4D69] cursor-pointer'><a href="/" className=' text-[#4E4D69] cursor-pointer' >Home</a> </div>
+                  <div className='text-center mx-auto py-3 text-[#4E4D69] cursor-pointer'><a href="/blogs" className=' text-[#4E4D69] cursor-pointer' >Blogs</a></div>
+                  <div className='text-center mx-auto py-3 text-[#4E4D69] cursor-pointer'><a className=' text-[#4E4D69] cursor-pointer' onClick={() => {
+                    // Scroll to contact section (define `scrollToSection` function in your component)
+                    scrollToSection("contactUs");
+                    setIsVisible(!isVisible);
+                  }} >Contact Us</a></div>
+
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
