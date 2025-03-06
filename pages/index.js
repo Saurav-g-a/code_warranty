@@ -203,7 +203,7 @@ export default function Page() {
 
                             <div className='lg:hidden md:hidden sm:block s:block'>
                                 <p className='text-center text-lg leading-1 Gilroy text-white'>Empowered by InsureTech and Built for Compliance</p>
-                                <hr className='w-[30%] border-[#00FFFC] my-3 mx-auto' />
+                                <div className='w-[30%] my-3 bg-white h-[2px] mx-auto' ></div>
                                 <p className='text-[#95AAAD] text-center'>Optimize your warranty operations with our smart and scalable software, designed to enhance efficiency, reduce costs, and deliver exceptional customer experiences.</p>
 
                             </div>
@@ -213,7 +213,7 @@ export default function Page() {
                             </div>
                             <video
                                 // className=""
-                                className='mx-auto bg-transparent rounded-[2.5rem] shadow-lg'
+                                className='mx-auto bg-transparent md:rounded-[40px] rounded-[18px]  shadow-lg'
                                 poster={Banner}
                                 autoPlay
                                 loop
@@ -233,7 +233,7 @@ export default function Page() {
                     <div className='grid lg:grid-cols-12 md:grid-cols-6 sm:grid-cols-6 gap-0'>
                         <div className='col-span-3'></div>
                         <div className='col-span-6'>
-                            <p className='text-white text-center text-xl py-4 Brockmann'>Simplify, Automate, and Transform Your Warranty Operations
+                            <p className='text-white text-center text-xl py-4 px-4 Brockmann'>Simplify, Automate, and Transform Your Warranty Operations
                             </p>
                             <p className='text-[#00FFFC] text-center Gilroy'>Revolutionize Warranty Workflows with a Single Platform </p>
                             <p className='text-[#95AAAD] text-center Gilroy text-[15px]'>Connect every part of your warranty ecosystem—manufacturers, distributors, dealers, suppliers, and service providers—to deliver seamless, frustration-free experiences for customers.</p>
@@ -243,19 +243,19 @@ export default function Page() {
                     <div className='grid lg:grid-cols-12 md:grid-cols-12 sm:grid-cols-8 s:grid-cols-4 gap-4 py-5 px-8'>
                         <div className='col-span-4'>
                             <div className='flex '>
-                                <Image title="Hero image description" src={Mask} className='pr-3 self-start' alt="mask" />
+                                <Image title="Hero image description" src={Mask} className='h-4 w-[23px] mt-1 pr-3 self-start' alt="mask" />
                                 <p className='text-white Gilroy font-[500]'>Streamline claims, registrations, and <br /> service plans with ease.</p>
                             </div>
                         </div>
                         <div className='col-span-4'>
                             <div className='flex '>
-                                <Image title="Hero image description" src={Mask} className='pr-3 self-start' alt="mask" />
+                                <Image title="Hero image description" src={Mask} className='pr-3 w-[23px] mt-1 self-start' alt="mask" />
                                 <p className='text-white Gilroy font-[500]'>Automate key processes to eliminate <br /> inefficiencies and reduce operational costs.</p>
                             </div>
                         </div>
                         <div className='col-span-4'>
                             <div className='flex '>
-                                <Image title="Hero image description" src={Mask} className='pr-3 self-start' alt="mask" />
+                                <Image title="Hero image description" src={Mask} className='pr-3 w-[23px] mt-1 self-start' alt="mask" />
                                 <p className='text-white Gilroy font-[500]'>Support dealer services with a robust, <br /> all-in-one solution built for scalability.</p>
                             </div>
                         </div>
@@ -267,16 +267,16 @@ export default function Page() {
                     <p className='text-[#95AAAD] Gilroy text-base'>Our platform brings together every stage of the warranty process to maximize efficiency and deliver value:</p>
                     <div className='relative mt-6 lg:block md:hidden sm:hidden s:hidden'>
                         <Image title="Hero image description" src={lifecycle} className='mx-auto px-16 py-8' alt="mask" />
-                        <div className='absolute top-5 3xl:left-[45%] 2xl:left-[43%] xl:left-[42%] lg:left-[37%] '>
+                        <div className='absolute top-5 3xl:left-[45%] 2xl:left-[43%] xl:left-[42%] lg:left-[39%] '>
                             <p className='text-[#95AAAD] Gilroy text-base'>Simplify product setup <br /> with, registrations, and <br /> service plans</p>
                         </div>
-                        <div className='absolute top-[19%] 3xl:left-[25%] 2xl:left-[17%] xl:left-[14%] lg:left-[-2%] '>
+                        <div className='absolute top-[19%] 3xl:left-[25%] 2xl:left-[17%] xl:left-[14%] lg:left-[3%] '>
                             <p className='text-[#95AAAD] Gilroy text-base text-right'>Foster deeper connections <br /> and enhance trust with <br /> customers and partners.</p>
                         </div>
-                        <div className='absolute top-[18%] 3xl:right-[26%] 2xl:right-[19%] xl:right-[16%] lg:right-[1%] '>
+                        <div className='absolute top-[18%] 3xl:right-[26%] 2xl:right-[19%] xl:right-[16%] lg:right-[5%] '>
                             <p className='text-[#95AAAD] Gilroy text-base text-left'>Handle warranty claims <br /> with precision and speed,<br /> backed by data-driven <br /> workflows.</p>
                         </div>
-                        <div className='absolute top-[44%] 3xl:left-[19%] 2xl:left-[9%] xl:left-[5%] lg:left-[-5%] '>
+                        <div className='absolute top-[44%] 3xl:left-[19%] 2xl:left-[9%] xl:left-[5%] lg:left-[-4%] '>
                             <p className='text-[#95AAAD] Gilroy text-base text-right'>Bring stakeholders together <br /> on one cohesive platform for  <br /> seamless collaboration.</p>
                         </div>
                         <div className='absolute top-[47%] 3xl:right-[22%] 2xl:right-[13%] xl:right-[9%] lg:right-[-4%]'>
@@ -285,10 +285,10 @@ export default function Page() {
                         <div className='absolute bottom-[13%] 3xl:right-[25%] 2xl:right-[17%] xl:right-[14%] lg:right-[-2%] '>
                             <p className='text-[#95AAAD] Gilroy text-base text-left'>Streamline recovery   <br /> operations to minimize losses <br /> and maximize efficiency.</p>
                         </div>
-                        <div className='absolute bottom-[14%] 3xl:left-[25%] 2xl:left-[17%] xl:left-[14%] lg:left-[-3%]  '>
+                        <div className='absolute bottom-[14%] 3xl:left-[25%] 2xl:left-[17%] xl:left-[14%] lg:left-[2%]  '>
                             <p className='text-[#95AAAD] Gilroy text-base text-right'>Optimize operations with   <br /> intelligent, automated <br /> workflows that drive results.</p>
                         </div>
-                        <div className='absolute bottom-[-2%] 3xl:left-[45%] 2xl:left-[43%]  xl:left-[42%] lg:left-[37%]'>
+                        <div className='absolute bottom-[-2%] 3xl:left-[45%] 2xl:left-[43%]  xl:left-[42%] lg:left-[39%]'>
                             <p className='text-[#95AAAD] Gilroy text-base text-left'>Transform raw data into   <br /> actionable insights for <br /> smarter decision-making.</p>
                         </div>
                     </div>
@@ -348,7 +348,7 @@ export default function Page() {
 
                 <div className='py-8 w-large mx-auto'>
                     <p className='text-3xl Brockmann text-white text-center'>Comprehensive Warranty <br /> Lifecycle Solutions</p>
-                    <p className='text-[#95AAAD] text-lg text-center Gilroy py-6'>Streamlined processes for every stage of the warranty journey, tailored for efficiency and accuracy.</p>
+                    <p className='text-[#95AAAD] text-[22px] text-center Gilroy py-6'>Streamlined processes for every stage of the warranty journey, tailored for efficiency and accuracy.</p>
                     <div className='lg:block md:hidden sm:block s:block'>
                         <div className='grid lg:grid-cols-12 md:grid-cols-8 sm:grid-cols-4 s:grid-cols-4 gap-4 py-5 px-8'>
                             <div className='col-span-4 text-white'>
@@ -473,9 +473,9 @@ export default function Page() {
                                 <Image title="Hero image description" src={Business2} className='py-4' alt="mask" />
                                 <p className='Brockmann text-xl'>Seamless API Integration</p>
                                 <p className='text-[#95AAAD] Gilroy py-4 pr-8'>Integrate with existing CRM, ERP, and dealer management systems for a unified warranty management ecosystem.</p>
-                                <p className='flex Gilroy pb-3'> <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' /> Synchronize customer, product, and claim data seamlessly across platforms.</p>
+                                <p className='flex Gilroy pb-3'> <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Synchronize customer, product, and claim data seamlessly across platforms.</p>
                                 <p className='flex Gilroy pb-3' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Eliminate redundant data entry and improve operational efficiency.</p>
-                                <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' /> Enable real - time updates and consistent information across all connected systems.</p>
+                                <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Enable real - time updates and consistent information across all connected systems.</p>
                             </div >
                         </div >
                         <div className='col-span-6 h-full'>
@@ -510,7 +510,7 @@ export default function Page() {
                                 <Image title="Hero image description" src={Business6} className='py-4' alt="mask" />
                                 <p className='Brockmann text-xl'>Improve Data-Driven Decision Making</p>
                                 <p className='text-[#95AAAD] Gilroy py-4 pr-8'>Access powerful analytics and reporting tools to make smarter business decisions.</p>
-                                <p className='flex Gilroy pb-3'> <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' /> Analyze trends in claims, sales, and operations to identify opportunities for improvement.</p>
+                                <p className='flex Gilroy pb-3'> <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Analyze trends in claims, sales, and operations to identify opportunities for improvement.</p>
                                 <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Use actionable insights to optimize warranty policies and product quality.</p>
                             </div >
                         </div >
@@ -581,43 +581,51 @@ export default function Page() {
                             </div >
                         </div>
                         <div className='md:hidden sm:block s:block'>
-                            {/* <Carousel responsive={responsive}>
+                            <div className='bg-[#04292B] text-[#00FFFC] mb-4 text-3xl relative p-8 border border-[#104649] rounded-xl'>
+                                <p className='text-left text-3xl font-semibold Gilroy'>
+                                    Industries <br /> We
+                                </p>
+                                <p className='text-3xl font-semibold Gilroy flex justify-start'>
+                                    Serve <Image title="Hero image description" src={DeliverImage} alt='Deliver' className='absolute left-[40%] top-[21%]' />
+                                </p>
+                            </div>
+                            <Carousel responsive={responsive}>
                                 <div className='bg-[#04292b] hover:bg-[#104342] p-8 rounded-xl '>
-                                    <Image   title="Hero image description" src={DeliverImage1} className='mb-3' alt='Deliver' />
-                                    <p  className='text-lg Brockmann text-white '>Furniture Insurance</p>
+                                    <Image title="Hero image description" src={DeliverImage1} className='mb-3' alt='Deliver' />
+                                    <p className='text-lg Brockmann text-white '>Furniture Insurance</p>
                                     <p className='text-[#95AAAD] Gilroy text-base'>Provide reliable warranty and recovery solutions for furniture retailers.</p>
                                 </div>
                                 <div className='bg-[#04292b] hover:bg-[#104342] p-8 rounded-xl'>
-                                    <Image   title="Hero image description" src={DeliverImage2} className='mb-3' alt='Deliver' />
-                                    <p  className='text-lg Brockmann text-white'>Appliances</p>
+                                    <Image title="Hero image description" src={DeliverImage2} className='mb-3' alt='Deliver' />
+                                    <p className='text-lg Brockmann text-white'>Appliances</p>
                                     <p className='text-[#95AAAD] Gilroy text-base'>Automate warranty registration and claims for home appliances.</p>
                                 </div>
                                 <div className='bg-[#04292b] hover:bg-[#104342] p-8 rounded-xl'>
-                                    <Image   title="Hero image description" src={DeliverImage3} className='mb-3' alt='Deliver' />
-                                    <p  className='text-lg Brockmann text-white'>Electric Vehicles</p>
+                                    <Image title="Hero image description" src={DeliverImage3} className='mb-3' alt='Deliver' />
+                                    <p className='text-lg Brockmann text-white'>Electric Vehicles</p>
                                     <p className='text-[#95AAAD] Gilroy text-base'>Enhance warranty services for next-gen automotive solutions.</p>
                                 </div >
                                 <div className='bg-[#04292b] hover:bg-[#104342] p-8 rounded-xl'>
-                                    <Image   title="Hero image description" src={DeliverImage4} className='mb-4' alt='Deliver' />
-                                    <p  className='text-lg Brockmann text-white'>Logistics and Insurance</p>
+                                    <Image title="Hero image description" src={DeliverImage4} className='mb-4' alt='Deliver' />
+                                    <p className='text-lg Brockmann text-white'>Logistics and Insurance</p>
                                     <p className='text-[#95AAAD] Gilroy text-base'>Improve operational efficiency with streamlined claim management.</p>
                                 </div >
                                 <div className='bg-[#04292b] hover:bg-[#104342] p-8 rounded-xl'>
-                                    <Image   title="Hero image description" src={DeliverImage5} className='mb-5' alt='Deliver' />
-                                    <p  className='text-lg Brockmann text-white'>Agriculture Equipment</p>
+                                    <Image title="Hero image description" src={DeliverImage5} className='mb-5' alt='Deliver' />
+                                    <p className='text-lg Brockmann text-white'>Agriculture Equipment</p>
                                     <p className='text-[#95AAAD] Gilroy text-base'>Simplify warranty processes for machinery and tools.</p>
                                 </div >
                                 <div className='bg-[#04292b] hover:bg-[#104342] p-8 rounded-xl'>
-                                    <Image   title="Hero image description" src={DeliverImage6} className='mb-3' alt='Deliver' />
-                                    <p  className='text-lg Brockmann text-white'>Consumer Electronics</p>
+                                    <Image title="Hero image description" src={DeliverImage6} className='mb-3' alt='Deliver' />
+                                    <p className='text-lg Brockmann text-white'>Consumer Electronics</p>
                                     <p className='text-[#95AAAD] Gilroy text-base'>Seamlessly manage warranties for gadgets and electronic devices.</p>
                                 </div >
                                 <div className='bg-[#04292b] hover:bg-[#104342] p-8 rounded-xl'>
-                                    <Image   title="Hero image description" src={DeliverImage7} className='mb-3' alt='Deliver' />
-                                    <p  className='text-lg Brockmann text-white'>Consumer Durables</p>
+                                    <Image title="Hero image description" src={DeliverImage7} className='mb-3' alt='Deliver' />
+                                    <p className='text-lg Brockmann text-white'>Consumer Durables</p>
                                     <p className='text-[#95AAAD] Gilroy text-base'>Optimize warranty handling for long-term goods like appliances and equipment.</p>
                                 </div >
-                            </Carousel> */}
+                            </Carousel>
                         </div>
                     </div >
                 </div >
@@ -651,7 +659,7 @@ export default function Page() {
                         <div className='lg:w-[50%] md:w-[50%] sm:w-full s:w-full md:text-left sm:text-center s:text-center'>
                             <p className='Gilroy text-3xl text-[#95AAAD]'><span className='text-white'> Let us know </span>  if you'd <br /> like further refinements!</p>
                         </div>
-                        <p className='self-center Gilroy text-[#95AAAD] lg:w-[50%] md:w-[50%] sm:w-full s:w-full lg:text-right md:text-right sm:text-center s:text-center'>
+                        <p className='self-center Gilroy mt-4 text-[#95AAAD] lg:w-[50%] md:w-[50%] sm:w-full s:w-full lg:text-right md:text-right sm:text-center s:text-center'>
 
                             <button onClick={() => scrollToSection("contactUs")} className="bg-[#8BC542] Gilroy uppercase py-4 px-6 rounded-md text-white font-medium">Know More</button>
                         </p>
@@ -659,19 +667,19 @@ export default function Page() {
                 </div >
 
                 <div className='py-8 w-large mx-auto'>
-                    <p className='text-[#95AAAD] Brockmann text-3xl text-center'>Explore the  <span className='text-[#00FFFC]'> Capabilities </span></p>
-                    <p className='text-[#95AAAD] text-center Gilroy py-6'>Discover the key features to automate the warranty management process</p>
+                    <p className='text-[#95AAAD] Brockmann text-[34px] text-center'>Explore the  <span className='text-[#00FFFC]'> Capabilities </span></p>
+                    <p className='text-[#95AAAD] text-center Gilroy pt-2 pb-6'>Discover the key features to automate the warranty management process</p>
 
 
                     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4 px-8'>
                         <div className='col-span-1 lg:order-none md:order-none sm:order-2 s:order-2 text-white'>
                             <p className='Brockmann text-xl'>Multiple Claim Types</p>
                             <p className='text-[#95AAAD] text-lg Gilroy py-4 pr-8'>The platform supports different types of claims such as:</p>
-                            <p className='flex Gilroy '> <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Warranty Claims</p>
+                            <p className='flex Gilroy '> <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Warranty Claims</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Handle requests for repair or replacement under valid warranty terms.</p>
                             <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Bulk Claims</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Allows multiple claims to be uploaded and processed simultaneously.</p>
-                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' /> Custom Claims Management</p>
+                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Custom Claims Management</p>
                             <p className='text-[#95AAAD] Gilroy'>Tailors claim processes based on product categories or dealer requirements.</p>
                             <p className='text-white Gilroy pt-5'>Impact</p>
                             <div className='border-l border-white pl-4 mt-3'>
@@ -684,7 +692,7 @@ export default function Page() {
                         <div className='lg:order-none md:order-none sm:order-1 s:order-1 flex self-center'>
                             <video
                                 // className=""
-                                className='mx-auto bg-transparent rounded-[1.5rem] shadow-lg'
+                                className='mx-auto bg-transparent md:rounded-[24px]   rounded-[17px]  shadow-lg'
                                 poster={Banner1}
                                 autoPlay
                                 loop
@@ -698,7 +706,7 @@ export default function Page() {
                         <div className='lg:order-none md:order-none sm:order-3 s:order-3 flex self-center'>
                             <video
                                 // className=""
-                                className='mx-auto bg-transparent rounded-[1.5rem] shadow-lg'
+                                className='mx-auto bg-transparent md:rounded-[24px]   rounded-[17px]  shadow-lg'
                                 poster={Banner1}
                                 autoPlay
                                 loop
@@ -712,11 +720,11 @@ export default function Page() {
                         <div className='col-span-1 text-white lg:order-none md:order-none sm:order-4 s:order-4 mt-3'>
                             <p className='Brockmann text-xl'>Advanced Pricing Features</p>
                             <p className='text-[#95AAAD] text-lg Gilroy py-4 pr-8'>The system supports managing dealer-specific price books with different pricing models, including:</p>
-                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Regular Pricing</p>
+                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Regular Pricing</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Fixed pricing for standard sales.</p>
                             <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Flat Pricing</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Uniform pricing for specific categories or ranges.</p>
-                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' /> Quantity - Based Pricing</p>
+                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 ' /> Quantity - Based Pricing</p>
                             <p className='text-[#95AAAD] Gilroy'>Discounted rates for bulk purchases.</p>
                             <p className='text-white Gilroy pt-5'>Impact</p>
                             <div className='border-l border-white pl-4 mt-3'>
@@ -728,11 +736,11 @@ export default function Page() {
                         <div className='col-span-1 text-white lg:order-none md:order-none sm:order-6 s:order-6 mt-3'>
                             <p className='Brockmann text-xl'>Real-Time Claim Tracking</p>
                             <p className='text-[#95AAAD] text-lg Gilroy py-4 pr-8'>Track claims at every stage of their lifecycle with features like:</p>
-                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Status Updates</p>
+                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Status Updates</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Clear visibility into claim processing.</p>
                             <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Approval Workflows</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Automated steps for claim validation and approvals.</p>
-                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Filters and Searches</p>
+                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Filters and Searches</p>
                             <p className='text-[#95AAAD] Gilroy'>Quickly locate claims by type, status, or dealer.</p>
                             <p className='text-white Gilroy pt-5'>Impact</p>
                             <div className='border-l border-white pl-4 mt-3'>
@@ -744,7 +752,7 @@ export default function Page() {
                         <div className='lg:order-none md:order-none sm:order-5 s:order-5 flex self-center'>
                             <video
                                 // className=""
-                                className='mx-auto bg-transparent rounded-[1.5rem] shadow-lg'
+                                className='mx-auto bg-transparent md:rounded-[24px]   rounded-[17px]  shadow-lg'
                                 poster={Banner1}
                                 autoPlay
                                 loop
@@ -754,17 +762,27 @@ export default function Page() {
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className='lg:order-none md:order-none sm:order-7 s:order-7 flex'>
-                            <Image title="Hero image description" src={Banner1} className='px-6 self-center' alt="mask" />
+                        <div className='lg:order-none md:order-none sm:order-7 s:order-7 flex self-center'>
+                            <video
+                                // className=""
+                                className='mx-auto bg-transparent md:rounded-[24px]   rounded-[17px]  shadow-lg'
+                                poster={Banner1}
+                                autoPlay
+                                loop
+                                muted
+                            >
+                                <source src="./assets/video/5.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div className='col-span-1 text-white lg:order-none md:order-none sm:order-8 s:order-8 mt-3'>
                             <p className='Brockmann text-xl'>Dealer Management Tools</p>
                             <p className='text-[#95AAAD] text-lg Gilroy py-4 pr-8'> Facilitate efficient dealer operations with features like:</p>
-                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Dealer Approval Workflows</p>
+                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Dealer Approval Workflows</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Quickly onboard or update dealer accounts.</p>
                             <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Order Management</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Manage dealer-specific orders, contracts, and claims in one place.</p>
-                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' /> Performance Insights</p>
+                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 ' /> Performance Insights</p>
                             <p className='text-[#95AAAD] Gilroy'>View dealer activity and performance metrics.</p>
                             <p className='text-white Gilroy pt-5'>Impact</p>
                             <div className='border-l border-white pl-4 mt-3'>
@@ -776,11 +794,11 @@ export default function Page() {
                         <div className='col-span-1 lg:order-none md:order-none sm:order-10 s:order-10 text-white mt-3'>
                             <p className='Brockmann text-xl'>Reporting and Insights</p>
                             <p className='text-[#95AAAD] text-lg Gilroy py-4 pr-8'>Generate comprehensive reports to analyze performance across warranty operations:</p>
-                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Claims Reporting</p>
+                            <p className='flex Gilroy ' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Claims Reporting</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>View claims by type, dealer, or product category.</p>
                             <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' /> Sales Reports</p>
                             <p className='text-[#95AAAD] Gilroy pb-3'>Track order volumes and revenue trends.</p>
-                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2 self-start' />Custom Dashboards</p>
+                            <p className='flex Gilroy' > <Image title="Hero image description" src={Mask} alt="mask" className='pr-2' />Custom Dashboards</p>
                             <p className='text-[#95AAAD] Gilroy'>Tailored visualizations to monitor KPIs.</p>
                             <p className='text-white Gilroy pt-5'>Impact</p>
                             <div className='border-l border-white pl-4 mt-3'>
@@ -789,8 +807,18 @@ export default function Page() {
                                 <p className='text-[#95AAAD] Gilroy pb-3 flex'><Image title="Hero image description" src={Mask1} alt="mask" className='pr-2 self-center' /> Ensures better alignment of warranty operations with business goals.</p>
                             </div>
                         </div >
-                        <div className='lg:order-none md:order-none sm:order-9 s:order-9 flex'>
-                            <Image title="Hero image description" src={Banner1} className='px-6 self-center' alt="mask" />
+                        <div className='lg:order-none md:order-none sm:order-9 s:order-9 flex self-center'>
+                            <video
+                                // className=""
+                                className='mx-auto bg-transparent md:rounded-[24px]   rounded-[17px]  shadow-lg'
+                                poster={Banner1}
+                                autoPlay
+                                loop
+                                muted
+                            >
+                                <source src="./assets/video/6.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
 
                     </div >
@@ -802,10 +830,8 @@ export default function Page() {
 
                 <div className='w-large mx-auto'>
                     <div className='lg:flex md:block sm:block bg-[#04292B] justify-center text-white p-12 mx-8'>
-                        <div className='lg:w-[50%] md:w-full sm:w-full'>
-                            <p className='Gilroy text-3xl text-[#95AAAD] lg:text-left md:text-center sm:text-center'>Your <span className='text-white'> warranty <br /> transformation begins now. </span> <br />  Let us simplify, automate, and <br /> elevate your operations.</p>
-                        </div>
-                        <p className='self-center Gilroy text-[#95AAAD] lg:w-[50%] md:w-full sm:w-full lg:text-right lg:pt-0 md:pt-5 sm:pt-5 md:text-center sm:text-center'>Let us know if you'd like any further adjustments!</p>
+
+                        <p className='Gilroy text-3xl text-[#95AAAD] lg:text-center md:text-center sm:text-center'>Your <span className='text-white'> warranty  transformation begins now. </span> <br />  Let us simplify, automate, and elevate your operations.</p>
                     </div>
                 </div >
                 {showButton && (

@@ -78,7 +78,7 @@ function Contact() {
 
         try {
             // Fetch the IP address
-            const ipResponse = await fetch("https://api.ipify.org?htmlFormat=json");
+            const ipResponse = await fetch("https://api.ipify.org?format=json");
             const ipData = await ipResponse.json();
             const ipAddress = ipData.ip;
 
@@ -106,27 +106,23 @@ function Contact() {
                     };
 
                     console.log(payload);
-                    const response = await fetch(
-                        "https://api.demo.codewarranty.com/api-v1/user/contact-us",
-                        {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify(payload),
-                        }
-                    );
-
+                    const response = await fetch("https://api.demo.codewarranty.com/api-v1/user/contact-us", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(payload),
+                    });
+                    console.log("API response status:", response.status);
                     if (!response.ok) {
                         const errorDetails = await response.json();
+                        console.log("API error response:", errorDetails);
                         setShow(true);
                         setText(errorDetails.message);
-                        setTimeout(() => {
-                            setText("");
-                        }, 10000);
                         return;
                     }
-
+                    console.log("Message sent successfully!");
+                    ;
 
                     setShow(true);
                     setText("Message sent successfully!");
@@ -176,16 +172,16 @@ function Contact() {
             <p className='Brockmann text-white text-2xl text-center'>How we can help you?</p>
             <div className='grid lg:grid-cols-12 md:grid-cols-8 sm:grid-cols-4 gap-4 my-5'>
                 <div className='col-span-4'>
-                    <div className='relative p-12 border border-[#104649] rounded-lg'>
+                    <div className='relative p-12 border border-[#104649] rounded-lg h-full'>
                         <div className='text-[#00FFFC] bg-[#104649] py-3 px-4 absolute top-0 left-0 rounded-ss-lg rounded-ee-lg'>
                             <p>01</p>
                         </div>
-                        <p className='text-white Brockmann text-lg'>Fill this htmlForm</p>
+                        <p className='text-white Brockmann text-lg'>Fill this HTMLForm</p>
                         <p className='text-[#8E8E8E] Gilroy lg:pr-10 md:pr-3 sm:pr-0'>Share your details with us, and  our team will reach out within  48 hours to guide you through  the next steps.</p>
                     </div>
                 </div>
                 <div className='col-span-4'>
-                    <div className='relative p-12 border border-[#104649] rounded-lg'>
+                    <div className='relative p-12 border border-[#104649] rounded-lg h-full'>
                         <div className='text-[#00FFFC] bg-[#104649] py-3 px-4 absolute top-0 left-0 rounded-ss-lg rounded-ee-lg'>
                             <p>02</p>
                         </div>
@@ -194,7 +190,7 @@ function Contact() {
                     </div>
                 </div>
                 <div className='col-span-4'>
-                    <div className='relative p-12 border border-[#104649] rounded-lg'>
+                    <div className='relative p-12 border border-[#104649] rounded-lg h-full'>
                         <div className='text-[#00FFFC] bg-[#104649] py-3 px-4 absolute top-0 left-0 rounded-ss-lg rounded-ee-lg'>
                             <p>03</p>
                         </div>
@@ -203,7 +199,7 @@ function Contact() {
                     </div>
                 </div>
             </div>
-            <htmlForm onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className='grid grid-cols-12 gap-4'>
                     <div className='lg:col-span-6 md:col-span-6 sm:col-span-12 s:col-span-12'>
                         <Input placeholder='Enter'
@@ -335,7 +331,7 @@ function Contact() {
                         <button type="submit" className='text-[#000] text-base bg-[#00FFFC] Brockmann rounded-lg px-12 py-4 uppercase'>Send Message</button>
                     </div>
                 </div>
-            </htmlForm>
+            </form>
         </div >
     )
 }

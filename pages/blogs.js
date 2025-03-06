@@ -18,9 +18,11 @@ const BlogPage = ({ blogs, error }) => {
 
   return (
     <>
-      <Head>
+      <Head>  <title>{'Blog'}</title>
+        <meta name="description" content={"Key Features to Look for in a Warranty Management Platform"} />
         <link href="https://fonts.cdnfonts.com/css/brockmann" rel="stylesheet" />
         <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet" />
+        <link rel="canonical" href={`https://codewarranty.com/blogs`} />
         <link rel="icon" type="image/x-icon" href="./assets/images/fabIcon.png" />
         <link rel="apple-touch-icon" sizes="57x57" href="./assets/images/fabIcon.png" />
       </Head>
@@ -47,12 +49,12 @@ const BlogPage = ({ blogs, error }) => {
                       key={blog._id} // Assuming MongoDB's default `_id` is used
                       className=""
                     >
-                 <Link href={`/blogs/${blog.paramUrl}`} passHref>
-                        <div className="bg-[#082B30] p-4 rounded-[14px]">
+                      <Link href={`/blogs/${blog.paramUrl}`} passHref>
+                        <div className="bg-[#082B30] p-4 rounded-[14px] h-full relative">
                           {/* Ensure bannerImage is a valid URL */}
-                          {blog.bannerImage && (
+                          {blog.thumbnailImage && (
                             <Image
-                              src={blog.bannerImage}
+                              src={blog.thumbnailImage}
                               alt={blog.title}
                               width={500} // Add width and height for Image
                               height={300}
@@ -72,9 +74,15 @@ const BlogPage = ({ blogs, error }) => {
                           <p className="text-[#95AAAD] Gilroy leading-tight mb-3 pr-8">
                             {blog.extractDescription || "Default description for the blog..."}
                           </p>
-                          <div className="my-5">
-                          {/* <Link href={`/blogs/${blog.paramUrl}`} passHref> */}
-                              <Image title="Hero image description" src={Arrow} alt='arrow' className='w-[60px] h-[60px]' />
+                          <div className="my-5 opacity-0">
+                            {/* <Link href={`/blogs/${blog.paramUrl}`} passHref> */}
+                            <Image title="Hero image description" src={Arrow} alt='arrow' className='w-[60px] h-[60px]' />
+
+                            {/* </Link> */}
+                          </div>
+                          <div className="absolute bottom-6">
+                            {/* <Link href={`/blogs/${blog.paramUrl}`} passHref> */}
+                            <Image title="Hero image description" src={Arrow} alt='arrow' className='w-[60px] h-[60px]' />
 
                             {/* </Link> */}
                           </div>
@@ -89,7 +97,7 @@ const BlogPage = ({ blogs, error }) => {
             </div>
           </div>
 
-          <div className='py-8 w-large mx-auto'>
+          <div className='py-8'>
             <div id='contactUs'></div>
             <Contact />
           </div>
