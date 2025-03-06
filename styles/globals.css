@@ -14,6 +14,16 @@
   }
 }
 
+.custom-content h2,
+.custom-content h3 {
+  color: #00FFFC;
+}
+
+.custom-content strong {
+  color: #00FFFC;
+  font-weight: 500;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

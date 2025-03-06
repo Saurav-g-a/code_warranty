@@ -82,47 +82,51 @@ export default function Blog({ blog, error, isLoading }) {
         <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/fabIcon.png" />
       </Head>
 
-      <div className='bg-[#002025] '>
-        <div className='w-large mx-auto'>
-          <Header />
-        </div>
+      <div className='bg-headerBackground bg-contain bg-no-repeat'>
+        <div className='bg-custom-gradient   bg-contain bg-no-repeat'>
+          <div className='w-large mx-auto'>
+            <Header />
+          </div>
 
 
-        <div>
           <div>
-            {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto w-full h-[500px] my-3' />}
-            <div className='w-[65%] mx-auto bg-[#002025] z-10 -mt-[10%] p-5 rounded-xl relative shadow-lg'>
-              <div>
+            <div>
+              {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto w-full h-[350px] my-3' />}
+              <div className='w-[65%] mx-auto bg-[#11474A] z-10 -mt-[10%] p-5 rounded-xl relative shadow-lg'>
+                <div>
 
-              </div>
-              <h1 className='text-white text-3xl Brockmann text-left'>{title}</h1>
-              <div className='flex  mt-3'>
+                </div>
+                <h1 className='text-white text-3xl Brockmann text-left'>{title}</h1>
+                <div className='flex  mt-3'>
 
-                <img src={author?.photo} alt='author photo' className='mr-3 rounded-full w-[50px] h-[50px]' />
+                  <img src={author?.photo} alt='author photo' className='mr-3 rounded-full w-[50px] h-[50px]' />
 
-                <p className='text-white self-center Gilroy capitalize font-semibold text-lg text-left'>By {author?.name}  on {uploadDate ? new Date(uploadDate).toLocaleDateString() : ''}</p>
+                  <p className='text-white self-center Gilroy capitalize font-semibold text-lg text-left'>By {author?.name}  on {uploadDate ? new Date(uploadDate).toLocaleDateString() : ''}</p>
 
 
-              </div>
-            </div>
-            <div id="contentSection" className='w-[65%] mx-auto bg-[#002025] z-10 p-5 mt-7 rounded-xl relative shadow-xl'>
-              <div className={`left-[-45px] ${isSticky ? "sticky top-5" : ""}`}
-                style={!isSticky ? { bottom: `-${bottomOffset}px` } : {}}>
-                <div className={"absolute left-[-45px]"}>
-                  <a href=''><Image src={Facebook} alt='facebook' className='mb-3' /></a>
-                  <a href=''><Image src={twitter} alt='twitter' className='mb-3' /></a>
-                  <a href=''><Image src={linkin} alt='linkin' className='mb-3' /></a>
-                  <a href=''><Image src={instagram} alt='instagram' className='mb-3' /></a>
                 </div>
               </div>
-              <div className='text-white mt-5 text-left mx-auto Gilroy text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
+              <div id="contentSection" className='w-[65%] mx-auto  z-10 p-5 mt-7 rounded-xl relative'>
+                <div className={`left-[-45px] ${isSticky ? "sticky top-5" : ""}`}
+                  style={!isSticky ? { bottom: `-${bottomOffset}px` } : {}}>
+                  <div className={"absolute left-[-45px]"}>
+                    <a href=''><Image src={Facebook} alt='facebook' className='mb-3' /></a>
+                    <a href=''><Image src={twitter} alt='twitter' className='mb-3' /></a>
+                    <a href=''><Image src={linkin} alt='linkin' className='mb-3' /></a>
+                    <a href=''><Image src={instagram} alt='instagram' className='mb-3' /></a>
+                  </div>
+                </div>
+                <div className='text-[#65868B] mt-5 text-left mx-auto Gilroy custom-content text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
+              </div>
             </div>
           </div>
         </div>
-        <div className='py-8 w-large mx-auto' id='contactUs'>
-          <Contact />
+        <div className='bg-[#002025]'>
+          <div className='py-8 w-large mx-auto ' id='contactUs'>
+            <Contact />
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
     </>
   );
