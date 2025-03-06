@@ -692,7 +692,7 @@ export default function Page() {
                         <div className='lg:order-none md:order-none sm:order-1 s:order-1 flex self-center'>
                             <video
                                 // className=""
-                                className='mx-auto bg-transparent md:rounded-[30px]   rounded-[17px]  shadow-lg'
+                                className='mx-auto bg-transparent md:rounded-[24px]   rounded-[17px]  shadow-lg'
                                 poster={Banner1}
                                 autoPlay
                                 loop
@@ -706,7 +706,7 @@ export default function Page() {
                         <div className='lg:order-none md:order-none sm:order-3 s:order-3 flex self-center'>
                             <video
                                 // className=""
-                                className='mx-auto bg-transparent md:rounded-[30px]   rounded-[17px]  shadow-lg'
+                                className='mx-auto bg-transparent md:rounded-[24px]   rounded-[17px]  shadow-lg'
                                 poster={Banner1}
                                 autoPlay
                                 loop
@@ -752,7 +752,7 @@ export default function Page() {
                         <div className='lg:order-none md:order-none sm:order-5 s:order-5 flex self-center'>
                             <video
                                 // className=""
-                                className='mx-auto bg-transparent md:rounded-[30px]   rounded-[17px]  shadow-lg'
+                                className='mx-auto bg-transparent md:rounded-[24px]   rounded-[17px]  shadow-lg'
                                 poster={Banner1}
                                 autoPlay
                                 loop
@@ -765,7 +765,7 @@ export default function Page() {
                         <div className='lg:order-none md:order-none sm:order-7 s:order-7 flex self-center'>
                             <video
                                 // className=""
-                                className='mx-auto bg-transparent md:rounded-[30px]   rounded-[17px]  shadow-lg'
+                                className='mx-auto bg-transparent md:rounded-[24px]   rounded-[17px]  shadow-lg'
                                 poster={Banner1}
                                 autoPlay
                                 loop
@@ -810,7 +810,7 @@ export default function Page() {
                         <div className='lg:order-none md:order-none sm:order-9 s:order-9 flex self-center'>
                             <video
                                 // className=""
-                                className='mx-auto bg-transparent md:rounded-[30px]   rounded-[17px]  shadow-lg'
+                                className='mx-auto bg-transparent md:rounded-[24px]   rounded-[17px]  shadow-lg'
                                 poster={Banner1}
                                 autoPlay
                                 loop
