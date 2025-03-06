@@ -93,7 +93,7 @@ function Header() {
             </div>
 
             {isVisible && (
-              <div className='fixed top-0 left-0 w-full h-screen bg-[#002025] backdrop-blur-2xl'>
+              <div className='fixed top-0 left-0 w-full h-screen z-50 bg-[#002025] backdrop-blur-2xl'>
                 <Image src={cross} onClick={openDiv} className='ml-5 mt-5' alt='cross' />
                 <div className='mt-8  w-full text-center  mx-auto'>
                   <Link href='/'>
