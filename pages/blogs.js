@@ -50,7 +50,7 @@ const BlogPage = ({ blogs, error }) => {
                       className=""
                     >
                       <Link href={`/blogs/${blog.paramUrl}`} passHref>
-                        <div className="bg-[#082B30] p-4 rounded-[14px]">
+                        <div className="bg-[#082B30] p-4 rounded-[14px] h-full relative">
                           {/* Ensure bannerImage is a valid URL */}
                           {blog.bannerImage && (
                             <Image
@@ -74,7 +74,13 @@ const BlogPage = ({ blogs, error }) => {
                           <p className="text-[#95AAAD] Gilroy leading-tight mb-3 pr-8">
                             {blog.extractDescription || "Default description for the blog..."}
                           </p>
-                          <div className="my-5">
+                          <div className="my-5 opacity-0">
+                            {/* <Link href={`/blogs/${blog.paramUrl}`} passHref> */}
+                            <Image title="Hero image description" src={Arrow} alt='arrow' className='w-[60px] h-[60px]' />
+
+                            {/* </Link> */}
+                          </div>
+                          <div className="absolute bottom-6">
                             {/* <Link href={`/blogs/${blog.paramUrl}`} passHref> */}
                             <Image title="Hero image description" src={Arrow} alt='arrow' className='w-[60px] h-[60px]' />
 

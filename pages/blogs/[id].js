@@ -115,7 +115,7 @@ export default function Blog({ blog, error, isLoading }) {
                     <a href=''><Image src={instagram} alt='instagram' className='mb-3' /></a>
                   </div>
                 </div>
-                <div className='text-[#65868B] mt-5 text-left mx-auto Gilroy custom-content text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
+                <div className='text-[#95AAAD] mt-5 text-left mx-auto Gilroy custom-content text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
               </div>
             </div>
           </div>
