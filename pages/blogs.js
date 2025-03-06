@@ -91,7 +91,7 @@ const BlogPage = ({ blogs, error }) => {
             </div>
           </div>
 
-          <div className='py-8 w-large mx-auto'>
+          <div className='py-8'>
             <div id='contactUs'></div>
             <Contact />
           </div>

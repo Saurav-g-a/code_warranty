@@ -88,8 +88,6 @@ export default function Blog({ blog, error, isLoading }) {
           <div className='w-large mx-auto'>
             <Header />
           </div>
-
-
           <div>
             <div>
               {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto w-full h-[350px] my-3' />}
@@ -123,7 +121,7 @@ export default function Blog({ blog, error, isLoading }) {
           </div>
         </div>
         <div className='bg-[#002025]'>
-          <div className='py-8 w-large mx-auto ' id='contactUs'>
+          <div className='py-8 w-large mx-auto' id='contactUs'>
             <Contact />
           </div>
           <Footer />
