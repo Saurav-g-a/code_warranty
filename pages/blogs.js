@@ -52,9 +52,9 @@ const BlogPage = ({ blogs, error }) => {
                       <Link href={`/blogs/${blog.paramUrl}`} passHref>
                         <div className="bg-[#082B30] p-4 rounded-[14px] h-full relative">
                           {/* Ensure bannerImage is a valid URL */}
-                          {blog.bannerImage && (
+                          {blog.thumbnailImage && (
                             <Image
-                              src={blog.bannerImage}
+                              src={blog.thumbnailImage}
                               alt={blog.title}
                               width={500} // Add width and height for Image
                               height={300}
