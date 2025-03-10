@@ -28,7 +28,7 @@ export default function EditBlogPage() {
     metaTags: [],
   });
   const [uploadTime, setUploadTime] = useState(null); // Track upload time
-  const ReactQuill = useMemo(() => dynamic(() => import("react-quill"), { ssr: false }), []);
+  const ReactQuill = useMemo(() => dynamic(() => import("react-quill-new"), { ssr: false }), []);
 
   // Fetch blog details when component mounts
   useEffect(() => {

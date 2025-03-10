@@ -14,6 +14,33 @@
   }
 }
 
+.selected-flag {
+  background: transparent !important;
+  border: 0px !important;
+  padding-top: 97px;
+}
+
+input.form-control {
+  background: none !important;
+  width: 100%;
+  border: 0px !important;
+}
+
+.flag-dropdown {
+  background: transparent !important;
+  border: 0px !important;
+  color: black;
+}
+
+.flag-dropdown:hover,
+.selected-flag:hover,
+.react-tel-input .flag-dropdown.open .selected-flag,
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus {
+
+  background: transparent !important;
+}
+
 .custom-content h2,
 .custom-content h3 {
   color: #00FFFC;
