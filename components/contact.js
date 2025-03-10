@@ -234,6 +234,8 @@ function Contact() {
                             </div>
                         )}
                     </div>
+
+
                     <div className='lg:col-span-6 md:col-span-6 sm:col-span-12 s:col-span-12'>
                         <Input placeholder='Enter'
                             type="number"
