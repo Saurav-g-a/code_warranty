@@ -14,6 +14,8 @@ const Input = ({
     label,
     className1,
     disabled,
+    countryCodeEditable,
+    country,
     placeholder,
     classBox,
     onChange,
@@ -35,8 +37,10 @@ const Input = ({
             {type === "number" ? (
                 // React Phone Input for phone numbers
                 <PhoneInput
-                    country={"us"} // Default country (change as needed)
+
                     value={value}
+                    country={country || "us"}  // Default to "us" if countryCode is not set
+                    countryCodeEditable={countryCodeEditable}
                     onChange={(phone, country) =>
                         onChange({ target: { name, value: phone, countryCode: country.dialCode } })
                     }

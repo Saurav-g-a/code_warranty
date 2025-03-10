@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Input from './input'
 
 function Contact() {
@@ -13,7 +13,7 @@ function Contact() {
     const [email, setEmail] = useState("");
     const [description, setDescription] = useState("");
     const [show, setShow] = useState(false);
-
+    const [countryCode, setCountryCode] = useState('');
     const [categorys, setCategorys] = useState({
         CodeWarranty_Catalog: false,
         CodeWarranty_Warranty: false,
@@ -21,6 +21,37 @@ function Contact() {
         CodeWarranty_Desk: false,
         CodeWarranty_RMS: false
     });
+
+    useEffect(() => {
+        const fetchCountryCode = async () => {
+            try {
+                console.log("Fetching IP address...");
+
+                // Get the IP address
+                const ipResponse = await fetch("https://api.ipify.org?format=json");
+                const ipData = await ipResponse.json();
+                const ipAddress = ipData.ip;
+                console.log("IP Address:", ipAddress);
+
+                // Get country code using IP
+                const geoResponse = await fetch(`https://ipwho.is/${ipAddress}`);
+                const geoData = await geoResponse.json();
+                console.log("Geolocation Data:", geoData);
+
+                if (geoData.success) {
+                    setCountryCode(geoData.country_code.toLowerCase());
+                } else {
+                    console.error("Error fetching country code:", geoData.message);
+                }
+            } catch (error) {
+                console.error("Error fetching IP or country code:", error);
+            }
+        };
+
+        fetchCountryCode();
+        console.log("Country Code Set:", countryCode);
+    }, []);
+
 
 
     const handleEmailChange = (e) => {
@@ -44,6 +75,7 @@ function Contact() {
     };
 
     const handlePhoneChange = (e) => {
+        console.log(e.target.value)
         let digitsOnly = e.target.value.replace(/\D/g, "");
 
         // Limit to 10 digits
@@ -52,7 +84,6 @@ function Contact() {
         }
 
         setPhoneNumber(digitsOnly);
-
         if (digitsOnly.length !== 10) {
             setPhoneError("Phone number must be 10 digits.");
         } else {
@@ -164,7 +195,6 @@ function Contact() {
     };
     return (
         <div>
-
             <div className=' mx-auto'>
                 <h3 className='text-[#95AAAD] Brockmann text-[40px] text-center'>Schedule a <span className='text-[#00FFFC]'> Free Demo</span>, and <span className='text-[#8BC542]'> Go Live  in just 7 days </span> </h3>
             </div>
@@ -234,16 +264,17 @@ function Contact() {
                             </div>
                         )}
                     </div>
-
-
                     <div className='lg:col-span-6 md:col-span-6 sm:col-span-12 s:col-span-12'>
-                        <Input placeholder='Enter'
+                        <Input
+                            placeholder="Enter"
                             type="number"
                             name="phoneNumber"
-                            label='Phone No.'
+                            label="Phone No."
                             required
                             minLength={9}
                             maxLength={10}
+                            country={countryCode || "us"}  // Default to "us" if countryCode is not set
+                            countryCodeEditable={false}
                             value={phoneNumber}
                             onChange={(e) => handlePhoneChange(e)}
                         />
@@ -334,7 +365,7 @@ function Contact() {
                     </div>
                 </div>
             </form>
-        </div >
+        </div>
     )
 }
 
