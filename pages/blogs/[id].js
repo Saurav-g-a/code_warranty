@@ -106,9 +106,9 @@ export default function Blog({ blog, error, isLoading }) {
                 </div>
               </div>
               <div id="contentSection" className='w-[75%] mx-auto  z-10 p-5 mt-7 rounded-xl relative'>
-                <div className={`left-[-45px] ${isSticky ? "sticky top-5" : ""}`}
+                <div className={`left-[-55px] ${isSticky ? "sticky top-5" : ""}`}
                   style={!isSticky ? { bottom: `-${bottomOffset}px` } : {}}>
-                  <div className={"absolute left-[-45px]"}>
+                  <div className={"absolute left-[-55px]"}>
                     <a href=''><Image src={Facebook} alt='facebook' className='mb-3' /></a>
                     <a href=''><Image src={twitter} alt='twitter' className='mb-3' /></a>
                     <a href=''><Image src={linkin} alt='linkin' className='mb-3' /></a>

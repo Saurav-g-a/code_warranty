@@ -19,6 +19,13 @@
   color: #00FFFC;
 }
 
+.custom-content ol,
+.custom-content ul {
+  list-style-type: disc;
+  margin-left: 25px;
+}
+
+
 .custom-content strong {
   color: #00FFFC;
   font-weight: 500;

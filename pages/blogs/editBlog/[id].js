@@ -4,11 +4,11 @@ import { useRouter } from "next/router";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "react-quill-new/dist/quill.snow.css";
-
+import Head from "next/head";
 export default function EditBlogPage() {
   const router = useRouter();
   const { id } = router.query;
-
+  const [editorContent, setEditorContent] = useState("");
   const [value, setValue] = useState("");
   const [loading, setLoading] = useState(true);
   const [blogData, setBlogData] = useState(null);
@@ -28,7 +28,7 @@ export default function EditBlogPage() {
     metaTags: [],
   });
   const [uploadTime, setUploadTime] = useState(null); // Track upload time
-  const ReactQuill = useMemo(() => dynamic(() => import("react-quill-new"), { ssr: false }), []);
+  const ReactQuill = useMemo(() => dynamic(() => import("react-quill"), { ssr: false }), []);
 
   // Fetch blog details when component mounts
   useEffect(() => {
@@ -59,7 +59,7 @@ export default function EditBlogPage() {
             });
             setValue(data.data.content)
             setUploadTime(data.data.uploadDate);
-          } 
+          }
         } catch (error) {
           console.error("Error fetching blog details:", error);
           router.push("/404");
@@ -68,7 +68,7 @@ export default function EditBlogPage() {
         }
       };
       fetchBlogDetails();
-    } 
+    }
   }, [id]);
 
   const handleChange = (e) => {
@@ -209,11 +209,17 @@ export default function EditBlogPage() {
 
   const quillModules = {
     toolbar: [
-      [{ header: [1, 2, 3, 4, 5, 6, false] }],
-      ["bold", "italic", "underline", "strike"],
-      [{ list: "ordered" }, { list: "bullet" }],
-      ["link", "image"],
-      ["clean"],
+      [{ header: [1, 2, 3, false] }], // Add <h1>, <h2>, <h3>
+      ["bold", "italic", "underline"], // Basic formatting
+      [{ list: "ordered" }, { list: "bullet" }], // Lists
+      [{ script: "sub" }, { script: "super" }], // Subscript/Superscript
+      [{ indent: "-1" }, { indent: "+1" }], // Indentation
+      [{ align: [] }], // Text alignment
+      [{ 'direction': 'rtl' }], // Right-to-left text direction
+      ["link", "image", "video"], // Media options
+      ["blockquote", "code-block"], // Add <blockquote> and <pre>
+      [{ color: [] }, { background: [] }], // Text color & highlight
+      ["clean"], // Remove formatting
     ],
   };
 
@@ -223,6 +229,7 @@ export default function EditBlogPage() {
     "italic",
     "underline",
     "strike",
+    "indent",
     "list",
     "bullet",
     "link",
@@ -243,136 +250,156 @@ export default function EditBlogPage() {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Edit Blog</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="text"
-          name="title"
-          placeholder="Title"
-          value={formData.title}
-          onChange={handleChange}
-          className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-          required
+    <>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/react-quill@1.3.3/dist/quill.snow.css"
         />
-
-        <textarea
-          name="extractDescription"
-          placeholder="Extract Description"
-          value={formData.extractDescription}
-          onChange={handleChange}
-          className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-          required
-        />
-
-        <input
-          type="text"
-          name="name"
-          placeholder="Author Name"
-          value={formData.author.name}
-          onChange={handleAuthorChange}
-          className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-          required
-        />
-
-        <div>
-          <label className="block mb-2 font-medium">Author Photo</label>
+        <script
+          src="https://unpkg.com/react@16/umd/react.development.js"
+          crossorigin
+        ></script>
+        <script
+          src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+          crossorigin
+        ></script>
+        <script src="https://unpkg.com/react-quill@1.3.3/dist/react-quill.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+      </Head>
+      <div className="container mx-auto p-4">
+        <h1 className="text-2xl font-bold mb-4">Edit Blog</h1>
+        <form onSubmit={handleSubmit} className="space-y-4">
           <input
-            type="file"
-            name="photo"
-            onChange={handleAuthorPhotoChange}
-            accept="image/*"
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={formData.title}
+            onChange={handleChange}
             className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+            required
           />
-        </div>
 
-        <div>
-          <label className="block mb-2 font-medium">Banner Image</label>
+          <textarea
+            name="extractDescription"
+            placeholder="Extract Description"
+            value={formData.extractDescription}
+            onChange={handleChange}
+            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+            required
+          />
+
           <input
-            type="file"
-            name="bannerImage"
-            onChange={handleFileChange}
-            accept="image/*"
+            type="text"
+            name="name"
+            placeholder="Author Name"
+            value={formData.author.name}
+            onChange={handleAuthorChange}
             className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+            required
           />
-        </div>
 
-        <div>
-          <label className="block mb-2 font-medium">Thumbnail Image</label>
+          <div>
+            <label className="block mb-2 font-medium">Author Photo</label>
+            <input
+              type="file"
+              name="photo"
+              onChange={handleAuthorPhotoChange}
+              accept="image/*"
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+            />
+          </div>
+
+          <div>
+            <label className="block mb-2 font-medium">Banner Image</label>
+            <input
+              type="file"
+              name="bannerImage"
+              onChange={handleFileChange}
+              accept="image/*"
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+            />
+          </div>
+
+          <div>
+            <label className="block mb-2 font-medium">Thumbnail Image</label>
+            <input
+              type="file"
+              name="thumbnailImage"
+              onChange={handleFileChange}
+              accept="image/*"
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+            />
+          </div>
+
           <input
-            type="file"
-            name="thumbnailImage"
-            onChange={handleFileChange}
-            accept="image/*"
+            type="text"
+            name="paramUrl"
+            placeholder="Param Url"
+            value={formData.paramUrl}
+            onChange={handleChange}
+            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+            required
+          />
+
+          <input
+            type="text"
+            name="metaTitle"
+            placeholder="Meta Title"
+            value={formData.metaTitle}
+            onChange={handleChange}
+            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+            required
+          />
+
+          <textarea
+            name="metaDescription"
+            placeholder="Meta Description"
+            value={formData.metaDescription}
+            onChange={handleChange}
+            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+            required
+          />
+
+          <input
+            type="text"
+            name="metaTags"
+            placeholder="Meta Tags (comma-separated)"
+            value={formData.metaTags.join(", ")}
+            onChange={handleMetaTagsChange}
             className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
           />
-        </div>
 
-        <input
-          type="text"
-          name="paramUrl"
-          placeholder="Param Url"
-          value={formData.paramUrl}
-          onChange={handleChange}
-          className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-          required
-        />
+          <div>
+            <label className="block mb-2 font-medium">Upload Time</label>
+            <DatePicker
+              selected={uploadTime ? new Date(uploadTime) : null}
+              onChange={(date) => setUploadTime(date)}
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+            />
+          </div>
 
-        <input
-          type="text"
-          name="metaTitle"
-          placeholder="Meta Title"
-          value={formData.metaTitle}
-          onChange={handleChange}
-          className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-          required
-        />
+          <div>
+            <label className="block mb-2 font-medium">Content</label>
+            <ReactQuill
+              value={value}
+              theme="snow"
+              onChange={setValue}
+              modules={quillModules}
+              formats={quillFormats}
+              className="w-full"
+            >
+            </ReactQuill>
+          </div>
 
-        <textarea
-          name="metaDescription"
-          placeholder="Meta Description"
-          value={formData.metaDescription}
-          onChange={handleChange}
-          className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-          required
-        />
-
-        <input
-          type="text"
-          name="metaTags"
-          placeholder="Meta Tags (comma-separated)"
-          value={formData.metaTags.join(", ")}
-          onChange={handleMetaTagsChange}
-          className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-        />
-
-        <div>
-          <label className="block mb-2 font-medium">Upload Time</label>
-          <DatePicker
-            selected={uploadTime ? new Date(uploadTime) : null}
-            onChange={(date) => setUploadTime(date)}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-          />
-        </div>
-
-        <div>
-          <label className="block mb-2 font-medium">Content</label>
-          <ReactQuill
-            value={value}
-            onChange={setValue}
-            modules={quillModules}
-            formats={quillFormats}
-            className="w-full"
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg"
-        >
-          Update Blog
-        </button>
-      </form>
-    </div>
+          <button
+            type="submit"
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg"
+          >
+            Update Blog
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
