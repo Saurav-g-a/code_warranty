@@ -82,11 +82,9 @@ function Contact() {
 
 
         setPhoneNumber(digitsOnly);
-        if (digitsOnly.length !== 10) {
-            setPhoneError("Phone number must be 10 digits.");
-        } else {
-            setPhoneError("");
-        }
+
+        setPhoneError("");
+
     };
 
     const handleDescriptionChange = (e) => {
