@@ -74,7 +74,7 @@ function Footer() {
             </div> */}
 
             <div className=' text-center py-3'>
-                <p className='text-center Brockmann text-white'>© 2024 - {new Date().getFullYear()} CodeWarranty. All Rights Reserved. </p>
+                <p className='text-center Gilroy text-white'>© 2024 - {new Date().getFullYear()} CodeWarranty. All Rights Reserved. </p>
             </div>
         </div>
     )
