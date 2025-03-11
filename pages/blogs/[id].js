@@ -91,7 +91,7 @@ export default function Blog({ blog, error, isLoading }) {
           <div>
             <div>
               {bannerImage && <img src={bannerImage} alt='banner' className='mx-auto w-full h-[350px] my-3' />}
-              <div className='w-[80%] mx-auto bg-[#11474A] z-10 -mt-[5%] p-5 rounded-xl relative shadow-lg'>
+              <div className='w-[80%] mx-auto bg-[#11474A] z-10 -mt-[3%] p-5 rounded-xl relative shadow-lg'>
                 <div>
 
                 </div>
