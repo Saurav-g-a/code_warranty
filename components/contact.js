@@ -79,10 +79,7 @@ function Contact() {
         console.log(e.target.value)
         let digitsOnly = e.target.value.replace(/\D/g, "");
 
-        // Limit to 10 digits
-        if (digitsOnly.length > 10) {
-            digitsOnly = digitsOnly.slice(0, 10);
-        }
+
 
         setPhoneNumber(digitsOnly);
         if (digitsOnly.length !== 10) {
