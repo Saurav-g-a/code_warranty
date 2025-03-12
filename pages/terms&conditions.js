@@ -33,7 +33,7 @@ function Terms_conditions() {
                     <h1 className='2xl:w-2/3 xl:w-full xl:mx-auto text-center text-white lg:text-[55px] md:text-[40px] sm:text-[34px] s:text-[34px] leading-none py-12	Brockmann'><span className='text-[#00FFFC]'>Terms  </span> & Conditions </h1>
                 </div>
 
-                <div className='w-large mx-auto 2xl:py-12 xl:py-12 lg:py-12 md:py-12 sm:py-8 s:py-8'>
+                <div className='md:w-[80%] w-full mx-auto 2xl:py-12 xl:py-12 lg:py-12 md:py-12 sm:py-8 s:py-8'>
                     <p className='text-white Gilroy text-base'>These Terms and Conditions constitute a legally binding agreement between you, whether personally or on behalf of an entity (“you”) and CodeWarranty (“we,” “us,” or “our”), governing your access to and use of the CodeWarranty.com website, platform, and any related services (collectively, the “Service”). <br /> <br />
                         By accessing or using our Service, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree with these Terms, you must discontinue use immediately.<br /><br />
                         We reserve the right to modify these Terms at any time. Changes will be effective upon posting, and your continued use of the Service constitutes acceptance of any revised Terms. It is your responsibility to periodically review these Terms to stay informed of any updates.
