@@ -36,7 +36,7 @@ function Privacypolicy() {
                     <h1 className='2xl:w-2/3 xl:w-full xl:mx-auto text-center text-white lg:text-[55px] md:text-[40px] sm:text-[34px] s:text-[34px] leading-none py-8	Brockmann'><span className='text-[#00FFFC]'>Privacy </span> Policy </h1>
                 </div>
                 <div className='w-large mx-auto'>
-                    <p className='text-white Gilroy text-base text-right'><span className="text-[#00FFFC]"> Effective Date: </span> March 3, 2025</p>
+                    <p className='text-white Gilroy text-base text-right'><span className="text-[#00FFFC]"> Effective Date: </span> February 3, 2025</p>
                 </div>
                 <div className='md:w-[80%] w-large mx-auto 2xl:py-12 xl:py-12 lg:py-12 md:py-12 sm:py-8 s:py-8'>
 
