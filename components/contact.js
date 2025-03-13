@@ -213,7 +213,7 @@ function Contact() {
                     <div className=' mx-auto'>
                         <h3 className='text-[#95AAAD] Brockmann text-[40px] text-center'>Schedule a <span className='text-[#00FFFC]'> Free Demo</span>, and <span className='text-[#8BC542]'> Go Live  in just 7 days </span> </h3>
                     </div>
-                    <p className='text-[#95AAAD] text-center Gilroy py-6'>Experience Seamless Warranty Management Like Never BehtmlFore</p>
+                    <p className='text-[#95AAAD] text-center Gilroy py-6'>Experience Seamless Warranty Management Like Never Be</p>
                     <p className='Brockmann text-white text-2xl text-center'>How we can help you?</p>
                     <div className='grid lg:grid-cols-12 md:grid-cols-8 sm:grid-cols-4 gap-4 my-5'>
                         <div className='col-span-4'>
