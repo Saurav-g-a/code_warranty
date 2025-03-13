@@ -221,7 +221,7 @@ function Contact() {
                                 <div className='text-[#00FFFC] bg-[#104649] py-3 px-4 absolute top-0 left-0 rounded-ss-lg rounded-ee-lg'>
                                     <p>01</p>
                                 </div>
-                                <p className='text-white Brockmann text-lg'>Fill this HTMLForm</p>
+                                <p className='text-white Brockmann text-lg'>Fill this form</p>
                                 <p className='text-[#8E8E8E] Gilroy lg:pr-10 md:pr-3 sm:pr-0'>Share your details with us, and  our team will reach out within  48 hours to guide you through  the next steps.</p>
                             </div>
                         </div>
