@@ -110,8 +110,8 @@ function Privacypolicy() {
                     <h3 className='mt-4 mb-2 text-xl text-[#00FFFC]'>8) Contact Information</h3>
                     <p className='text-white Gilroy text-base'>
                         For any questions regarding this Privacy Policy or your data rights, contact us at:
-                        <br /> <br /> <span className="text-[#00FFFC]">Email:</span> Care@codewarranty.com
-                        <br /> <span className="text-[#00FFFC]">Address:</span> F-298 Phase VIII B Industrial Area Mohali, India 160074
+                        <br /> <br /> <span className="text-[#00FFFC]">Email:</span> care@codewarranty.com
+                        <br /> <span className="text-[#00FFFC]">Address:</span> F-298, Phase VIII B, Industrial Area, Mohali, India 160074
                     </p>
                 </div>
 
