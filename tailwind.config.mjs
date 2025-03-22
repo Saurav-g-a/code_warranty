@@ -15,6 +15,7 @@ export default {
       backgroundImage: {
         "headerBackground": "url('/assets/images/Mask group.png')",
         "headerBackground1": "url('/assets/images/banner1.png')",
+        "number": "url('/assets/images/aboutImage.png')",
         'custom-gradient': 'linear-gradient(180deg, #002025 10%, #053036 22.08%)',
       },
       backgroundClip: {

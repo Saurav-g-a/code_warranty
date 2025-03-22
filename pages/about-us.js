@@ -77,18 +77,18 @@ function AboutUs() {
                         <div className='col-span-1'></div>
                         <div className='lg:col-span-10 md:col-span-12 s:col-span-12 pt-5 px-6'>
                             <div className='grid grid-cols-12 gap-2'>
-                                <div className='col-span-9'>
+                                <div className='lg:col-span-9 md:col-span-12 s:col-span-12'>
                                     <p className='text-[#00FFFC] Gilroy uppercase mb-3'>We are CodeWarranty</p>
                                     <h1 className=' w-full mx-auto text-left text-white lg:text-[55px] md:text-[40px] sm:text-[34px] s:text-[34px] leading-none	Brockmann'>We set out to build <br /> <span className='opacity-50'>a better way to protect</span></h1>
 
                                 </div>
-                                <div className='col-span-3'>
+                                <div className='lg:col-span-3 md:col-span-12 s:col-span-12'>
                                     <h2 className='text-white text-base text-left py-5 Gilroy'>Now experience the future of warranty management—automated, efficient, and built for  complete customer satisfaction.</h2>
                                 </div>
-                                <div className='col-span-8'>
+                                <div className='lg:col-span-8 md:col-span-12 s:col-span-12'>
                                     <Image src={aboutImage1} title="Hero image description" className='w-full' alt='about Us' />
                                 </div>
-                                <div className='col-span-4'>
+                                <div className='lg:col-span-4 md:col-span-12 s:col-span-12'>
                                     <Image src={aboutImage} title="Hero image description" className='w-full h-full' alt='about Us' />
                                 </div>
                             </div>
@@ -101,11 +101,11 @@ function AboutUs() {
 
                 <div className='py-12 w-large mx-auto'>
                     <div className='grid grid-cols-12 gap-2 Gilroy'>
-                        <div className='col-span-5 flex'>
+                        <div className='lg:col-span-5 md:col-span-12 s:col-span-12 flex'>
                             <p className='text-3xl text-white'>How We Started <br /> CodeWarranty</p>
                             <Image src={How} title="Hero image description" className='h-[60px] w-[60px] ml-5' alt='about Us' />
                         </div>
-                        <div className='col-span-7'>
+                        <div className='lg:col-span-7 md:col-span-12 s:col-span-12'>
                             <p className='text-[#889997] mb-3'>The idea for <span className='text-white font-semibold'> CodeWarranty </span> was born from firsthand experience with the challenges of warranty management. One day, during a conversation with a friend in the industry, we discussed how <span className='text-white font-semibold'> complicated and time-consuming </span>
                                 warranty processes could be. From <span className='text-white font-semibold'> manual paperwork and delayed claim resolutions to high operational costs, </span> his business was struggling to manage warranties efficiently.</p>
                             <div className='p-3 border-l-2 border-[#00FFFC] text-[#889997]'>
@@ -117,14 +117,14 @@ function AboutUs() {
                 </div>
 
                 <div className='py-8 w-large mx-auto Gilroy'>
-                    <div className='bg-[#0B3635] p-8 rounded-full'>
+                    <div className='bg-[#0B3635] p-8 lg:rounded-full md:rounded-[71px] sm:rounded-[71px] s:rounded-[71px]'>
                         <div className='grid grid-cols-12 gap-4'>
-                            <div className='col-span-5'>
-                                <p className='text-white text-[35px] capitalize text-right'> <span className='text-[#daddd6]'>We are <br />
+                            <div className='lg:col-span-5 md:col-span-12 s:col-span-12'>
+                                <p className='text-white text-[35px] capitalize lg:text-right md:text-center sm:text-center s:text-center'> <span className='text-[#daddd6]'>We are <br />
                                     the next era <br /></span>
                                     of warranty <br /> Management</p>
                             </div>
-                            <div className='col-span-7'>
+                            <div className='lg:col-span-7 md:col-span-12 s:col-span-12'>
                                 <p className='text-left text-white mb-3'>We are on a mission to make Warranty <br /> Management Seamless and Customer-Centric</p>
                                 <div className='pl-4 pr-4 border-l-2 border-[#00FFFC] text-[#a7b7b2]'>
                                     <p>After analyzing the biggest pain points in <span className='text-white'> warranty management, </span>  we made it our mission to bring <span className='text-white'>transparency </span> and <span className='text-white'> efficiency </span> to the process. Customers often feel lost after filing a claim, unsure of its status and stuck in long wait times. <span className='text-white'>CodeWarranty</span> solves this
@@ -141,10 +141,10 @@ function AboutUs() {
                         <p className='text-2xl font-semibold Brockmann'>Our Team</p>
                     </div>
                     <div className='grid grid-cols-12 gap-4'>
-                        <div className='col-span-5 p-8'>
+                        <div className='lg:col-span-5 md:col-span-12 s:col-span-12 p-8'>
                             <Image src={team} title="Hero image description" className='w-full' alt='about Us' />
                         </div>
-                        <div className='col-span-7 py-6 pr-8'>
+                        <div className='lg:col-span-7 md:col-span-12 s:col-span-12 py-6 pr-8'>
                             <p className='mb-1 uppercase text-2xl'>Founder</p>
                             <p className='mb-4 font-bold text-3xl uppercase'>Nikhil Garg</p>
                             <p className='text-[#5f605e] mb-6'>With a passion for technology and problem-solving, I have spent many years <b> in the IT industry,</b> working on <b>complex software solutions.</b> My journey has been shaped by <b> curiosity, innovation, and a commitment to simplifying everyday challenges </b> through technology.
@@ -157,7 +157,7 @@ function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className='grid grid-cols-5 gap-4'>
+                    {/* <div className='grid grid-cols-5 gap-4'>
                         <div className='col-span-1'>
                             <Image src={Team1} title="Hero image description" alt='about Us' />
                             <div className='flex justify-between'>
@@ -223,13 +223,13 @@ function AboutUs() {
                             </div>
 
                         </div>
-                    </div>
+                    </div> */}
                 </div >
 
                 <div className='py-12 w-large mx-auto Gilroy'>
                     <p className='text-white text-center text-3xl leading-none Brockmann xl:font-[500] py-8'>Our Values</p>
-                    <div className='grid lg:grid-cols-12 md:grid-cols-12 sm:grid-cols-8 s:grid-cols-4 gap-4 py-5 px-8'>
-                        <div className='col-span-4'>
+                    <div className='grid lg:grid-cols-12 md:grid-cols-12 sm:grid-cols-12 s:grid-cols-12 gap-4 py-5 px-8'>
+                        <div className='lg:col-span-4 md:col-span-6 s:col-span-12'>
                             <div className=''>
                                 <div className='flex'>
                                     <Image src={Mask} title="Hero image description" className='mr-3' alt='about Us' />
@@ -238,7 +238,7 @@ function AboutUs() {
                                 <p className='text-[#DBE2DC] mt-3 pr-6'>Our customers are at the heart of everything we do. <b>We design </b> our solutions to <b>enhance user experience,</b>  ensuring <b> smoother warranty management, </b> faster claim resolutions, and <b>complete transparency</b>. When our <b>customers succeed, we succeed.</b></p>
                             </div>
                         </div>
-                        <div className='col-span-4'>
+                        <div className='lg:col-span-4 md:col-span-6 s:col-span-12'>
                             <div className=''>
                                 <div className='flex'>
                                     <Image src={Mask} title="Hero image description" className='mr-3' alt='about Us' />
@@ -248,7 +248,7 @@ function AboutUs() {
                                     all sizes.</p>
                             </div>
                         </div>
-                        <div className='col-span-4'>
+                        <div className='lg:col-span-4 md:col-span-6 s:col-span-12'>
                             <div className=''>
                                 <div className='flex'>
                                     <Image src={Mask} title="Hero image description" className='mr-3' alt='about Us' />
@@ -257,7 +257,7 @@ function AboutUs() {
                                 <p className='text-[#DBE2DC] mt-3 pr-6'>Trust is built through <b>honesty and clarity.</b> We <b>prioritize transparency</b> in every step, ensuring businesses and <b> customers always know where they stand in the warranty process. </b> No hidden steps, no unnecessary delays—just clear, fair solutions.</p>
                             </div>
                         </div>
-                        <div className='col-span-4'>
+                        <div className='lg:col-span-4 md:col-span-6 s:col-span-12'>
                             <div className=''>
                                 <div className='flex'>
                                     <Image src={Mask} title="Hero image description" className='mr-3' alt='about Us' />
@@ -266,7 +266,7 @@ function AboutUs() {
                                 <p className='text-[#DBE2DC] mt-3 pr-6'>Time is valuable, and we strive to save it. Our streamlined workflows and <b> automated processes reduce waiting times,</b> eliminate inefficiencies, and deliver a system businesses can rely on for <b>seamless warranty management</b>.</p>
                             </div>
                         </div>
-                        <div className='col-span-4'>
+                        <div className='lg:col-span-4 md:col-span-6 s:col-span-12'>
                             <div className=''>
                                 <div className='flex'>
                                     <Image src={Mask} title="Hero image description" className='mr-3' alt='about Us' />
@@ -275,7 +275,7 @@ function AboutUs() {
                                 <p className='text-[#DBE2DC] mt-3 pr-6'>Technology should simplify, not complicate. Our platform is designed to be <b>intuitive</b> and <b>user-friendly</b>, removing the hassle from <b>warranty management</b>  while <b> maintaining powerful capabilities for businesses. </b> </p>
                             </div>
                         </div>
-                        <div className='col-span-4'>
+                        <div className='lg:col-span-4 md:col-span-6 s:col-span-12'>
                             <div className=''>
                                 <div className='flex'>
                                     <Image src={Mask} title="Hero image description" className='mr-3' alt='about Us' />

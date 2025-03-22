@@ -52,22 +52,29 @@ function Header() {
         }}
       />
       <div className="py-6">
-        <div className="grid lg:grid-cols-12 md:grid-cols-7 sm:grid-cols-7 s:grid-cols-7 gap-4">
+        <div className="grid lg:grid-cols-12 md:grid-cols-8 sm:grid-cols-8 s:grid-cols-8 gap-4">
           <div className="col-span-3">
             {/* Logo */}
             <Link href="/">
               <Image title="Hero image description" src={Logo} alt="logo" />
             </Link>
           </div>
-          <div className="col-span-5 lg:block md:hidden sm:hidden s:hidden"></div>
-          <div className="col-span-4">
-            <div className="md:flex sm:hidden s:hidden lg:w-[77%] md:w-full sm:w-full ml-auto justify-end">
+          <div className="col-span-4 lg:block md:hidden sm:hidden s:hidden"></div>
+          <div className="col-span-5">
+            <div className="md:flex sm:hidden s:hidden lg:w-[100%] md:w-full sm:w-full ml-auto justify-end">
               <a
                 href="/"
                 className={`${currentPath === "/" ? "text-[#00FFFC] bg-[#104649]" : "text-[#95AAAD]"
                   } hover:text-[#00FFFC] hover:bg-[#104649] border-[#104649] px-5 py-3 rounded-s-[7px] border`}
               >
                 Home
+              </a>
+              <a
+                href="/about-us"
+                className={`${currentPath === "/about-us" ? "text-[#00FFFC] bg-[#104649]" : "text-[#95AAAD]"
+                  } hover:text-[#00FFFC] hover:bg-[#104649] border-[#104649] px-5 py-3 border`}
+              >
+                About Us
               </a>
               <a
                 href="/blogs"
@@ -77,11 +84,9 @@ function Header() {
                 Blogs
               </a>
               <a
-                className="text-[#95AAAD] cursor-pointer border-[#104649] hover:text-[#00FFFC] hover:bg-[#104649] border px-4 py-3 rounded-e-[7px]"
-                onClick={() => {
-                  // Scroll to contact section (define `scrollToSection` function in your component)
-                  scrollToSection("contactUs");
-                }}
+                href="/contact-us"
+                className={`${currentPath === "/contact-us" ? "text-[#00FFFC] bg-[#104649]" : "text-[#95AAAD]"
+                  } hover:text-[#00FFFC] hover:bg-[#104649] border-[#104649] px-5 py-3 rounded-e-[7px] border`}
               >
                 Contact Us
               </a>
@@ -101,12 +106,9 @@ function Header() {
                   </Link>
 
                   <div className='text-center mx-auto py-3 mt-5 text-[#4E4D69] cursor-pointer'><a href="/" className=' text-[#4E4D69] cursor-pointer' >Home</a> </div>
+                  <div className='text-center mx-auto py-3 text-[#4E4D69] cursor-pointer'><a href="/about-us" className=' text-[#4E4D69] cursor-pointer' >About Us</a></div>
                   <div className='text-center mx-auto py-3 text-[#4E4D69] cursor-pointer'><a href="/blogs" className=' text-[#4E4D69] cursor-pointer' >Blogs</a></div>
-                  <div className='text-center mx-auto py-3 text-[#4E4D69] cursor-pointer'><a className=' text-[#4E4D69] cursor-pointer' onClick={() => {
-                    // Scroll to contact section (define `scrollToSection` function in your component)
-                    scrollToSection("contactUs");
-                    setIsVisible(!isVisible);
-                  }} >Contact Us</a></div>
+                  <div className='text-center mx-auto py-3 text-[#4E4D69] cursor-pointer'><a href="/contact-us" className=' text-[#4E4D69] cursor-pointer' >Contact Us</a></div>
 
                 </div>
               </div>

@@ -163,13 +163,13 @@ function Contact() {
                     setEmail("");
                     setPhoneNumber("");
                     setDescription("");
-                    setCategorys({
-                        CodeWarranty_Catalog: false,
-                        CodeWarranty_Warranty: false,
-                        CodeWarranty_Manual: false,
-                        CodeWarranty_Desk: false,
-                        CodeWarranty_RMS: false
-                    });
+                    // setCategorys({
+                    //     CodeWarranty_Catalog: false,
+                    //     CodeWarranty_Warranty: false,
+                    //     CodeWarranty_Manual: false,
+                    //     CodeWarranty_Desk: false,
+                    //     CodeWarranty_RMS: false
+                    // });
                     setTimeout(function () {
                         setLoading(false);
                     }, 3000);
@@ -297,7 +297,7 @@ function Contact() {
                                     <div className="text-sm text-red-600">{phoneError}</div>
                                 )}
                             </div>
-                            <div className='col-span-12'>
+                            {/* <div className='col-span-12'>
                                 <p className='Gilroy text-white'>Product Name*</p>
                                 <div className='grid lg:grid-cols-12 md:grid-cols-9 sm:grid-cols-6 gap-0 mt-4'>
                                     <div className='col-span-3'>
@@ -348,7 +348,7 @@ function Contact() {
 
 
                                 </div>
-                            </div>
+                            </div> */}
                             <div className='col-span-12'>
                                 <div className="relative rounded-lg border border-[#104649]">
                                     <label
