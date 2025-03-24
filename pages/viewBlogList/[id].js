@@ -97,7 +97,7 @@ export default function BlogListPage() {
           </button>
           <button
             className="btn btn-secondary"
-            onClick={() => router.push(`/blogs/editBlog/${row.paramUrl}`)}
+            onClick={() => router.push(`/blogs/editBlog/ghe6hvwayvpof82zcp7gsbudxh0anvdv/${row.paramUrl}`)}
           >
             Edit
           </button>

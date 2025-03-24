@@ -5,9 +5,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "react-quill-new/dist/quill.snow.css";
 import Head from "next/head";
+
+const StaticID = "ghe6hvwayvpof82zcp7gsbudxh0anvdv";
+
 export default function EditBlogPage() {
+ 
   const router = useRouter();
-  const { id } = router.query;
+  const {slug, id } = router.query;
   const [editorContent, setEditorContent] = useState("");
   const [value, setValue] = useState("");
   const [loading, setLoading] = useState(true);
@@ -32,43 +36,49 @@ export default function EditBlogPage() {
 
   // Fetch blog details when component mounts
   useEffect(() => {
-    if (id) {
-      const fetchBlogDetails = async () => {
-        try {
-          const response = await fetch(`/api/posts/${id}`, {
-            method: "GET",
-          });
-
-          const data = await response.json();
-          if (data.success) {
-            setBlogData(data.data);
-            setFormData({
-              title: data.data.title,
-              extractDescription: data.data.extractDescription,
-              content: data.data.content,
-              author: {
-                name: data.data.author.name,
-                photo: data.data.author.photo,
-              },
-              bannerImage: data.data.bannerImage,
-              paramUrl: data.data.paramUrl,
-              thumbnailImage: data.data.thumbnailImage,
-              metaTitle: data.data.metaTitle,
-              metaDescription: data.data.metaDescription,
-              metaTags: data.data.metaTags,
+    if (slug != StaticID) {
+      router.replace("/404");
+    } 
+    else{
+      if (id) {
+        const fetchBlogDetails = async () => {
+          try {
+            const response = await fetch(`/api/posts/${id}`, {
+              method: "GET",
             });
-            setValue(data.data.content)
-            setUploadTime(data.data.uploadDate);
+  
+            const data = await response.json();
+            if (data.success) {
+              setBlogData(data.data);
+              setFormData({
+                title: data.data.title,
+                extractDescription: data.data.extractDescription,
+                content: data.data.content,
+                author: {
+                  name: data.data.author.name,
+                  photo: data.data.author.photo,
+                },
+                bannerImage: data.data.bannerImage,
+                paramUrl: data.data.paramUrl,
+                thumbnailImage: data.data.thumbnailImage,
+                metaTitle: data.data.metaTitle,
+                metaDescription: data.data.metaDescription,
+                metaTags: data.data.metaTags,
+              });
+              setValue(data.data.content)
+              setUploadTime(data.data.uploadDate);
+            }
+          } catch (error) {
+            console.error("Error fetching blog details:", error);
+            router.push("/404");
+          } finally {
+            setLoading(false);
           }
-        } catch (error) {
-          console.error("Error fetching blog details:", error);
-          router.push("/404");
-        } finally {
-          setLoading(false);
-        }
-      };
-      fetchBlogDetails();
+        };
+        fetchBlogDetails();
+      }
     }
+   
   }, [id]);
 
   const handleChange = (e) => {
