@@ -294,7 +294,7 @@ function ContactUs() {
                                         </div>
                                         <div className='col-span-9'>
                                             <p className='text-xl text-[#fff] Brockmann'>Call</p>
-                                            <a href='tel:8523697410' className='text-base text-[#95AAAD] Gilroy'>+91 8523697410</a>
+                                            <a href='tel:9041311724' className='text-base text-[#95AAAD] Gilroy'>+91 9041311724</a>
                                         </div>
                                     </div>
                                     <div className='grid grid-cols-12 gap-4 mb-4'>
