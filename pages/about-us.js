@@ -8,7 +8,7 @@ import aboutImage1 from '@/public/assets/images/aboutImage1.png'
 import Mask from '@/public/assets/images/value.png'
 import Mask1 from '@/public/assets/images/Vector.png'
 import How from '@/public/assets/images/CodeWarranty.png'
-import team from '@/public/assets/images/Team.png'
+import team from '@/public/assets/images/nikImge.png'
 import Team1 from '@/public/assets/images/Team1.png'
 import Team2 from '@/public/assets/images/Team2.png'
 import Team3 from '@/public/assets/images/Team3.png'
@@ -142,9 +142,9 @@ function AboutUs() {
                     </div>
                     <div className='grid grid-cols-12 gap-4'>
                         <div className='lg:col-span-5 md:col-span-12 s:col-span-12 p-8'>
-                            <Image src={team} title="Hero image description" className='w-full' alt='about Us' />
+                            <Image src={team} title="Hero image description" className='w-full h-[500px]' alt='about Us' />
                         </div>
-                        <div className='lg:col-span-7 md:col-span-12 s:col-span-12 py-6 pr-8'>
+                        <div className='lg:col-span-7 md:col-span-12 s:col-span-12 py-6 self-center pr-8'>
                             <p className='mb-1 uppercase text-2xl'>Founder</p>
                             <p className='mb-4 font-bold text-3xl uppercase'>Nikhil Garg</p>
                             <p className='text-[#5f605e] mb-6'>With a passion for technology and problem-solving, I have spent many years <b> in the IT industry,</b> working on <b>complex software solutions.</b> My journey has been shaped by <b> curiosity, innovation, and a commitment to simplifying everyday challenges </b> through technology.
