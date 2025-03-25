@@ -52,7 +52,7 @@ export default function Blog({ blog, error, isLoading }) {
         const windowHeight = window.innerHeight;
 
         // Check if we have reached the bottom
-        const atBottom = rect.bottom <= windowHeight - 170;
+        const atBottom = rect.bottom <= windowHeight - 400;
 
         if (atBottom) {
           setIsSticky(false);
