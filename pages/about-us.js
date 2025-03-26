@@ -142,7 +142,9 @@ function AboutUs() {
                     </div>
                     <div className='grid grid-cols-12 gap-4'>
                         <div className='lg:col-span-5 md:col-span-12 s:col-span-12 p-8'>
-                            <Image src={team} title="Nikhil Garg" className='w-[80%] !h-[450px]' alt='about Us' />
+                            <div className='bg-white rounded-lg'>
+                                <Image src={team} title="Nikhil Garg" className='w-[80%] !h-[450px]' alt='about Us' />
+                            </div>
                         </div>
                         <div className='lg:col-span-7 md:col-span-12 s:col-span-12 py-6 self-center pr-8'>
                             <p className='mb-1 uppercase text-2xl'>Founder</p>
