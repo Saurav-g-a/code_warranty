@@ -96,7 +96,7 @@ function Contact() {
         setLoading(true);
         if (emailError || phoneError) {
             setShow(true);
-            setText("Please fix the validation errors behtmlFore submitting.");
+            setText("Please fix the validation errors then submitting.");
             setTimeout(() => {
                 setText("");
             }, 4000);
@@ -161,7 +161,7 @@ function Contact() {
                     setFirstName("");
                     setLastName("");
                     setEmail("");
-                    setPhoneNumber("");
+                    // setPhoneNumber("");
                     setDescription("");
                     // setCategorys({
                     //     CodeWarranty_Catalog: false,

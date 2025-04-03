@@ -10,7 +10,7 @@ export default function BlogListPage() {
   const router = useRouter();
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false); 
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (router.query.id !== undefined) {
@@ -19,14 +19,14 @@ export default function BlogListPage() {
       } else {
         setTimeout(() => {
           fetchBlogs();
-        }, 500); 
+        }, 500);
       }
     }
   }, [router.query.id]);
 
   const fetchBlogs = async () => {
     try {
-      setError(false); 
+      setError(false);
       const response = await fetch("/api/post");
       const data = await response.json();
       if (data.success) {
@@ -91,13 +91,15 @@ export default function BlogListPage() {
         <div className="space-x-2">
           <button
             className="btn btn-primary"
-            onClick={() => router.push(`/blogs/${row.paramUrl}`)}
+            onClick={() => window.open(`/blogs/${row.paramUrl}`, '_blank')}
           >
             View
           </button>
           <button
             className="btn btn-secondary"
-            onClick={() => router.push(`/blogs/editBlog/ghe6hvwayvpof82zcp7gsbudxh0anvdv/${row.paramUrl}`)}
+            onClick={() =>
+              window.open(`/blogs/editBlog/ghe6hvwayvpof82zcp7gsbudxh0anvdv/${row.paramUrl}`, '_blank')
+            }
           >
             Edit
           </button>

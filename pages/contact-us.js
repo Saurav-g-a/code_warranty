@@ -31,6 +31,7 @@ function ContactUs() {
     });
 
     useEffect(() => {
+        console.log(countryCode)
         const fetchCountryCode = async () => {
             try {
                 console.log("Fetching IP address...");
@@ -101,9 +102,10 @@ function ContactUs() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
+
         if (emailError || phoneError) {
             setShow(true);
-            setText("Please fix the validation errors behtmlFore submitting.");
+            setText("Please fix the validation errors before submitting.");
             setTimeout(() => {
                 setText("");
             }, 4000);
@@ -112,21 +114,22 @@ function ContactUs() {
 
         try {
             // Fetch the IP address
-            const ipResponse = await fetch("https://api.ipify.org?format=json");
-            const ipData = await ipResponse.json();
-            const ipAddress = ipData.ip;
+            let ipAddress = null;
+            try {
+                const ipResponse = await fetch("https://api.ipify.org?format=json");
+                const ipData = await ipResponse.json();
+                ipAddress = ipData.ip;
+            } catch (error) {
+                console.warn("Failed to fetch IP address:", error);
+            }
 
             // Get the site URL
             const siteURL = window.location.href;
 
-            // Get the location
+            // Attempt to get the location
             navigator.geolocation.getCurrentPosition(
                 async (position) => {
-                    const location = {
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude,
-                    };
-
+                    // If location is granted, include it in the payload
                     const payload = {
                         firstName,
                         lastName,
@@ -135,62 +138,30 @@ function ContactUs() {
                         description,
                         products: Object.keys(categorys).filter((key) => categorys[key]),
                         siteURL,
-                        ipAddress,
+                        ipAddress, // Send IP when location is allowed
                         server: "codewarranty",
                     };
 
-                    console.log(payload);
-                    const response = await fetch("https://api.demo.codewarranty.com/api-v1/user/contact-us", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify(payload),
-                    });
-                    console.log("API response status:", response.status);
-                    if (!response.ok) {
-                        const errorDetails = await response.json();
-                        console.log("API error response:", errorDetails);
-                        setShow(true);
-                        setText(errorDetails.message);
-                        return;
-                    }
-                    console.log("Message sent successfully!");
-                    ;
-
-                    setShow(true);
-                    setText("Message sent successfully!");
-                    setTimeout(() => {
-                        setText("");
-                    }, 10000);
-
-                    // Clear htmlForm fields
-                    setFirstName("");
-                    setLastName("");
-                    setEmail("");
-                    setPhoneNumber("");
-                    setDescription("");
-                    // setCategorys({
-                    //     CodeWarranty_Catalog: false,
-                    //     CodeWarranty_Warranty: false,
-                    //     CodeWarranty_Manual: false,
-                    //     CodeWarranty_Desk: false,
-                    //     CodeWarranty_RMS: false
-                    // });
-                    setTimeout(function () {
-                        setLoading(false);
-                    }, 3000);
+                    console.log("Payload with IP:", payload);
+                    await sendRequest(payload);
                 },
-                (error) => {
-                    console.error("Error getting location:", error);
-                    setShow(true);
-                    setText("Unable to retrieve location.");
-                    setTimeout(() => {
-                        setText("");
-                    }, 4000);
-                    setTimeout(function () {
-                        setLoading(false);
-                    }, 3000);
+                async (error) => {
+                    console.warn("Location access denied:", error);
+
+                    // If location is denied, omit the IP from the payload
+                    const payload = {
+                        firstName,
+                        lastName,
+                        email,
+                        phoneNumber,
+                        description,
+                        products: Object.keys(categorys).filter((key) => categorys[key]),
+                        siteURL,
+                        server: "codewarranty",
+                    };
+
+                    console.log("Payload without IP:", payload);
+                    await sendRequest(payload);
                 }
             );
         } catch (error) {
@@ -200,13 +171,54 @@ function ContactUs() {
             setTimeout(() => {
                 setText("");
             }, 4000);
-            setTimeout(function () {
+        } finally {
+            setTimeout(() => {
                 setLoading(false);
             }, 3000);
         }
-        setTimeout(function () {
-            setLoading(false);
-        }, 3000);
+    };
+
+    // Helper function to send the request
+    const sendRequest = async (payload) => {
+        try {
+            const response = await fetch("https://api.demo.codewarranty.com/api-v1/user/contact-us", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            });
+
+            console.log("API response status:", response.status);
+            if (!response.ok) {
+                const errorDetails = await response.json();
+                console.log("API error response:", errorDetails);
+                setShow(true);
+                setText(errorDetails.message);
+                return;
+            }
+
+            console.log("Message sent successfully!");
+            setShow(true);
+            setText("Message sent successfully!");
+            setTimeout(() => {
+                setText("");
+            }, 10000);
+
+            // Clear form fields
+            setFirstName("");
+            setLastName("");
+            setEmail("");
+            setDescription("");
+
+        } catch (error) {
+            console.error("Error sending request:", error);
+            setShow(true);
+            setText("An error occurred. Please try again later.");
+            setTimeout(() => {
+                setText("");
+            }, 4000);
+        }
     };
     return (
         <>
@@ -369,7 +381,7 @@ function ContactUs() {
                                                         required
                                                         minLength={9}
                                                         maxLength={10}
-                                                        country={countryCode || "us"}  // Default to "us" if countryCode is not set
+                                                        country={countryCode || "91"}  // Default to "us" if countryCode is not set
                                                         countryCodeEditable={false}
                                                         value={phoneNumber}
                                                         onChange={(e) => handlePhoneChange(e)}
