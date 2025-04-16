@@ -38,7 +38,7 @@ function Header() {
   };
   return (
     <>
-      {/* <Script
+      <Script
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -50,7 +50,7 @@ function Header() {
             smartlook('init', '361f09aeaedbeba64bb124477f3d60ee4596f29c', {region: 'eu' });
           `,
         }}
-      /> */}
+      />
       <div className="py-6">
         <div className="grid lg:grid-cols-12 md:grid-cols-9 sm:grid-cols-9 s:grid-cols-9 gap-4">
           <div className="col-span-3">
@@ -113,6 +113,7 @@ function Header() {
                   </Link>
 
                   <div className='text-center mx-auto py-3 mt-5 text-[#4E4D69] cursor-pointer'><a href="/" className=' text-[#4E4D69] cursor-pointer' >Home</a> </div>
+                  <div className='text-center mx-auto py-3 text-[#4E4D69] cursor-pointer'><a href="/features" className=' text-[#4E4D69] cursor-pointer' >Features</a></div>
                   <div className='text-center mx-auto py-3 text-[#4E4D69] cursor-pointer'><a href="/about-us" className=' text-[#4E4D69] cursor-pointer' >About Us</a></div>
                   <div className='text-center mx-auto py-3 text-[#4E4D69] cursor-pointer'><a href="/blogs" className=' text-[#4E4D69] cursor-pointer' >Blogs</a></div>
                   <div className='text-center mx-auto py-3 text-[#4E4D69] cursor-pointer'><a href="/contact-us" className=' text-[#4E4D69] cursor-pointer' >Contact Us</a></div>

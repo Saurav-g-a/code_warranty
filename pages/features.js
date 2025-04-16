@@ -132,7 +132,7 @@ function Features() {
                     <div className='grid grid-cols-12 gap-0 pb-8 pt-16 px-8'>
                         <div className='lg:col-span-7 md:col-span-12 s:col-span-12'>
                             <p className='text-[#00FFFC] Gilroy uppercase my-3'>Platform Features & Benefits</p>
-                            <h1 className=' w-full mx-auto text-left text-white leading-[60px] lg:text-[40px] md:text-[30px] sm:text-[24px] s:text-[24px] Brockmann'>Efficient, End-to-End <br /> Warranty Management
+                            <h1 className=' w-full mx-auto text-left text-white leading-[50px] lg:text-[40px] md:text-[30px] sm:text-[24px] s:text-[24px] Brockmann'>Efficient, End-to-End <br /> Warranty Management
                                 <br /> for   <span className='opacity-50'>Modern Manufacturers</span></h1>
                             <p className='pr-12 text-[#95AAAD] Gilroy mt-4'>CodeWarranty is a cloud-based warranty <br />
                                 management software built to handle the entire <br />
@@ -147,7 +147,7 @@ function Features() {
 
                 <div className='py-8 w-large mx-auto'>
                     <div className='grid grid-cols-2 gap-4 Gilroy'>
-                        <div className='col-span-1'>
+                        <div className='lg:col-span-1 md:col-span-2 s:col-span-2'>
                             <div className='bg-[#052B2D] rounded-xl px-16 py-8 h-full'>
                                 <Image src={aboutImage} title="Hero image description" className='w-50 mb-4' alt='about Us' />
                                 <p className='text-[#00FFFC] text-[24px] mb-3 Brockmann'>Centralized Product <br /> Registration</p>
@@ -158,7 +158,7 @@ function Features() {
                                 </p>
                             </div>
                         </div>
-                        <div className='col-span-1'>
+                        <div className='lg:col-span-1 md:col-span-2 s:col-span-2'>
                             <div className='bg-[#052B2D] rounded-xl px-16 py-8 h-full'>
                                 <Image src={aboutImage2} title="Hero image description" className='w-50 mb-4' alt='about Us' />
                                 <p className='text-[#00FFFC] text-[24px] mb-3 Brockmann'>Automated Claims <br /> Registration</p>
@@ -173,151 +173,290 @@ function Features() {
                     <p className='py-12 text-white opacity-50 Gilroy text-center'> <b> CodeWarranty </b>  <span className=''> covers every aspect of the warranty lifecycle, similar to leading platforms. Our features handle <br /> registration, claims, returns, supplier recovery, and analytics in one integrated system (as illustrated above), ensuring <br /> no stakeholder – customer, dealer, or supplier – is left out of the loop. </span></p>
                 </div>
                 <div>
-                    <Carousel
-                        additionalTransfrom={0}
-                        arrows
-                        autoPlaySpeed={3000}
-                        centerMode
-                        className=""
-                        containerClass="container"
-                        dotListClass=""
-                        draggable
-                        focusOnSelect={false}
-                        infinite
-                        itemClass=""
-                        keyBoardControl
-                        minimumTouchDrag={80}
-                        pauseOnHover
-                        renderArrowsWhenDisabled={false}
-                        renderButtonGroupOutside={false}
-                        renderDotsOutside={false}
-                        responsive={{
-                            desktop: {
-                                breakpoint: {
-                                    max: 3000,
-                                    min: 1024
+
+                    <div className='grid grid-cols-1 gap-4 Gilroy slider lg:block md:block sm:hidden s:hidden'>
+                        <Carousel
+                            additionalTransfrom={0}
+                            arrows
+                            autoPlaySpeed={3000}
+                            centerMode
+                            draggable
+                            focusOnSelect={false}
+                            infinite
+                            keyBoardControl
+                            pauseOnHover
+                            renderArrowsWhenDisabled={false}
+                            renderButtonGroupOutside={false}
+                            renderDotsOutside={false}
+                            responsive={{
+                                desktop: {
+                                    breakpoint: {
+                                        max: 3000,
+                                        min: 1024
+                                    },
+                                    items: 1,
+                                    partialVisibilityGutter: 40
                                 },
-                                items: 1,
-                                partialVisibilityGutter: 40
-                            },
-                            mobile: {
-                                breakpoint: {
-                                    max: 464,
-                                    min: 0
+                                mobile: {
+                                    breakpoint: {
+                                        max: 464,
+                                        min: 0
+                                    },
+                                    items: 1,
+                                    partialVisibilityGutter: 30
                                 },
-                                items: 1,
-                                partialVisibilityGutter: 30
-                            },
-                            tablet: {
-                                breakpoint: {
-                                    max: 1024,
-                                    min: 464
-                                },
-                                items: 1,
-                                partialVisibilityGutter: 30
-                            }
-                        }}
-                        rewind={false}
-                        rewindWithAnimation={false}
-                        rtl={false}
-                        shouldResetAutoplay
-                        showDots={false}
-                        sliderClass=""
-                        slidesToSlide={1}
-                        swipeable
-                    >
-                        <WithStyles
-                            description="Handle the logistics of product returns or repairs with ease. When a claim is approved, CodeWarranty can automatically generate a Return Merchandise Authorization (RMA) and shipping labels, or schedule a service visit. Track the product’s journey through repair, and update the customer at each step."
-                            headline={
-                                <>
-                                    Returns & Repairs <br /> Management (RMA)
-                                </>
-                            }
-                            description2=" By linking claims to RMA and repair
+                                tablet: {
+                                    breakpoint: {
+                                        max: 1024,
+                                        min: 464
+                                    },
+                                    items: 1,
+                                    partialVisibilityGutter: 30
+                                }
+                            }}
+                            rewind={false}
+                            rewindWithAnimation={false}
+                            rtl={false}
+                            shouldResetAutoplay
+                            showDots={false}
+                            sliderClass=""
+                            slidesToSlide={1}
+                            swipeable
+                        >
+                            <WithStyles
+                                description="Handle the logistics of product returns or repairs with ease. When a claim is approved, CodeWarranty can automatically generate a Return Merchandise Authorization (RMA) and shipping labels, or schedule a service visit. Track the product’s journey through repair, and update the customer at each step."
+                                headline={
+                                    <>
+                                        Returns & Repairs <br /> Management (RMA)
+                                    </>
+                                }
+                                description2=" By linking claims to RMA and repair
 workflows, nothing falls through the cracks. You’ll reduce turnaround time on fixes/replacements and keep customers informed, which improves transparency and satisfaction. For industries, this means less downtime for your end-users; for consumer electronics, it means swift replacements and fewer calls to support."
-                        />
-                        <WithStyles
-                            description="
+                            />
+                            <WithStyles
+                                description="
                             Make CodeWarranty look and feel like an extension of your brand. Our platform supports full whitelabeling, allowing you to customize everything – logo, colors, domain, and even the customer portal – to match your corporate identity.
                             "
-                            headline={
-                                <>
-                                    Whitelabeling & Brand  <br /> Customization
-                                </>
-                            }
-                            description2="
+                                headline={
+                                    <>
+                                        Whitelabeling & Brand  <br /> Customization
+                                    </>
+                                }
+                                description2="
                             Deliver a seamless, branded experience
 to customers and partners without compromising functionality. Whether you're a manufacturer, OEM, or distributor, you can maintain consistency across your digital presence while using our robust backend platform.
 "
-                        />
-                        <WithStyles
-                            description="
+                            />
+                            <WithStyles
+                                description="
                             Leverage powerful analytics to turn warranty data into actionable insights. CodeWarranty’s dashboard and reporting suite lets you monitor key metrics – claim rates by product, average resolution time, cost per claim, and more – in real time. Visual charts and reports help you spot trends, such as a spike in claims for a certain batch or a particular issue recurring across customers.
                             "
-                            headline={
-                                <>
-                                    Analytics & Quality   <br /> Insights
-                                </>
-                            }
-                            description2="
+                                headline={
+                                    <>
+                                        Analytics & Quality   <br /> Insights
+                                    </>
+                                }
+                                description2="
                            Benefit: These insights create a feedback loop to
                             engineering and quality teams. For instance, if analytics show 30% of claims on an electronics device are due to one faulty capacitor, your team can initiate a design change or recall. By identifying issues early, you improve product quality and reduce future claims. Analytics also help in forecasting warranty reserves and making data-driven decisions to lower warranty costs.
                                "
-                        />
-                        <WithStyles
-                            description="
+                            />
+                            <WithStyles
+                                description="
                             Make CodeWarranty look and feel like an extension of your brand. Our platform supports full whitelabeling, allowing you to customize everything – logo, colors, domain, and even the customer portal – to match your corporate identity.
                             "
-                            headline={
-                                <>
-                                    Custom Policy   <br /> Management
-                                </>
-                            }
-                            description2="
+                                headline={
+                                    <>
+                                        Custom Policy   <br /> Management
+                                    </>
+                                }
+                                description2="
                             Deliver a seamless, branded experience
 to customers and partners without compromising functionality. Whether you're a manufacturer, OEM, or distributor, you can maintain consistency across your digital presence while using our robust backend platform.
 "
-                        />
-                        <WithStyles
-                            description="
+                            />
+                            <WithStyles
+                                description="
                             Configure warranty terms and business rules to fit different products or regions. CodeWarranty lets you set up multiple warranty types (standard warranty, extended warranty, service contracts) with varying durations, coverages, and conditions. You can automate rules – e.g., offer a 2-year extended warranty for an EV battery if certain maintenance actions are logged, or handle goodwill exceptions. 
                             "
-                            headline={
-                                <>
-                                    Whitelabeling & Brand  <br /> Customization
-                                </>
-                            }
-                            description2="
+                                headline={
+                                    <>
+                                        Whitelabeling & Brand  <br /> Customization
+                                    </>
+                                }
+                                description2="
                             This flexibility means your sales and product teams can create tailored warranty offerings (a huge plus for high-value products like solar installations or commercial electronics) without creating administrative burden. The system ensures each claim is evaluated against the correct policy terms, maintaining fairness and consistency.
                            "
-                        />
-                        <WithStyles
-                            description="
+                            />
+                            <WithStyles
+                                description="
                            Empower your repair partners with a dedicated portal. Servicers can log in to view assigned cases, access customer and product information, update repair statuses, and upload supporting documentation (like photos or repair notes). They can also request parts, schedule appointments, and manage returns.
                             "
-                            headline={
-                                <>
-                                    Servicer Repair  <br /> Portal
-                                </>
-                            }
-                            description2="
+                                headline={
+                                    <>
+                                        Servicer Repair  <br /> Portal
+                                    </>
+                                }
+                                description2="
                             Streamlines coordination between manufacturers and service providers, ensuring faster repairs and fewer errors. Having a centralized portal means no back-and-forth via phone or email, and gives manufacturers full visibility into service performance.
                            "
-                        />
-                        <WithStyles
-                            description="
+                            />
+                            <WithStyles
+                                description="
                             Turn warranty service into a competitive advantage. CodeWarranty keeps customers in the loop with automated updates (“Your claim has been approved – part is shipped!”) and offers a convenient user-friendly interface for them to initiate and track claims. It also supports multi-channel communications – customers can receive notifications via email, and your support reps can manage all warranty conversations in one place. 
                             "
-                            headline={
-                                <>
-                                    Enhanced Customer   <br /> Experience
-                                </>
-                            }
-                            description2="
+                                headline={
+                                    <>
+                                        Enhanced Customer   <br /> Experience
+                                    </>
+                                }
+                                description2="
                           Benefit: By making warranty service hassle-free, you increase customer satisfaction and loyalty. Happy customers are more likely to buy from you again or recommend your brand, effectively making your warranty not just a cost center but a loyalty driver. A seamless claims experience also reduces inbound calls and confusion, freeing your team to focus on complex cases rather than status inquiries.
                           "
-                        />
-                    </Carousel>
+                            />
+                        </Carousel>
+                    </div>
+                    <div className='grid grid-cols-1 gap-4 Gilroy slider lg:hidden md:hidden sm:block'>
+                        <Carousel
+                            additionalTransfrom={0}
+                            arrows
+                            autoPlaySpeed={3000}
+                            draggable
+                            focusOnSelect={false}
+                            infinite
+                            keyBoardControl
+                            pauseOnHover
+                            renderArrowsWhenDisabled={false}
+                            renderButtonGroupOutside={false}
+                            renderDotsOutside={false}
+                            responsive={{
+                                desktop: {
+                                    breakpoint: {
+                                        max: 3000,
+                                        min: 1024
+                                    },
+                                    items: 1,
+                                    partialVisibilityGutter: 40
+                                },
+                                mobile: {
+                                    breakpoint: {
+                                        max: 464,
+                                        min: 0
+                                    },
+                                    items: 1,
+                                    partialVisibilityGutter: 30
+                                },
+                                tablet: {
+                                    breakpoint: {
+                                        max: 1024,
+                                        min: 464
+                                    },
+                                    items: 1,
+                                    partialVisibilityGutter: 30
+                                }
+                            }}
+                            rewind={false}
+                            rewindWithAnimation={false}
+                            rtl={false}
+                            shouldResetAutoplay
+                            showDots={false}
+                            sliderClass=""
+                            slidesToSlide={1}
+                            swipeable
+                        >
+                            <WithStyles
+                                description="Handle the logistics of product returns or repairs with ease. When a claim is approved, CodeWarranty can automatically generate a Return Merchandise Authorization (RMA) and shipping labels, or schedule a service visit. Track the product’s journey through repair, and update the customer at each step."
+                                headline={
+                                    <>
+                                        Returns & Repairs <br /> Management (RMA)
+                                    </>
+                                }
+                                description2=" By linking claims to RMA and repair
+workflows, nothing falls through the cracks. You’ll reduce turnaround time on fixes/replacements and keep customers informed, which improves transparency and satisfaction. For industries, this means less downtime for your end-users; for consumer electronics, it means swift replacements and fewer calls to support."
+                            />
+                            <WithStyles
+                                description="
+                            Make CodeWarranty look and feel like an extension of your brand. Our platform supports full whitelabeling, allowing you to customize everything – logo, colors, domain, and even the customer portal – to match your corporate identity.
+                            "
+                                headline={
+                                    <>
+                                        Whitelabeling & Brand  <br /> Customization
+                                    </>
+                                }
+                                description2="
+                            Deliver a seamless, branded experience
+to customers and partners without compromising functionality. Whether you're a manufacturer, OEM, or distributor, you can maintain consistency across your digital presence while using our robust backend platform.
+"
+                            />
+                            <WithStyles
+                                description="
+                            Leverage powerful analytics to turn warranty data into actionable insights. CodeWarranty’s dashboard and reporting suite lets you monitor key metrics – claim rates by product, average resolution time, cost per claim, and more – in real time. Visual charts and reports help you spot trends, such as a spike in claims for a certain batch or a particular issue recurring across customers.
+                            "
+                                headline={
+                                    <>
+                                        Analytics & Quality   <br /> Insights
+                                    </>
+                                }
+                                description2="
+                           Benefit: These insights create a feedback loop to
+                            engineering and quality teams. For instance, if analytics show 30% of claims on an electronics device are due to one faulty capacitor, your team can initiate a design change or recall. By identifying issues early, you improve product quality and reduce future claims. Analytics also help in forecasting warranty reserves and making data-driven decisions to lower warranty costs.
+                               "
+                            />
+                            <WithStyles
+                                description="
+                            Make CodeWarranty look and feel like an extension of your brand. Our platform supports full whitelabeling, allowing you to customize everything – logo, colors, domain, and even the customer portal – to match your corporate identity.
+                            "
+                                headline={
+                                    <>
+                                        Custom Policy   <br /> Management
+                                    </>
+                                }
+                                description2="
+                            Deliver a seamless, branded experience
+to customers and partners without compromising functionality. Whether you're a manufacturer, OEM, or distributor, you can maintain consistency across your digital presence while using our robust backend platform.
+"
+                            />
+                            <WithStyles
+                                description="
+                            Configure warranty terms and business rules to fit different products or regions. CodeWarranty lets you set up multiple warranty types (standard warranty, extended warranty, service contracts) with varying durations, coverages, and conditions. You can automate rules – e.g., offer a 2-year extended warranty for an EV battery if certain maintenance actions are logged, or handle goodwill exceptions. 
+                            "
+                                headline={
+                                    <>
+                                        Whitelabeling & Brand  <br /> Customization
+                                    </>
+                                }
+                                description2="
+                            This flexibility means your sales and product teams can create tailored warranty offerings (a huge plus for high-value products like solar installations or commercial electronics) without creating administrative burden. The system ensures each claim is evaluated against the correct policy terms, maintaining fairness and consistency.
+                           "
+                            />
+                            <WithStyles
+                                description="
+                           Empower your repair partners with a dedicated portal. Servicers can log in to view assigned cases, access customer and product information, update repair statuses, and upload supporting documentation (like photos or repair notes). They can also request parts, schedule appointments, and manage returns.
+                            "
+                                headline={
+                                    <>
+                                        Servicer Repair  <br /> Portal
+                                    </>
+                                }
+                                description2="
+                            Streamlines coordination between manufacturers and service providers, ensuring faster repairs and fewer errors. Having a centralized portal means no back-and-forth via phone or email, and gives manufacturers full visibility into service performance.
+                           "
+                            />
+                            <WithStyles
+                                description="
+                            Turn warranty service into a competitive advantage. CodeWarranty keeps customers in the loop with automated updates (“Your claim has been approved – part is shipped!”) and offers a convenient user-friendly interface for them to initiate and track claims. It also supports multi-channel communications – customers can receive notifications via email, and your support reps can manage all warranty conversations in one place. 
+                            "
+                                headline={
+                                    <>
+                                        Enhanced Customer   <br /> Experience
+                                    </>
+                                }
+                                description2="
+                          Benefit: By making warranty service hassle-free, you increase customer satisfaction and loyalty. Happy customers are more likely to buy from you again or recommend your brand, effectively making your warranty not just a cost center but a loyalty driver. A seamless claims experience also reduces inbound calls and confusion, freeing your team to focus on complex cases rather than status inquiries.
+                          "
+                            />
+                        </Carousel>
+                    </div>
                 </div>
 
                 <div className='py-8 w-large mx-auto'>
@@ -334,7 +473,6 @@ to customers and partners without compromising functionality. Whether you're a m
 
                 <div className='w-large mx-auto'>
                     <div className='lg:flex md:block sm:block bg-[#04292B] justify-center text-white p-12 mx-8'>
-
                         <p className='Gilroy text-3xl text-[#95AAAD] lg:text-center md:text-center sm:text-center'>Your <span className='text-white'> warranty  transformation begins now. </span> <br />  Let us simplify, automate, and elevate your operations.</p>
                     </div>
                 </div >

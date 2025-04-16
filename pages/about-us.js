@@ -85,12 +85,12 @@ function AboutUs() {
                                 <div className='lg:col-span-3 md:col-span-12 s:col-span-12'>
                                     <h2 className='text-white text-base text-left py-5 Gilroy'>Now experience the future of warranty management—automated, efficient, and built for  complete customer satisfaction.</h2>
                                 </div>
-                                <div className='lg:col-span-8 md:col-span-12 s:col-span-12'>
+                                {/* <div className='lg:col-span-8 md:col-span-12 s:col-span-12'>
                                     <Image src={aboutImage1} title="Hero image description" className='w-full' alt='about Us' />
                                 </div>
                                 <div className='lg:col-span-4 md:col-span-12 s:col-span-12'>
                                     <Image src={aboutImage} title="Hero image description" className='w-full h-full' alt='about Us' />
-                                </div>
+                                </div> */}
                             </div>
 
                             {/* <Image title="Hero image description" src={Banner} alt="banner" className='mx-auto' /> */}

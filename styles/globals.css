@@ -26,6 +26,14 @@ input.form-control {
   border: 0px !important;
 }
 
+.slider .react-multiple-carousel__arrow--right {
+  right: 5% !important;
+}
+
+.slider .react-multiple-carousel__arrow--left {
+  left: 5% !important;
+}
+
 .flag-dropdown {
   background: transparent !important;
   border: 0px !important;
