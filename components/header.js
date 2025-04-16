@@ -38,7 +38,7 @@ function Header() {
   };
   return (
     <>
-      <Script
+      {/* <Script
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -50,17 +50,17 @@ function Header() {
             smartlook('init', '361f09aeaedbeba64bb124477f3d60ee4596f29c', {region: 'eu' });
           `,
         }}
-      />
+      /> */}
       <div className="py-6">
-        <div className="grid lg:grid-cols-12 md:grid-cols-8 sm:grid-cols-8 s:grid-cols-8 gap-4">
+        <div className="grid lg:grid-cols-12 md:grid-cols-9 sm:grid-cols-9 s:grid-cols-9 gap-4">
           <div className="col-span-3">
             {/* Logo */}
             <Link href="/">
               <Image title="Hero image description" src={Logo} alt="logo" />
             </Link>
           </div>
-          <div className="col-span-4 lg:block md:hidden sm:hidden s:hidden"></div>
-          <div className="col-span-5">
+          <div className="col-span-3 lg:block md:hidden sm:hidden s:hidden"></div>
+          <div className="col-span-6">
             <div className="md:flex sm:hidden s:hidden lg:w-[100%] md:w-full sm:w-full ml-auto justify-end">
               <a
                 href="/"
@@ -68,6 +68,13 @@ function Header() {
                   } hover:text-[#00FFFC] hover:bg-[#104649] border-[#104649] px-5 py-3 rounded-s-[7px] border`}
               >
                 Home
+              </a>
+              <a
+                href="/features"
+                className={`${currentPath === "/features" ? "text-[#00FFFC] bg-[#104649]" : "text-[#95AAAD]"
+                  } hover:text-[#00FFFC] hover:bg-[#104649] border-[#104649] px-5 py-3 border`}
+              >
+                Features
               </a>
               <a
                 href="/about-us"
