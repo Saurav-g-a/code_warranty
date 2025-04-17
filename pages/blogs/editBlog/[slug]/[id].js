@@ -9,9 +9,9 @@ import Head from "next/head";
 const StaticID = "ghe6hvwayvpof82zcp7gsbudxh0anvdv";
 
 export default function EditBlogPage() {
- 
+
   const router = useRouter();
-  const {slug, id } = router.query;
+  const { slug, id } = router.query;
   const [editorContent, setEditorContent] = useState("");
   const [value, setValue] = useState("");
   const [loading, setLoading] = useState(true);
@@ -38,15 +38,15 @@ export default function EditBlogPage() {
   useEffect(() => {
     if (slug != StaticID) {
       router.replace("/404");
-    } 
-    else{
+    }
+    else {
       if (id) {
         const fetchBlogDetails = async () => {
           try {
             const response = await fetch(`/api/posts/${id}`, {
               method: "GET",
             });
-  
+
             const data = await response.json();
             if (data.success) {
               setBlogData(data.data);
@@ -78,7 +78,7 @@ export default function EditBlogPage() {
         fetchBlogDetails();
       }
     }
-   
+
   }, [id]);
 
   const handleChange = (e) => {
@@ -280,35 +280,41 @@ export default function EditBlogPage() {
       <div className="container mx-auto p-4">
         <h1 className="text-2xl font-bold mb-4">Edit Blog</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="text"
-            name="title"
-            placeholder="Title"
-            value={formData.title}
-            onChange={handleChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-
-          <textarea
-            name="extractDescription"
-            placeholder="Extract Description"
-            value={formData.extractDescription}
-            onChange={handleChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Author Name"
-            value={formData.author.name}
-            onChange={handleAuthorChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-
+          <div>
+            <label className="block mb-2 font-medium">Title</label>
+            <input
+              type="text"
+              name="title"
+              placeholder="Title"
+              value={formData.title}
+              onChange={handleChange}
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2 font-medium">Extract Description</label>
+            <textarea
+              name="extractDescription"
+              placeholder="Extract Description"
+              value={formData.extractDescription}
+              onChange={handleChange}
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2 font-medium">Author Name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Author Name"
+              value={formData.author.name}
+              onChange={handleAuthorChange}
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+              required
+            />
+          </div>
           <div>
             <label className="block mb-2 font-medium">Author Photo</label>
             <input
@@ -341,45 +347,52 @@ export default function EditBlogPage() {
               className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
             />
           </div>
-
-          <input
-            type="text"
-            name="paramUrl"
-            placeholder="Param Url"
-            value={formData.paramUrl}
-            onChange={handleChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-
-          <input
-            type="text"
-            name="metaTitle"
-            placeholder="Meta Title"
-            value={formData.metaTitle}
-            onChange={handleChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-
-          <textarea
-            name="metaDescription"
-            placeholder="Meta Description"
-            value={formData.metaDescription}
-            onChange={handleChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-            required
-          />
-
-          <input
-            type="text"
-            name="metaTags"
-            placeholder="Meta Tags (comma-separated)"
-            value={formData.metaTags.join(", ")}
-            onChange={handleMetaTagsChange}
-            className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
-          />
-
+          <div>
+            <label className="block mb-2 font-medium">Param Url</label>
+            <input
+              type="text"
+              name="paramUrl"
+              placeholder="Param Url"
+              value={formData.paramUrl}
+              onChange={handleChange}
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2 font-medium">Meta Title</label>
+            <input
+              type="text"
+              name="metaTitle"
+              placeholder="Meta Title"
+              value={formData.metaTitle}
+              onChange={handleChange}
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2 font-medium">Meta Description</label>
+            <textarea
+              name="metaDescription"
+              placeholder="Meta Description"
+              value={formData.metaDescription}
+              onChange={handleChange}
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+              required
+            />
+          </div>
+          <div>
+            <label className="block mb-2 font-medium">Meta Tags (comma-separated)</label>
+            <input
+              type="text"
+              name="metaTags"
+              placeholder="Meta Tags (comma-separated)"
+              value={formData.metaTags.join(", ")}
+              onChange={handleMetaTagsChange}
+              className="block px-4 py-2 w-full text-base text-black bg-white rounded-lg border border-gray-300"
+            />
+          </div>
           <div>
             <label className="block mb-2 font-medium">Upload Time</label>
             <DatePicker
