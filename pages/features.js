@@ -28,6 +28,7 @@ function Features() {
     const [showButton, setShowButton] = useState(false);
     const [activeIndex, setActiveIndex] = useState(0);
     const carouselRef = useRef(null);
+    const carouselRef1 = useRef(null);
 
     const handleNext = () => {
         if (carouselRef.current) {
@@ -39,6 +40,20 @@ function Features() {
     const handlePrev = () => {
         if (carouselRef.current) {
             carouselRef.current.previous();
+            setActiveIndex((prevIndex) => (prevIndex - 1 + carouselData.length) % carouselData.length);
+        }
+    };
+
+    const handleNext1 = () => {
+        if (carouselRef1.current) {
+            carouselRef1.current.next();
+            setActiveIndex((prevIndex) => (prevIndex + 1) % carouselData.length);
+        }
+    };
+
+    const handlePrev1 = () => {
+        if (carouselRef1.current) {
+            carouselRef1.current.previous();
             setActiveIndex((prevIndex) => (prevIndex - 1 + carouselData.length) % carouselData.length);
         }
     };
@@ -319,7 +334,7 @@ function Features() {
                     </div>
                     <div className='grid grid-cols-1 gap-4 Gilroy slider relative lg:hidden md:hidden sm:block'>
                         <Carousel
-                            ref={carouselRef}
+                            ref={carouselRef1}
                             responsive={responsive}
 
                             infinite
@@ -345,8 +360,8 @@ function Features() {
                                 </div>
                             ))}
                         </Carousel>
-                        <button className='absolute left-[1%] top-[40%] self-center' onClick={handlePrev}> <Image title="Hero image description" className="rotate-90" src={close} width={40} height={40} alt="close" /></button>
-                        <button className='absolute right-[1%] top-[40%] self-center' onClick={handleNext}><Image title="Hero image description" className="rotate-[-93deg]" src={close} width={40} height={40} alt="close" /></button>
+                        <button className='absolute left-[1%] top-[40%] self-center' onClick={handlePrev1}> <Image title="Hero image description" className="rotate-90" src={close} width={40} height={40} alt="close" /></button>
+                        <button className='absolute right-[1%] top-[40%] self-center' onClick={handleNext1}><Image title="Hero image description" className="rotate-[-93deg]" src={close} width={40} height={40} alt="close" /></button>
                     </div>
                 </div>
 
