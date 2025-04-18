@@ -234,11 +234,12 @@ function Features() {
     return (
         <>
             <Head>
-                <link rel="canonical" href="https://codewarranty.com/about-us" />
-                <title>Best Warranty Management Software | Streamline Claims and Warranty Operations</title>
+                <link rel="canonical" href="https://www.codewarranty.com/features" />
+                <title>Efficient End-to-End Warranty Management Features | CodeWarranty
+                </title>
                 <meta
                     name="description"
-                    content="Best Warranty Management Software | Streamline Claims and Warranty Operations"
+                    content="Discover CodeWarranty’s powerful features — from centralized product registration and automated claims processing to real-time tracking and repair management. Simplify, automate, and elevate your warranty operations with ease. for features page"
                 />
                 <link
                     href="https://fonts.cdnfonts.com/css/brockmann"
