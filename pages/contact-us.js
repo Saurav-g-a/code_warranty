@@ -6,7 +6,7 @@ import { RotateLoader } from "react-spinners";
 import contactImage from '@/public/assets/images/ContactUs.png'
 import Phone from '@/public/assets/images/Phone.png'
 import Email from '@/public/assets/images/Email.png'
-import Address from '@/public/assets/images/address.png'
+import Address from '@/public/assets/images/address11.png'
 import Image from 'next/image'
 import Head from 'next/head'
 
