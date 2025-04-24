@@ -97,16 +97,17 @@ export default function Blog({ blog, error, isLoading }) {
                 </div>
                 <h1 className='text-white text-3xl Brockmann text-left'>{title}</h1>
                 <div className='flex  mt-3'>
+                  <a href='https://www.linkedin.com/in/nikg510/' target='_blank'>
+                    <img src={author?.photo} alt='author photo' className='mr-3 rounded-full w-[50px] h-[50px]' />
+                  </a>
 
-                  <img src={author?.photo} alt='author photo' className='mr-3 rounded-full w-[50px] h-[50px]' />
-
-                  <p className='text-white self-center Gilroy capitalize font-semibold text-lg text-left'>By {author?.name}  on {uploadDate ? new Date(uploadDate).toLocaleDateString() : ''}</p>
+                  <p className='text-white self-center Gilroy capitalize font-semibold text-lg text-left'>By  <a href='https://www.linkedin.com/in/nikg510/' target='_blank'>{author?.name}</a>  on {uploadDate ? new Date(uploadDate).toLocaleDateString() : ''}</p>
 
 
                 </div>
               </div>
               <div id="contentSection" className='w-[75%] mx-auto  z-10 p-5 mt-7 rounded-xl relative'>
-                <div className={`left-[-55px] ${isSticky ? "sticky top-5" : ""}`}
+                {/* <div className={`left-[-55px] ${isSticky ? "sticky top-5" : ""}`}
                   style={!isSticky ? { bottom: `-${bottomOffset}px` } : {}}>
                   <div className={"absolute left-[-55px]"}>
                     <a href=''><Image src={Facebook} alt='facebook' className='mb-3' /></a>
@@ -114,7 +115,7 @@ export default function Blog({ blog, error, isLoading }) {
                     <a href=''><Image src={linkin} alt='linkin' className='mb-3' /></a>
                     <a href=''><Image src={instagram} alt='instagram' className='mb-3' /></a>
                   </div>
-                </div>
+                </div> */}
                 <div className='text-[#fff] mt-5 text-left mx-auto Gilroy custom-content text-base' dangerouslySetInnerHTML={{ __html: content || '' }} />
               </div>
             </div>

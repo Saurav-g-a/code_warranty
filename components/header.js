@@ -38,7 +38,7 @@ function Header() {
   };
   return (
     <>
-      <Script
+      {/* <Script
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -62,7 +62,6 @@ function Header() {
         }}
       />
 
-      {/* Google Tag Manager (noscript) */}
       <noscript>
         <iframe
           src="https://www.googletagmanager.com/ns.html?id=GTM-WSMKWRXZ"
@@ -70,7 +69,7 @@ function Header() {
           width="0"
           style={{ display: 'none', visibility: 'hidden' }}
         ></iframe>
-      </noscript>
+      </noscript> */}
 
       <div className="py-6">
         <div className="grid lg:grid-cols-12 md:grid-cols-9 sm:grid-cols-9 s:grid-cols-9 gap-4">

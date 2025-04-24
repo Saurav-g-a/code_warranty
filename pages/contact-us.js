@@ -6,7 +6,7 @@ import { RotateLoader } from "react-spinners";
 import contactImage from '@/public/assets/images/ContactUs.png'
 import Phone from '@/public/assets/images/Phone.png'
 import Email from '@/public/assets/images/Email.png'
-import Address from '@/public/assets/images/Address.png'
+import Address from '@/public/assets/images/address.png'
 import Image from 'next/image'
 import Head from 'next/head'
 
@@ -305,8 +305,8 @@ function ContactUs() {
                                             <Image src={Phone} title="Hero image description" className='w-12 h-12 ml-auto' alt='about Us' />
                                         </div>
                                         <div className='col-span-9'>
-                                            <p className='text-xl text-[#fff] Brockmann'>Call</p>
-                                            <a href='tel:9041311724' className='text-base text-[#95AAAD] Gilroy'>+91 9041311724</a>
+                                            <p className='text-xl text-[#fff] Brockmann'>Phone Number</p>
+                                            <a href='tel:9041311724' className='text-base text-[#95AAAD] Gilroy'>+91 90413-11724</a>
                                         </div>
                                     </div>
                                     <div className='grid grid-cols-12 gap-4 mb-4'>
@@ -315,7 +315,8 @@ function ContactUs() {
                                         </div>
                                         <div className='col-span-9'>
                                             <p className='text-xl text-[#fff] Brockmann'>Email</p>
-                                            <a href='mailto:sales@codewarranty.com' className='text-base text-[#95AAAD] Gilroy'>sales@codewarranty.com</a>
+                                            <a href='mailto:sales@codewarranty.com' className='text-base text-[#95AAAD] Gilroy'>sales@codewarranty.com, </a>
+                                            <a href='mailto:nikhil@codewarranty.com' className='text-base text-[#95AAAD] Gilroy'>nikhil@codewarranty.com </a>
                                         </div>
                                     </div>
                                     <div className='grid grid-cols-12 gap-4 mb-4'>
@@ -324,7 +325,7 @@ function ContactUs() {
                                         </div>
                                         <div className='col-span-9'>
                                             <p className='text-xl text-[#fff] Brockmann'>Address</p>
-                                            <a href='https://maps.app.goo.gl/fawJcT3PwSFb3o5s8' target='_blank' className='text-base text-[#95AAAD] Gilroy'>f-298, Phase 8B, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160055</a>
+                                            <a href='https://maps.app.goo.gl/fawJcT3PwSFb3o5s8' target='_blank' className='text-base text-[#95AAAD] Gilroy'>F-298, Phase 8B, Industrial Area, Sector 74, Sahibzada Ajit Singh Nagar, Punjab 160055</a>
                                         </div>
                                     </div>
                                 </div>
@@ -394,7 +395,7 @@ function ContactUs() {
                                                     <div className="relative rounded-lg border border-[#104649]">
                                                         <label
                                                             htmlhtmlFor="description"
-                                                            className=" text-[#00FFFC] Brockmann text-sm absolute top-4 left-4"
+                                                            className=" text-[#00FFFC] Brockmann text-sm absolute top-[-7px] left-4"
                                                         >
                                                             Description of inquiry
                                                         </label>
@@ -404,8 +405,10 @@ function ContactUs() {
                                                             name="description"
                                                             value={description}
                                                             onChange={handleDescriptionChange}
+                                                            placeholder='Enter '
                                                             maxLength={120}
-                                                            className="resize-none block px-4 pb-4 pt-8 w-full text-base outline-none font-medium rounded-lg bg-[transparent] appearance-none peer placeholder-[#fff] text-[#fff]"
+
+                                                            className="resize-none block px-4 pb-4 pt-4 w-full text-base placeholder-[#9ca3af] focus:placeholder-transparent  outline-none font-medium rounded-lg bg-[transparent] appearance-none peer  text-[#fff]"
                                                         ></textarea>
                                                     </div>
                                                 </div>

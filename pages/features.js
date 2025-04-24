@@ -386,10 +386,17 @@ function Features() {
                 {showButton && (
                     <button
                         onClick={scrollToTop}
-                        className="fixed bottom-5 right-5 px-4 py-2 rounded-full shadow-lg "
+                        className="fixed bottom-5 left-5 px-4 py-2 rounded-full shadow-lg "
                     >
                         <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="close" />
                     </button>
+                )}
+                {showButton && (
+                    <a href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3TUE4miGSgGYkjSRA71gPaWzwLoUya5WDHu3IXW7Zt6nyC8VQW1SamtXC-W8Yig-01MGvDaoJp' target='_blank'
+                        onClick={scrollToTop}
+                        className="fixed bottom-5 right-5 px-4 py-2 rounded-full shadow-[1px_1px_4px_0px_#504d4d] bg-[#002025] text-white "
+                    >Book An Appointment
+                    </a>
                 )}
                 <Footer />
             </div >
