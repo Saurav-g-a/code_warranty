@@ -7,10 +7,12 @@ import contactImage from '@/public/assets/images/ContactUs.png'
 import Phone from '@/public/assets/images/Phone.png'
 import Email from '@/public/assets/images/Email.png'
 import Address from '@/public/assets/images/address11.png'
+import close from '@/public/assets/images/active.svg';
 import Image from 'next/image'
 import Head from 'next/head'
 
 function ContactUs() {
+    const [showButton, setShowButton] = useState(false);
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
@@ -61,7 +63,28 @@ function ContactUs() {
         console.log("Country Code Set:", countryCode);
     }, []);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 300) {
+                setShowButton(true);
+            } else {
+                setShowButton(false);
+            }
+        };
 
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth", // Smooth scrolling
+        });
+    };
 
     const handleEmailChange = (e) => {
         const emailValue = e.target.value;
@@ -315,7 +338,7 @@ function ContactUs() {
                                         </div>
                                         <div className='col-span-9'>
                                             <p className='text-xl text-[#fff] Brockmann'>Email</p>
-                                            <a href='mailto:sales@codewarranty.com' className='text-base text-[#95AAAD] Gilroy'>sales@codewarranty.com, </a>
+                                            <a href='mailto:sales@codewarranty.com' className='text-base text-[#95AAAD] Gilroy'>sales@codewarranty.com </a>
                                             <a href='mailto:nikhil@codewarranty.com' className='text-base text-[#95AAAD] Gilroy'>nikhil@codewarranty.com </a>
                                         </div>
                                     </div>
@@ -392,10 +415,10 @@ function ContactUs() {
                                                     )}
                                                 </div>
                                                 <div className='col-span-12'>
-                                                    <div className="relative rounded-lg border border-[#104649]">
+                                                    <div className="relative rounded-lg border bg-[#04292b] border-[#104649]">
                                                         <label
                                                             htmlhtmlFor="description"
-                                                            className=" text-[#00FFFC] Brockmann text-sm absolute top-[-7px] left-4"
+                                                            className=" text-[#00FFFC] z-10 Brockmann text-sm absolute top-[-9px] left-4"
                                                         >
                                                             Description of inquiry
                                                         </label>
@@ -408,7 +431,7 @@ function ContactUs() {
                                                             placeholder='Enter '
                                                             maxLength={120}
 
-                                                            className="resize-none block px-4 pb-4 pt-4 w-full text-base placeholder-[#9ca3af] focus:placeholder-transparent  outline-none font-medium rounded-lg bg-[transparent] appearance-none peer  text-[#fff]"
+                                                            className="resize-none  block px-4 pb-4 pt-4 w-full text-base placeholder-[#9ca3af] focus:placeholder-transparent  outline-none font-medium rounded-lg bg-[transparent] appearance-none peer  text-[#fff]"
                                                         ></textarea>
                                                     </div>
                                                 </div>
@@ -430,6 +453,20 @@ function ContactUs() {
                         </div>
                     </div>
                     <div className='w-large mx-auto mt-12'>
+                        {showButton && (
+                            <button
+                                onClick={scrollToTop}
+                                className="fixed bottom-5 left-5 px-4 py-2 rounded-full shadow-lg "
+                            >
+                                <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="close" />
+                            </button>
+                        )}
+
+                        <a href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3TUE4miGSgGYkjSRA71gPaWzwLoUya5WDHu3IXW7Zt6nyC8VQW1SamtXC-W8Yig-01MGvDaoJp' target='_blank'
+                            onClick={scrollToTop}
+                            className="fixed bottom-5 Gilroy leading-none right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
+                        >Book <br />  Appointment
+                        </a>
                         <Footer />
                     </div>
                 </div>

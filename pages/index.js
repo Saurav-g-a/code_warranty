@@ -167,7 +167,7 @@ export default function Page() {
                 <title>Best Warranty Management Software | Streamline Claims and Warranty Operations</title>
                 <meta
                     name="description"
-                    content="Best Warranty Management Software | Streamline Claims and Warranty Operations"
+                    content="Discover the ultimate warranty management software to automate claims, streamline operations, and enhance customer satisfaction. Integrate seamlessly with CRM and ERP systems for a unified experience."
                 />
                 <link
                     href="https://fonts.cdnfonts.com/css/brockmann"
@@ -842,13 +842,13 @@ export default function Page() {
                         <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="close" />
                     </button>
                 )}
-                {showButton && (
-                    <a href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3TUE4miGSgGYkjSRA71gPaWzwLoUya5WDHu3IXW7Zt6nyC8VQW1SamtXC-W8Yig-01MGvDaoJp' target='_blank'
-                        onClick={scrollToTop}
-                        className="fixed bottom-5 right-5 px-4 py-2 rounded-full shadow-[1px_1px_4px_0px_#504d4d] bg-[#002025] text-white "
-                    >Book An Appointment
-                    </a>
-                )}
+
+                <a href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3TUE4miGSgGYkjSRA71gPaWzwLoUya5WDHu3IXW7Zt6nyC8VQW1SamtXC-W8Yig-01MGvDaoJp' target='_blank'
+                    onClick={scrollToTop}
+                    className="fixed bottom-5 Gilroy leading-none right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
+                >Book <br />  Appointment
+                </a>
+
                 <Footer />
             </div >
         </>

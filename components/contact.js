@@ -258,7 +258,7 @@ function Contact() {
                     <form onSubmit={handleSubmit}>
                         <div className='grid grid-cols-12 gap-4'>
                             <div className='lg:col-span-6 md:col-span-6 sm:col-span-12 s:col-span-12'>
-                                <Input placeholder='Enter'
+                                <Input placeholder=''
                                     type='text'
                                     label='First Name'
                                     onChange={(e) => setFirstName(e.target.value)}
@@ -271,13 +271,13 @@ function Contact() {
                                     name="lastName"
                                     required
                                     label='Last Name'
-                                    placeholder="Enter"
+                                    placeholder=""
                                     value={lastName}
                                     onChange={(e) => setLastName(e.target.value)}
                                 />
                             </div>
                             <div className='lg:col-span-6 md:col-span-6 sm:col-span-12 s:col-span-12'>
-                                <Input placeholder='Enter'
+                                <Input placeholder=''
                                     type="email"
                                     name="email"
                                     required
@@ -292,7 +292,7 @@ function Contact() {
                             </div>
                             <div className='lg:col-span-6 md:col-span-6 sm:col-span-12 s:col-span-12'>
                                 <Input
-                                    placeholder="Enter"
+                                    placeholder=""
                                     type="number"
                                     name="phoneNumber"
                                     label="Phone No."
@@ -361,10 +361,10 @@ function Contact() {
                                 </div>
                             </div> */}
                             <div className='col-span-12'>
-                                <div className="relative rounded-lg border border-[#104649]">
+                                <div className="relative rounded-lg border bg-[#04292b] border-[#104649]">
                                     <label
                                         htmlhtmlFor="description"
-                                        className=" text-[#00FFFC] Brockmann text-sm absolute top-[-7px] left-4"
+                                        className=" text-[#00FFFC] Brockmann text-sm z-10 absolute top-[-9px] left-4"
                                     >
                                         Description of inquiry
                                     </label>
@@ -374,9 +374,9 @@ function Contact() {
                                         name="description"
                                         value={description}
                                         onChange={handleDescriptionChange}
-                                        placeholder="Enter"
+                                        placeholder=""
                                         maxLength={150}
-                                        className="resize-none block px-4 pb-4 pt-8 w-full text-base outline-none font-medium rounded-lg bg-[transparent] appearance-none peer placeholder-[#9ca3af] focus:placeholder-transparent text-[#fff]"
+                                        className="resize-none block  px-4 pb-4 pt-8 w-full text-base outline-none font-medium rounded-lg bg-[transparent] appearance-none peer placeholder-[#9ca3af] focus:placeholder-transparent text-[#fff]"
                                     ></textarea>
                                 </div>
                             </div>

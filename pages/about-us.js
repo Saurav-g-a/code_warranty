@@ -148,7 +148,7 @@ function AboutUs() {
                         </div>
                         <div className='lg:col-span-7 md:col-span-12 s:col-span-12 py-6 self-center pr-8'>
                             <p className='mb-1 uppercase text-2xl'>Founder</p>
-                            <p className='mb-4 font-bold text-3xl uppercase'>Nikhil Garg</p>
+                            <p className='mb-4 font-bold text-3xl uppercase'><a href='https://www.linkedin.com/in/nikg510/' target='_blank'>Nikhil Garg </a></p>
                             <p className='text-[#5f605e] mb-6'>With a passion for technology and problem-solving, I have spent many years <b> in the IT industry,</b> working on <b>complex software solutions.</b> My journey has been shaped by <b> curiosity, innovation, and a commitment to simplifying everyday challenges </b> through technology.
                                 <br />
                                 <br />
@@ -304,11 +304,17 @@ function AboutUs() {
                 {showButton && (
                     <button
                         onClick={scrollToTop}
-                        className="fixed bottom-5 right-5 px-4 py-2 rounded-full shadow-lg "
+                        className="fixed bottom-5 left-5 px-4 py-2 rounded-full shadow-lg "
                     >
                         <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="close" />
                     </button>
                 )}
+
+                <a href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3TUE4miGSgGYkjSRA71gPaWzwLoUya5WDHu3IXW7Zt6nyC8VQW1SamtXC-W8Yig-01MGvDaoJp' target='_blank'
+                    onClick={scrollToTop}
+                    className="fixed bottom-5 Gilroy leading-none right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
+                >Book <br />  Appointment
+                </a>
                 <Footer />
             </div >
         </>

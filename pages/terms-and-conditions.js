@@ -72,7 +72,7 @@ function Terms_conditions() {
                     </p>
                     <h3 className='mt-4 mb-2 text-lg text-[#00FFFC]'>8) Contact Information</h3>
                     <p className='text-white Gilroy text-base'>
-                        For any questions regarding these Terms and Conditions, please contact us at <a href='mailto:care@codewarranty.com' className='text-[#00FFFC] underline' >Click Here</a>
+                        For any questions regarding these Terms and Conditions, please contact us at <a href='/contact-us' className='text-[#00FFFC] underline' >Click Here</a>
                     </p>
                 </div>
 

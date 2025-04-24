@@ -29,7 +29,7 @@ const Input = ({
     return (
         <div className={`relative ${classBox} rounded-lg border ${error ? "border-red-500" : "border-[#104649]"}`}>
             {label && (
-                <label htmlFor={name} className="text-[#00FFFC] Gilroy font-semibold text-sm absolute top-[-11px] left-4">
+                <label htmlFor={name} className="text-[#00FFFC] Gilroy z-10 font-semibold text-sm absolute top-[-11px] left-4">
                     {label}
                 </label>
             )}
@@ -37,7 +37,6 @@ const Input = ({
             {type === "number" ? (
                 // React Phone Input for phone numbers
                 <PhoneInput
-
                     value={value}
                     country={country || "us"}  // Default to "us" if countryCode is not set
                     countryCodeEditable={countryCodeEditable}
@@ -51,7 +50,7 @@ const Input = ({
                     }}
 
                     containerClass="w-full" // Full-width
-                    className={`block px-4 pb-4 pt-4 w-full text-base outline-none font-medium rounded-lg bg-[transparent] appearance-none peer ${className1} placeholder-[#9ca3af] focus:placeholder-transparent text-[#fff]`}
+                    className={`block px-4 pb-4 pt-4 w-full text-base outline-none font-medium rounded-lg bg-[#04292b] appearance-none peer ${className1} placeholder-[#9ca3af] focus:placeholder-transparent text-[#fff]`}
                 />
             ) : (
                 // Default Input
@@ -63,7 +62,7 @@ const Input = ({
                     onBlur={onBlur}
                     minLength={minLength}
                     maxLength={maxLength}
-                    className={`block px-4 pb-4 pt-4 w-full text-base outline-none font-medium rounded-lg bg-[transparent] appearance-none peer ${className1} placeholder-[#9ca3af] focus:placeholder-transparent text-[#fff]`}
+                    className={`block px-4 pb-4 pt-4 w-full text-base outline-none font-medium rounded-lg bg-[#04292b] appearance-none peer ${className1} placeholder-[#9ca3af] focus:placeholder-transparent text-[#fff]`}
                     onChange={handleChange}
                     disabled={disabled}
                     required={required}

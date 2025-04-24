@@ -1,21 +1,44 @@
 import Header from "@/components/header";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Arrow from "@/public/assets/images/blog/arrow.png"
 import Image from "next/image";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import close from '@/public/assets/images/active.svg';
 import Link from "next/link";
 
 const BlogPage = ({ blogs, error }) => {
+  const [showButton, setShowButton] = useState(false);
   const router = useRouter();
   // console.log(blogs)
   if (error) {
     router.push('/404');
     return null;
   }
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scrolling
+    });
+  };
   return (
     <>
       <Head>  <title>{'Blog'}</title>
@@ -101,7 +124,20 @@ const BlogPage = ({ blogs, error }) => {
             <div id='contactUs'></div>
             <Contact />
           </div>
+          {showButton && (
+            <button
+              onClick={scrollToTop}
+              className="fixed bottom-5 left-5 px-4 py-2 rounded-full shadow-lg "
+            >
+              <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="close" />
+            </button>
+          )}
 
+          <a href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3TUE4miGSgGYkjSRA71gPaWzwLoUya5WDHu3IXW7Zt6nyC8VQW1SamtXC-W8Yig-01MGvDaoJp' target='_blank'
+            onClick={scrollToTop}
+            className="fixed bottom-5 Gilroy leading-none right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
+          >Book <br />  Appointment
+          </a>
           <Footer />
         </div>
       </div >
