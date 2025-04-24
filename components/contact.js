@@ -61,7 +61,7 @@ function Contact() {
 
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailPattern.test(emailValue)) {
-            setEmailError("Invalid email htmlFormat");
+            setEmailError("Invalid email Format");
         } else {
             setEmailError("");
         }
@@ -242,7 +242,7 @@ function Contact() {
                                     <p>02</p>
                                 </div>
                                 <p className='text-white Brockmann text-lg'>Schedule a free demo</p>
-                                <p className='text-[#8E8E8E] Gilroy lg:pr-10 md:pr-3 sm:pr-0'>Our experts will walk you through  the plathtmlForm, explaining its features  and how it can address your  specific needs.</p>
+                                <p className='text-[#8E8E8E] Gilroy lg:pr-10 md:pr-3 sm:pr-0'>Our experts will walk you through  the platForm, explaining its features  and how it can address your  specific needs.</p>
                             </div>
                         </div>
                         <div className='col-span-4'>
