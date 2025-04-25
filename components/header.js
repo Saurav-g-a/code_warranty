@@ -76,7 +76,7 @@ function Header() {
           <div className="col-span-3">
             {/* Logo */}
             <Link href="/">
-              <Image title="Hero image description" src={Logo} alt="logo" />
+              <Image title="Hero image description" src={Logo} alt="Header logo" />
             </Link>
           </div>
           <div className="col-span-3 lg:block md:hidden sm:hidden s:hidden"></div>

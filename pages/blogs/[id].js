@@ -7,12 +7,13 @@ import React, { useEffect, useState } from 'react';
 import Facebook from '../../public/assets/images/facebook.png';
 import linkin from '../../public/assets/images/linkedin.png';
 import twitter from '../../public/assets/images/twitter.png';
+import close from '@/public/assets/images/active.svg';
 import instagram from '../../public/assets/images/instagram.png';
 import Image from 'next/image';
 
 export default function Blog({ blog, error, isLoading }) {
   const router = useRouter();
-
+  const [showButton, setShowButton] = useState(false);
   useEffect(() => {
     if (!blog || error) {
       router.push('/404');
@@ -26,6 +27,28 @@ export default function Blog({ blog, error, isLoading }) {
   if (!blog || error) {
     return null;
   }
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scrolling
+    });
+  };
 
   const {
     author,
@@ -125,6 +148,20 @@ export default function Blog({ blog, error, isLoading }) {
           <div className='py-8 w-large mx-auto' id='contactUs'>
             <Contact />
           </div>
+          {showButton && (
+            <button
+              onClick={scrollToTop}
+              className="fixed bottom-5 left-5 px-4 py-2 rounded-full shadow-lg "
+            >
+              <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="close" />
+            </button>
+          )}
+
+          <a href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3TUE4miGSgGYkjSRA71gPaWzwLoUya5WDHu3IXW7Zt6nyC8VQW1SamtXC-W8Yig-01MGvDaoJp' target='_blank'
+            onClick={scrollToTop}
+            className="fixed bottom-5 Gilroy z-20 font-semibold leading-none right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
+          >Book <br />  Appointment
+          </a>
           <Footer />
         </div>
       </div>

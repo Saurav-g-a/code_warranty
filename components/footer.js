@@ -4,7 +4,7 @@ import Image from "next/image"
 function Footer() {
     return (
         <div className='bg-headerBackground bg-cover bg-no-repeat pt-12'>
-            <Image title="Hero image description" src={Logo} className='mx-auto' alt="logo" />
+            <Image title="Hero image description" src={Logo} className='mx-auto' alt="Footer logo" />
             <p className='text-center text-[#95AAAD] Gilroy text-lg py-4'><a href="/terms-and-conditions">Terms and Conditions</a> / <a href="/privacy-policy">Privacy Policy</a></p>
             {/* <div className='grid lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-2 s:grid-cols-2 gap-4 text-[#95AAAD] mt-5 px-8'>
                 <div className=' col-span-1'>

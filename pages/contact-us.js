@@ -285,7 +285,7 @@ function ContactUs() {
                         </div>
                         <div className='grid grid-cols-12 gap-0 pb-8 pt-16 '>
                             <div className='lg:col-span-5 md:col-span-12 s:col-span-12'>
-                                <Image src={contactImage} title="Hero image description" className='w-75 lg:ml-auto md:mx-auto sm:mx-auto s:mx-auto ' alt='about Us' />
+                                <Image src={contactImage} title="Hero image description" className='w-75 lg:ml-auto md:mx-auto sm:mx-auto s:mx-auto ' alt='Contact Us' />
                             </div>
                             <div className='col-span-1'></div>
                             <div className='lg:col-span-6 md:col-span-12 s:col-span-12 self-center'>
@@ -325,7 +325,7 @@ function ContactUs() {
                                 <div className='self-center'>
                                     <div className='grid grid-cols-12 gap-4 mb-4'>
                                         <div className='col-span-3 text-right'>
-                                            <Image src={Phone} title="Hero image description" className='w-12 h-12 ml-auto' alt='about Us' />
+                                            <Image src={Phone} title="Hero image description" className='w-12 h-12 ml-auto' alt='Phone No Image' />
                                         </div>
                                         <div className='col-span-9'>
                                             <p className='text-xl text-[#fff] Brockmann'>Phone Number</p>
@@ -334,7 +334,7 @@ function ContactUs() {
                                     </div>
                                     <div className='grid grid-cols-12 gap-4 mb-4'>
                                         <div className='col-span-3 text-right'>
-                                            <Image src={Email} title="Hero image description" className='w-12 h-12 ml-auto' alt='about Us' />
+                                            <Image src={Email} title="Hero image description" className='w-12 h-12 ml-auto' alt='Email Image' />
                                         </div>
                                         <div className='col-span-9'>
                                             <p className='text-xl text-[#fff] Brockmann'>Email</p>
@@ -344,7 +344,7 @@ function ContactUs() {
                                     </div>
                                     <div className='grid grid-cols-12 gap-4 mb-4'>
                                         <div className='col-span-3 text-right'>
-                                            <Image src={Address} title="Hero image description" className='w-12 h-12 ml-auto' alt='about Us' />
+                                            <Image src={Address} title="Hero image description" className='w-12 h-12 ml-auto' alt='Address Image' />
                                         </div>
                                         <div className='col-span-9'>
                                             <p className='text-xl text-[#fff] Brockmann'>Address</p>
@@ -364,7 +364,7 @@ function ContactUs() {
                                         <form onSubmit={handleSubmit}>
                                             <div className='grid grid-cols-12 gap-4'>
                                                 <div className='lg:col-span-6 md:col-span-6 sm:col-span-12 s:col-span-12'>
-                                                    <Input placeholder='Enter'
+                                                    <Input placeholder=''
                                                         type='text'
                                                         label='First Name'
                                                         onChange={(e) => setFirstName(e.target.value)}
@@ -377,13 +377,13 @@ function ContactUs() {
                                                         name="lastName"
                                                         required
                                                         label='Last Name'
-                                                        placeholder="Enter"
+                                                        placeholder=""
                                                         value={lastName}
                                                         onChange={(e) => setLastName(e.target.value)}
                                                     />
                                                 </div>
                                                 <div className='lg:col-span-6 md:col-span-6 sm:col-span-12 s:col-span-12'>
-                                                    <Input placeholder='Enter'
+                                                    <Input placeholder=''
                                                         type="email"
                                                         name="email"
                                                         required
@@ -398,7 +398,7 @@ function ContactUs() {
                                                 </div>
                                                 <div className='lg:col-span-6 md:col-span-6 sm:col-span-12 s:col-span-12'>
                                                     <Input
-                                                        placeholder="Enter"
+                                                        placeholder=""
                                                         type="number"
                                                         name="phoneNumber"
                                                         label="Phone No."
@@ -428,7 +428,7 @@ function ContactUs() {
                                                             name="description"
                                                             value={description}
                                                             onChange={handleDescriptionChange}
-                                                            placeholder='Enter '
+                                                            placeholder=' '
                                                             maxLength={120}
 
                                                             className="resize-none  block px-4 pb-4 pt-4 w-full text-base placeholder-[#9ca3af] focus:placeholder-transparent  outline-none font-medium rounded-lg bg-[transparent] appearance-none peer  text-[#fff]"
@@ -458,13 +458,13 @@ function ContactUs() {
                                 onClick={scrollToTop}
                                 className="fixed bottom-5 left-5 px-4 py-2 rounded-full shadow-lg "
                             >
-                                <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="close" />
+                                <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="Go To Up" />
                             </button>
                         )}
 
                         <a href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3TUE4miGSgGYkjSRA71gPaWzwLoUya5WDHu3IXW7Zt6nyC8VQW1SamtXC-W8Yig-01MGvDaoJp' target='_blank'
                             onClick={scrollToTop}
-                            className="fixed bottom-5 Gilroy leading-none right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
+                            className="fixed bottom-5 Gilroy font-semibold leading-none right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
                         >Book <br />  Appointment
                         </a>
                         <Footer />

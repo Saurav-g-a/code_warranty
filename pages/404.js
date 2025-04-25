@@ -28,7 +28,7 @@ export default function NotFound() {
                 <div className='w-large mx-auto'>
                     <Header />
 
-                    <Image title="Hero image description" src={Image1} className=' mx-auto' alt="mask" />
+                    <Image title="Hero image description" src={Image1} className=' mx-auto' alt="404 Image" />
 
                     <p className='2xl:w-2/3 xl:w-2/3 xl:mx-auto text-center text-white lg:text-[45px] md:text-[30px] sm:text-[24px] s:text-[24px] leading-none	Brockmann'><span className='text-[#00FFFC]'>Oops!</span>  Page you were looking for was not found</p>
                     <div className='text-center my-5'>

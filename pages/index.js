@@ -352,7 +352,7 @@ export default function Page() {
                     <div className='lg:block md:hidden sm:block s:block'>
                         <div className='grid lg:grid-cols-12 md:grid-cols-8 sm:grid-cols-4 s:grid-cols-4 gap-4 py-5 px-8'>
                             <div className='col-span-4 text-white'>
-                                <Image title="Hero image description" src={Dealer} alt="mask" />
+                                <Image title="Hero image description" src={Dealer} alt="Comprehensive Warranty Lifecycle" />
                                 <p className='pt-2 Brockmann'>Dealer Claims Management</p>
                                 <p className='py-2 text-[#95AAAD] Gilroy lg:pr-12 md:pr-8 sm:pr-4 s:pr-0'>Empower dealers to submit and track
                                     claims efficiently with complete transparency and accuracy.</p>
@@ -366,7 +366,7 @@ export default function Page() {
                                 </div >
                             </div >
                             <div className='col-span-4 text-white'>
-                                <Image title="Hero image description" src={Dealer1} alt="mask" />
+                                <Image title="Hero image description" src={Dealer1} alt="Manufacturer Claims Processing" />
                                 <p className='pt-2 Brockmann'>Manufacturer Claims Processing</p>
                                 <p className='py-2 text-[#95AAAD] Gilroy lg:pr-12 md:pr-8 sm:pr-4 s:pr-0'>Enable manufacturers to automate and adjudicate claims faster, improving decision-making and reducing delays.</p>
                                 <div className='border-l border-[#8BC542] pl-3 Gilroy lg:pr-16 md:pr-8 sm:pr-4 s:pr-0'>
@@ -379,7 +379,7 @@ export default function Page() {
                                 </div >
                             </div >
                             <div className='col-span-4 text-white'>
-                                <Image title="Hero image description" src={Dealer2} alt="mask" />
+                                <Image title="Hero image description" src={Dealer2} alt="Supplier Recovery Optimization" />
                                 <p className='pt-2 Brockmann'>Supplier Recovery Optimization</p>
                                 <p className='py-2 text-[#95AAAD] Gilroy lg:pr-24 md:pr-12 sm:pr-4 s:pr-0'>Provide suppliers with a dedicated portal to manage cost recovery efficiently and effectively.</p>
                                 <div className='border-l border-[#8BC542] pl-3 Gilroy lg:pr-16 md:pr-8 sm:pr-4 s:pr-0'>
@@ -397,7 +397,7 @@ export default function Page() {
                         <div className='flex overflow-x-auto gap-2 scroll-smooth px-8'>
                             <div className='min-w-[200px] w-[250px] flex-shrink-0 flex-grow-0 basis-auto'>
                                 <div className=' text-white'>
-                                    <Image title="Hero image description" src={Dealer} alt="mask" />
+                                    <Image title="Hero image description" src={Dealer} alt="Dealer Claims Management" />
                                     <p className='pt-2 Brockmann'>Dealer Claims Management</p>
                                     <p className='py-2 text-[#95AAAD] Gilroy '>Empower dealers to submit and track
                                         claims efficiently with complete transparency and accuracy.</p>
@@ -413,7 +413,7 @@ export default function Page() {
                             </div>
                             <div className='min-w-[200px] w-[250px] flex-shrink-0 flex-grow-0 basis-auto'>
                                 <div className='text-white'>
-                                    <Image title="Hero image description" src={Dealer1} alt="mask" />
+                                    <Image title="Hero image description" src={Dealer1} alt="Manufacturer Claims Processing" />
                                     <p className='pt-2 Brockmann'>Manufacturer Claims Processing</p>
                                     <p className='py-2 text-[#95AAAD] Gilroy pr-4'>Enable manufacturers to automate and adjudicate claims faster, improving decision-making and reducing delays.</p>
                                     <div className='border-l border-[#8BC542] pl-3 Gilroy pr-4'>
@@ -428,7 +428,7 @@ export default function Page() {
                             </div>
                             <div className='min-w-[200px] w-[250px] flex-shrink-0 flex-grow-0 basis-auto'>
                                 <div className='text-white'>
-                                    <Image title="Hero image description" src={Dealer2} alt="mask" />
+                                    <Image title="Hero image description" src={Dealer2} alt="Supplier Recovery Optimization" />
                                     <p className='pt-2 Brockmann'>Supplier Recovery Optimization</p>
                                     <p className='py-2 text-[#95AAAD] Gilroy pr-4'>Provide suppliers with a dedicated portal to manage cost recovery efficiently and effectively.</p>
                                     <div className='border-l border-[#8BC542] pl-3 Gilroy pr-4'>
@@ -845,7 +845,7 @@ export default function Page() {
 
                 <a href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3TUE4miGSgGYkjSRA71gPaWzwLoUya5WDHu3IXW7Zt6nyC8VQW1SamtXC-W8Yig-01MGvDaoJp' target='_blank'
                     onClick={scrollToTop}
-                    className="fixed bottom-5 Gilroy leading-none right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
+                    className="fixed bottom-5 Gilroy font-semibold leading-none right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
                 >Book <br />  Appointment
                 </a>
 

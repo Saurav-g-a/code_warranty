@@ -103,7 +103,7 @@ function AboutUs() {
                     <div className='grid grid-cols-12 gap-2 Gilroy'>
                         <div className='lg:col-span-5 md:col-span-12 s:col-span-12 flex'>
                             <p className='text-3xl text-white'>How We Started <br /> CodeWarranty</p>
-                            <Image src={How} title="Hero image description" className='h-[60px] w-[60px] ml-5' alt='about Us' />
+                            <Image src={How} title="Hero image description" className='h-[60px] w-[60px] ml-5' alt='How We Started CodeWarranty' />
                         </div>
                         <div className='lg:col-span-7 md:col-span-12 s:col-span-12'>
                             <p className='text-[#889997] mb-3'>The idea for <span className='text-white font-semibold'> CodeWarranty </span> was born from firsthand experience with the challenges of warranty management. One day, during a conversation with a friend in the industry, we discussed how <span className='text-white font-semibold'> complicated and time-consuming </span>
@@ -143,7 +143,7 @@ function AboutUs() {
                     <div className='grid grid-cols-12 gap-4'>
                         <div className='lg:col-span-5 md:col-span-12 s:col-span-12 p-8'>
                             <div className='bg-white rounded-lg'>
-                                <Image src={team} title="Nikhil Garg" className='w-[80%] !h-[450px]' alt='about Us' />
+                                <Image src={team} title="Nikhil Garg" className='w-[80%] !h-[450px]' alt='Nikhil Garg Image' />
                             </div>
                         </div>
                         <div className='lg:col-span-7 md:col-span-12 s:col-span-12 py-6 self-center pr-8'>
@@ -234,7 +234,7 @@ function AboutUs() {
                         <div className='lg:col-span-4 md:col-span-6 s:col-span-12'>
                             <div className=''>
                                 <div className='flex'>
-                                    <Image src={Mask} title="Hero image description" className='mr-3' alt='about Us' />
+                                    <Image src={Mask} title="Hero image description" className='mr-3' alt='Customer-Centric Approach' />
                                     <p className='text-xl text-white Brockmann self-center'>Customer-Centric <br /> Approach</p>
                                 </div>
                                 <p className='text-[#DBE2DC] mt-3 pr-6'>Our customers are at the heart of everything we do. <b>We design </b> our solutions to <b>enhance user experience,</b>  ensuring <b> smoother warranty management, </b> faster claim resolutions, and <b>complete transparency</b>. When our <b>customers succeed, we succeed.</b></p>
@@ -243,7 +243,7 @@ function AboutUs() {
                         <div className='lg:col-span-4 md:col-span-6 s:col-span-12'>
                             <div className=''>
                                 <div className='flex'>
-                                    <Image src={Mask} title="Hero image description" className='mr-3' alt='about Us' />
+                                    <Image src={Mask} title="Hero image description" className='mr-3' alt='Innovation-Driven Solutions' />
                                     <p className='text-xl text-white Brockmann self-center'>Innovation-Driven  <br /> Solutions</p>
                                 </div>
                                 <p className='text-[#DBE2DC] mt-3 pr-6'>We believe in <b>continuous improvement</b> and <b>smart automation</b>. By leveraging the latest technology, we simplify complex warranty processes, making them more <b>efficient, reliable,</b> and <b>scalable</b> for businesses of
@@ -253,7 +253,7 @@ function AboutUs() {
                         <div className='lg:col-span-4 md:col-span-6 s:col-span-12'>
                             <div className=''>
                                 <div className='flex'>
-                                    <Image src={Mask} title="Hero image description" className='mr-3' alt='about Us' />
+                                    <Image src={Mask} title="Hero image description" className='mr-3' alt='Integrity & Transparency' />
                                     <p className='text-xl text-white Brockmann self-center'>Integrity &  <br /> Transparency</p>
                                 </div>
                                 <p className='text-[#DBE2DC] mt-3 pr-6'>Trust is built through <b>honesty and clarity.</b> We <b>prioritize transparency</b> in every step, ensuring businesses and <b> customers always know where they stand in the warranty process. </b> No hidden steps, no unnecessary delays—just clear, fair solutions.</p>
@@ -271,7 +271,7 @@ function AboutUs() {
                         <div className='lg:col-span-4 md:col-span-6 s:col-span-12'>
                             <div className=''>
                                 <div className='flex'>
-                                    <Image src={Mask} title="Hero image description" className='mr-3' alt='about Us' />
+                                    <Image src={Mask} title="Hero image description" className='mr-3' alt='Simplicity in Technology' />
                                     <p className='text-xl text-white Brockmann self-center'>Simplicity in   <br /> Technology</p>
                                 </div>
                                 <p className='text-[#DBE2DC] mt-3 pr-6'>Technology should simplify, not complicate. Our platform is designed to be <b>intuitive</b> and <b>user-friendly</b>, removing the hassle from <b>warranty management</b>  while <b> maintaining powerful capabilities for businesses. </b> </p>
@@ -280,7 +280,7 @@ function AboutUs() {
                         <div className='lg:col-span-4 md:col-span-6 s:col-span-12'>
                             <div className=''>
                                 <div className='flex'>
-                                    <Image src={Mask} title="Hero image description" className='mr-3' alt='about Us' />
+                                    <Image src={Mask} title="Hero image description" className='mr-3' alt='Commitment to Growth' />
                                     <p className='text-xl text-white Brockmann self-center'>Commitment to   <br /> Growth</p>
                                 </div>
                                 <p className='text-[#DBE2DC] mt-3 pr-6'>We don’t just build software; <b>  we build lasting partnerships </b>. As industries evolve, so do we—constantly <b>innovating, learning,</b> and <b>improving</b> to help businesses <b>scale with confidence</b> and ease.</p>
@@ -306,13 +306,13 @@ function AboutUs() {
                         onClick={scrollToTop}
                         className="fixed bottom-5 left-5 px-4 py-2 rounded-full shadow-lg "
                     >
-                        <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="close" />
+                        <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="Go To Up" />
                     </button>
                 )}
 
                 <a href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3TUE4miGSgGYkjSRA71gPaWzwLoUya5WDHu3IXW7Zt6nyC8VQW1SamtXC-W8Yig-01MGvDaoJp' target='_blank'
                     onClick={scrollToTop}
-                    className="fixed bottom-5 Gilroy leading-none right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
+                    className="fixed bottom-5 Gilroy font-semibold leading-none right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
                 >Book <br />  Appointment
                 </a>
                 <Footer />
