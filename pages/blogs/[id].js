@@ -3,17 +3,21 @@ import Footer from '@/components/footer';
 import Header from '@/components/header';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Facebook from '../../public/assets/images/facebook.png';
 import linkin from '../../public/assets/images/linkedin.png';
 import twitter from '../../public/assets/images/twitter.png';
 import close from '@/public/assets/images/active.svg';
 import instagram from '../../public/assets/images/instagram.png';
+import Arrow from "@/public/assets/images/blog/arrow.png"
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Blog({ blog, error, isLoading }) {
   const router = useRouter();
   const [showButton, setShowButton] = useState(false);
+  const [blogs1, setBlogs1] = useState([]);
+  // const [error, setError] = useState(false);
   useEffect(() => {
     if (!blog || error) {
       router.push('/404');
@@ -64,10 +68,11 @@ export default function Blog({ blog, error, isLoading }) {
   } = blog;
 
   const [isSticky, setIsSticky] = useState(true);
-  console.log(blog)
+  console.log(blogs1)
   const [bottomOffset, setBottomOffset] = useState(0);
 
   useEffect(() => {
+    fetchBlogs();
     const handleScroll = () => {
       const contentDiv = document.getElementById("contentSection");
       if (contentDiv) {
@@ -83,7 +88,7 @@ export default function Blog({ blog, error, isLoading }) {
         } else {
           setIsSticky(true);
         }
-        console.log("================================", windowHeight, rect.bottom)
+        // console.log("================================", )
       }
     };
 
@@ -91,6 +96,36 @@ export default function Blog({ blog, error, isLoading }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const fetchBlogs = async () => {
+    try {
+      // setError(false);
+      const response = await fetch("/api/post");
+      const data = await response.json();
+      if (data.success) {
+        setBlogs1(data.data);
+      } else {
+        throw new Error("Failed to fetch blogs");
+      }
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+      // setError(true); // ✅ Set error state when API request fails
+    } finally {
+      // setLoading(false);
+    }
+  };
+
+  const randomBlogs = useMemo(() => {
+    if (!blogs1 || blogs1.length === 0) return [];
+
+    // 1. Filter out the current blog by paramUrl
+    const filtered = blogs1.filter(b => b.paramUrl !== paramUrl);
+
+    // 2. Shuffle randomly
+    const shuffled = filtered.sort(() => 0.5 - Math.random());
+
+    // 3. Take first 3
+    return shuffled.slice(0, 3);
+  }, [blogs1, paramUrl]);
 
   return (
     <>
@@ -143,6 +178,48 @@ export default function Blog({ blog, error, isLoading }) {
               </div>
             </div>
           </div>
+
+          <div className='py-8 w-large mx-auto'>
+            <h2 className="text-[#00fffc] text-3xl Brockmann my-3 font-[500]">
+              Recent Posts
+            </h2>
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 mt-8">
+              {randomBlogs.length === 0 ? (
+                <div className="text-center">No blogs available.</div>
+              ) : (
+                <>
+                  {randomBlogs.map((blog) => (
+                    <div
+                      key={blog._id} // Assuming MongoDB's default `_id` is used
+                      className=""
+                    >
+                      <Link href={`/blogs/${blog.paramUrl}`} passHref>
+                        <div className="bg-[#082B30] p-4 rounded-[14px] h-full relative">
+                          {/* Ensure bannerImage is a valid URL */}
+                          {blog.thumbnailImage && (
+                            <Image
+                              src={blog.thumbnailImage}
+                              alt={blog.title}
+                              width={300} // Add width and height for Image
+                              height={200}
+                              className="w-full"
+                            />
+                          )}
+                          <h2 className="text-[#fff] text-lg Brockmann my-3 font-[500]">
+                            {blog.title || "Default Blog Title"}
+                          </h2>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </>
+                // <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+
+              )}
+            </div>
+          </div>
+        </div>
+        <div>
         </div>
         <div className='bg-[#002025]'>
           <div className='py-8 w-large mx-auto' id='contactUs'>
