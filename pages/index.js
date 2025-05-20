@@ -43,6 +43,7 @@ import Recover from '@/public/assets/images/Recover.png';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Helmet } from 'react-helmet'
+import Script from 'next/script';
 
 export default function Page() {
     const [showButton, setShowButton] = useState(false);
@@ -181,7 +182,24 @@ export default function Page() {
                 <link rel="icon" type="image/x-icon" href="./assets/images/fabIcon.png" />
                 <link rel="apple-touch-icon" sizes="57x57" href="./assets/images/fabIcon.png" />
             </Head>
-
+            <Script
+                id="tawk-to"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                    __html: `
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function() {
+              var s1 = document.createElement("script"),
+                  s0 = document.getElementsByTagName("script")[0];
+              s1.async = true;
+              s1.src = 'https://embed.tawk.to/682c3663dc468a1911cee7f1/1irmb8tva';
+              s1.charset = 'UTF-8';
+              s1.setAttribute('crossorigin', '*');
+              s0.parentNode.insertBefore(s1, s0);
+            })();
+          `
+                }}
+            />
             <div className='bg-[#002025] bg-headerBackground1 bg-contain bg-no-repeat'>
                 <div className='w-large mx-auto'>
                     <Header />
@@ -837,7 +855,7 @@ export default function Page() {
                 {showButton && (
                     <button
                         onClick={scrollToTop}
-                        className="fixed bottom-5 left-5 px-4 py-2 rounded-full shadow-lg "
+                        className="fixed bottom-20 right-5 px-4 py-2 rounded-full shadow-lg "
                     >
                         <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="close" />
                     </button>
@@ -845,7 +863,7 @@ export default function Page() {
 
                 <a href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3TUE4miGSgGYkjSRA71gPaWzwLoUya5WDHu3IXW7Zt6nyC8VQW1SamtXC-W8Yig-01MGvDaoJp' target='_blank'
                     onClick={scrollToTop}
-                    className="fixed bottom-5 Gilroy font-semibold leading-none right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
+                    className="fixed bottom-5 Gilroy font-semibold leading-none left-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
                 >Book <br />  Appointment
                 </a>
 
