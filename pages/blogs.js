@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import close from '@/public/assets/images/active.svg';
 import Link from "next/link";
+import Script from "next/script";
 
 const BlogPage = ({ blogs, error }) => {
   const [showButton, setShowButton] = useState(false);
@@ -41,6 +42,24 @@ const BlogPage = ({ blogs, error }) => {
   };
   return (
     <>
+      <Script
+        id="tawk-to"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function() {
+              var s1 = document.createElement("script"),
+                  s0 = document.getElementsByTagName("script")[0];
+              s1.async = true;
+              s1.src = 'https://embed.tawk.to/682c3663dc468a1911cee7f1/1irmb8tva';
+              s1.charset = 'UTF-8';
+              s1.setAttribute('crossorigin', '*');
+              s0.parentNode.insertBefore(s1, s0);
+            })();
+          `
+        }}
+      />
       <Head>  <title>{'Blog'}</title>
         <meta name="description" content={"Key Features to Look for in a Warranty Management Platform"} />
         <link href="https://fonts.cdnfonts.com/css/brockmann" rel="stylesheet" />
@@ -127,7 +146,7 @@ const BlogPage = ({ blogs, error }) => {
           {showButton && (
             <button
               onClick={scrollToTop}
-              className="fixed bottom-5 left-5 px-4 py-2 rounded-full shadow-lg "
+              className="fixed bottom-20 right-5 px-4 py-2 rounded-full shadow-lg "
             >
               <Image title="Hero image description" className="rotate-180" src={close} width={40} height={40} alt="Go To Up" />
             </button>
@@ -135,7 +154,7 @@ const BlogPage = ({ blogs, error }) => {
 
           <a href='https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3TUE4miGSgGYkjSRA71gPaWzwLoUya5WDHu3IXW7Zt6nyC8VQW1SamtXC-W8Yig-01MGvDaoJp' target='_blank'
             onClick={scrollToTop}
-            className="fixed bottom-5 Gilroy leading-none font-semibold right-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
+            className="fixed bottom-5 Gilroy leading-none font-semibold left-5 text-center px-4 py-2 rounded-tl-[0px] rounded-tr-[20px] rounded-br-[0px] rounded-bl-[20px] shadow-[1px_1px_4px_0px_#504d4d] bg-[#00FFFC] text-black "
           >Book <br />  Appointment
           </a>
           <Footer />
